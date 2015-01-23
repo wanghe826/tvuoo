@@ -785,7 +785,7 @@
     for(TvInfo* tvInfo in self.single.tvArray)
     {
         int deltTime = [[NSDate date] timeIntervalSinceDate:tvInfo.date];
-        if(abs(deltTime) > 60)
+        if(abs(deltTime) > 200)
         {
             [self.single.tvArray removeObject:tvInfo];
             break;
@@ -795,7 +795,7 @@
     for(TvInfo* tvInfo in self.single.sdkArray)
     {
         int deltTime = [[NSDate date] timeIntervalSinceDate:tvInfo.date];
-        if(abs(deltTime) > 60)
+        if(abs(deltTime) > 200)
         {
             [self.single.sdkArray removeObject:tvInfo];
             break;
