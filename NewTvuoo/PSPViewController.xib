@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PSPViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yaogan" destination="Krc-hj-oL3" id="uvC-co-8Te"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="psp_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Bs-k8-MXK">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                </imageView>
+                <button opaque="NO" tag="155" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wib-Sr-e73">
+                    <rect key="frame" x="36" y="10" width="121" height="35"/>
+                    <state key="normal" image="psp_l1.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="psp_l2.png"/>
+                    <connections>
+                        <action selector="pressBtn:" destination="-1" eventType="touchUpInside" id="dq0-sP-0Bg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="156" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkS-JC-6T8">
+                    <rect key="frame" x="417" y="10" width="121" height="35"/>
+                    <state key="normal" image="psp_r1.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="psp_r2.png"/>
+                    <connections>
+                        <action selector="pressBtn:" destination="-1" eventType="touchUpInside" id="6XQ-B5-r7d"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exH-J3-PgW">
+                    <rect key="frame" x="261" y="280" width="87" height="24"/>
+                    <state key="normal" image="psp_select1.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="psp_select2.png"/>
+                    <connections>
+                        <action selector="pressSelectBtn:" destination="-1" eventType="touchUpInside" id="z52-UU-bFx"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="psp_quan.png" translatesAutoresizingMaskIntoConstraints="NO" id="Krc-hj-oL3">
+                    <rect key="frame" x="180" y="242" width="40" height="40"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzY-Wa-qhe">
+                    <rect key="frame" x="356" y="280" width="87" height="24"/>
+                    <state key="normal" image="psp_start1.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted" image="psp_start2.png"/>
+                    <connections>
+                        <action selector="pressStartBtn:" destination="-1" eventType="touchUpInside" id="PP5-9G-4bj"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="450" y="396"/>
+        </view>
+        <viewController id="JY2-BR-IlF">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="GDF-cb-PL7"/>
+                <viewControllerLayoutGuide type="bottom" id="iW2-ao-aEC"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="1at-IB-jYA">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            </view>
+            <point key="canvasLocation" x="681" y="329"/>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="psp_1.png" width="1280" height="720"/>
+        <image name="psp_l1.png" width="274" height="76"/>
+        <image name="psp_l2.png" width="274" height="76"/>
+        <image name="psp_quan.png" width="116" height="116"/>
+        <image name="psp_r1.png" width="274" height="76"/>
+        <image name="psp_r2.png" width="274" height="76"/>
+        <image name="psp_select1.png" width="164" height="40"/>
+        <image name="psp_select2.png" width="164" height="40"/>
+        <image name="psp_start1.png" width="164" height="40"/>
+        <image name="psp_start2.png" width="164" height="40"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

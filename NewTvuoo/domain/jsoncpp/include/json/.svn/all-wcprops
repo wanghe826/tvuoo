@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json
+END
+json.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/json.h
+END
+value.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/value.h
+END
+writer.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/writer.h
+END
+features.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/features.h
+END
+reader.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/reader.h
+END
+config.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/config.h
+END
+autolink.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/autolink.h
+END
+forwards.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/toolbox/!svn/ver/1190/Tvuoo/TvuooConnectorV2/server/release/jni/jsoncpp/include/json/forwards.h
+END
