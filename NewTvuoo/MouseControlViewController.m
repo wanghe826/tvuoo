@@ -850,7 +850,7 @@
 //                 [_activityView removeFromSuperview];
                  
                  //获取失败!!!
-                 
+                 //开始
 //                 _loadFailed = [[LoadFailed alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
 //                 _loadFailed.delegate = self;
 //                 [self.view addSubview:_loadFailed];
