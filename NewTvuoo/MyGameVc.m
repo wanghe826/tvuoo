@@ -187,7 +187,7 @@
     [self.view addSubview:self.activityIndicator];
     [self initFailedUI];
     
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(timerTarget) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(timerTarget) userInfo:nil repeats:YES];
     
     self.gameList = [[UITableView alloc] initWithFrame:CGRectMake(0,141,320,380) style:UITableViewStylePlain];
     self.flag = HOT;
@@ -1260,6 +1260,23 @@
                 break;
         }
     }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if([self.activityIndicator isAnimating])
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator removeFromSuperview];
+        
+        [self.view addSubview:self.gameList];
+        
+        [_failedIv removeFromSuperview];
+        //    [_failedIv release];
+        [_failedLabel removeFromSuperview];
+        //    [_failedLabel release];
+        [_listUv removeFromSuperview];
+        [_reloadBtn removeFromSuperview];
+    });
+    
+    
 //    [self.view performSelectorOnMainThread:@selector(addSubview:) withObject:self.gameList waitUntilDone:YES];
 //    [self.gameList performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:YES];
     [self performSelectorOnMainThread:@selector(reloadTableView) withObject:nil waitUntilDone:YES];

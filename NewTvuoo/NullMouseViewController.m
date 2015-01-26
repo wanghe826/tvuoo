@@ -457,14 +457,14 @@
            }
            else
            {
-               float x = gyroData.rotationRate.x*5*9.8;
-               float y = gyroData.rotationRate.y*5*9.8;
-               float z = gyroData.rotationRate.z*5*9.8;
-               if(abs((int)x) <= 35)
+               float x = gyroData.rotationRate.x*3*9.8;
+               float y = gyroData.rotationRate.y*3*9.8;
+               float z = gyroData.rotationRate.z*3*9.8;
+               if(abs((int)x) <= 15)
                {
                    x = 0;
                }
-               if(abs((int)z) <= 35)
+               if(abs((int)z) <= 15)
                {
                    z = 0;
                }
