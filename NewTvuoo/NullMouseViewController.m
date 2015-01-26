@@ -186,7 +186,8 @@
     [self addBottomBtn];
     
     UIButton* mouseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [mouseBtn addTarget:self action:@selector(pressConfirm) forControlEvents:UIControlEventTouchUpInside];
+    [mouseBtn addTarget:self action:@selector(pressConfirm) forControlEvents:UIControlEventTouchDown];
+    [mouseBtn addTarget:self action:@selector(pressConfirmUp) forControlEvents:UIControlEventTouchUpInside];
     mouseBtn.frame = CGRectMake(200, 300, 250, 250);
     [mouseBtn setBackgroundImage:[UIImage imageNamed:@"ks_queren.png"] forState:UIControlStateNormal];
     [mouseBtn setBackgroundImage:[UIImage imageNamed:@"ks_queren.png"] forState:UIControlStateHighlighted];
@@ -266,10 +267,16 @@
 
 - (void) pressConfirm
 {
-    keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 0, 23, 0);
-    keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 1, 23, 0);
+//    keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 0, 23, 0);
+//    keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 1, 23, 0);
+    mouseEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 0, 0, 0, 0);
+//    mouseEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 1, 0, 0, 0);
 }
 
+- (void) pressConfirmUp
+{
+    mouseEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 1, 0, 0, 0);
+}
 
 
 - (void) pressReturn
@@ -307,6 +314,9 @@
         _mouseLabel.textColor = myBlackColor;       //鼠标单击事件
         [_motionManager stopGyroUpdates];
         [_motionManager stopAccelerometerUpdates];
+        CusMouseViewController* cusVc = [[CusMouseViewController alloc] initWithNibName:@"CusMouseViewController" bundle:nil];
+        [self.navigationController pushViewController:cusVc animated:YES];
+        [cusVc release];
     }
     else if(tag == 12)
     {
@@ -406,23 +416,13 @@
                float y = accelerometerData.acceleration.y;
                float z = accelerometerData.acceleration.z;
                
-               
                float distanceX = v0_x*1.0/60.0 + (1.0/6.0)*x*(1.0/60.0);
                float distanceY = v0_y*1.0/60.0 + (1.0/6.0)*y*(1.0/60.0);
 //               float distanceZ = v0_z*1.0/60.0 + (1.0/6.0)*z*(1.0/60.0);
                v0_x = x * 1.0/60.0;
                v0_y = y * 1.0/60.0;
                v0_z = z * 1.0/60.0;
-//
-//               static NSDate* lastSendTime;
-//               if(lastSendTime != nil)
-//               {
-////                   NSTimeInterval secondsSinceLastSend = -([lastSendTime timeIntervalSinceNow]);
-////                   NSLog(@"x: %f", x*secondsSinceLastSend);
-////                   NSLog(@"y: %f", y*secondsSinceLastSend);
-//                   NSLog(@"x: %f", distanceX*10000);
-//                   NSLog(@"y: %f", distanceY*10000);
-//                   NSLog(@"z: %f", distanceZ*10000);
+
                int dx = abs(int(distanceX*10000-_x));
                int dy = abs(int(distanceY*10000-_y));
                
@@ -437,15 +437,7 @@
                
                _x = distanceX*10000;
                _y = distanceY*10000;
-                   mouseMove([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvUdpPort, distanceX*10000,distanceY*10000);
-//               }
-               
-               NSLog(@"加速计x：%f", distanceX*10000);
-               NSLog(@"加速计y: %f", distanceY*10000);
-               NSLog(@"加速计z: %f", z);
-//               [lastSendTime release];
-//               lastSendTime = [[NSDate alloc] init];
-               
+//                   mouseMove([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvUdpPort, distanceX*10000,distanceY*10000);
            }
         }];
     }
@@ -456,7 +448,7 @@
     
     if(_motionManager.gyroAvailable)
     {
-        _motionManager.gyroUpdateInterval = 5.0/10.0;
+        _motionManager.gyroUpdateInterval = 0.03;
         [_motionManager startGyroUpdatesToQueue:queue withHandler:^(CMGyroData* gyroData, NSError* error)
         {
            if(error)
@@ -465,42 +457,21 @@
            }
            else
            {
-//               gyroData.timestamp
-//               float x = gyroData.rotationRate.x*20.0;
-//               float y = gyroData.rotationRate.y*20.0;
-//               float z = gyroData.rotationRate.z*20.0;
+               float x = gyroData.rotationRate.x*5*9.8;
+               float y = gyroData.rotationRate.y*5*9.8;
+               float z = gyroData.rotationRate.z*5*9.8;
+               if(abs((int)x) <= 35)
+               {
+                   x = 0;
+               }
+               if(abs((int)z) <= 35)
+               {
+                   z = 0;
+               }
                
-//               float x = gyroData.rotationRate.x * 100;
-//               float z = gyroData.rotationRate.z * 100;
-//               float y = gyroData.rotationRate.y * 100;
-               
-//               float deltX = x - _x;
-//               float deltY = y - _y;
-//               float deltZ = z - _z;
-//               _x = x;
-//               _y = y;
-//               _z = z;
-//               NSLog(@"x: %f", x);
-//               NSLog(@"y: %f", y);
-//               NSLog(@"z: %f", z);
-//               mouseMove([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvUdpPort, -z,-x);
-//               sendSensor([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvUdpPort, 0, , , z);
+               NSLog(@"x=%d--y=%d--z=%d", (int)x, (int)y, (int)z);
+               mouseMove([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvUdpPort, -z,-x);
            }
-        }];
-    }
-    if(_motionManager.deviceMotionAvailable)
-    {
-        _motionManager.deviceMotionUpdateInterval = 5.0/10.0;
-        [_motionManager startDeviceMotionUpdatesToQueue:queue withHandler:^(CMDeviceMotion* deviceMotion, NSError* error)
-        {
-            if(error)
-            {
-                [_motionManager stopDeviceMotionUpdates];
-            }
-            else
-            {
-//                _motionManager.deviceMotiondA
-            }
         }];
     }
 }
