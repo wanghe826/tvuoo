@@ -140,10 +140,10 @@
     
     footView = [[FootView alloc] init];
     
-    self.hotGameArray = [[NSMutableArray alloc] initWithCapacity:5];
-    self.niceGameArray = [[NSMutableArray alloc] initWithCapacity:5];
-    self.pspGameArray = [[NSMutableArray alloc] initWithCapacity:5];
-    self.cateGameArray = [[NSMutableArray alloc] initWithCapacity:5];
+    self.hotGameArray = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
+    self.niceGameArray = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
+    self.pspGameArray = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
+    self.cateGameArray = [[[NSMutableArray alloc] initWithCapacity:5] autorelease];
     
     Singleton* single = [Singleton getSingle];
     single.myDelegate = self;

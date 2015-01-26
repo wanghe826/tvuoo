@@ -104,6 +104,7 @@
                 if(alert != nil)
                 {
                     [alert setImageUrl:gameInfo.iconUrl];
+                    [url release];
                 }
             });
         }

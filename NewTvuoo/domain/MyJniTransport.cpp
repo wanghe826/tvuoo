@@ -732,6 +732,7 @@ void startAllGame(string allGame, int ip)
             
             if(![jsonArray isKindOfClass:[NSArray class]])
             {
+                [gameInfoArray release];
                 return;
             }
             
