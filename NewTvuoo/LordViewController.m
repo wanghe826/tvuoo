@@ -839,7 +839,10 @@
         self.searchBtn.frame = CGRectMake(200, 130, 80, 40);
     }
     
-    self.hintIv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zy_tixing.png"]];
+    UIImageView* hint = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zy_tixing.png"]];
+    self.hintIv = hint;
+    [hint release];
+//    self.hintIv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zy_tixing.png"]];
     CGFloat x = self.searchBtn.frame.origin.x + 80;
     CGFloat y = self.searchBtn.frame.origin.y;
     self.hintIv.frame = CGRectMake(0, 0, 20, 20);
@@ -850,8 +853,6 @@
     self.nLabel.text = @"0";
     self.nLabel.textColor = [UIColor whiteColor];
     self.nLabel.center = self.hintIv.center;
-//    [nLabel release];
-//    [uv release];
     
     UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 20, 320, 386*h_rate)];
     imageView.backgroundColor = [UIColor colorWithRed:24/255.0 green:180/255.0 blue:237/255.0 alpha:1];

@@ -41,17 +41,8 @@
 		5932454F19ED54D3000B4E55 /* ty_sousuo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244B019ED54D3000B4E55 /* ty_sousuo2.png */; };
 		5932455019ED54D3000B4E55 /* ty_xinpin1.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244B119ED54D3000B4E55 /* ty_xinpin1.png */; };
 		5932455119ED54D3000B4E55 /* ty_xinpin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244B219ED54D3000B4E55 /* ty_xinpin2.png */; };
-		5932455219ED54D3000B4E55 /* 下载管理.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244B319ED54D3000B4E55 /* 下载管理.jpg */; };
-		5932455319ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244B419ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg */; };
-		5932455419ED54D3000B4E55 /* 手机游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244B519ED54D3000B4E55 /* 手机游戏中心.jpg */; };
-		5932455519ED54D3000B4E55 /* 手游中心加载失败.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244B619ED54D3000B4E55 /* 手游中心加载失败.jpg */; };
-		5932455619ED54D3000B4E55 /* 手游中心没有内容.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244B719ED54D3000B4E55 /* 手游中心没有内容.jpg */; };
-		5932455719ED54D3000B4E55 /* 手游中心载入.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244B819ED54D3000B4E55 /* 手游中心载入.jpg */; };
-		5932455819ED54D3000B4E55 /* 电视游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244B919ED54D3000B4E55 /* 电视游戏中心.jpg */; };
 		5932455919ED54D3000B4E55 /* root_tv.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244BC19ED54D3000B4E55 /* root_tv.png */; };
 		5932455A19ED54D3000B4E55 /* weilianjie.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244BD19ED54D3000B4E55 /* weilianjie.png */; };
-		5932455B19ED54D3000B4E55 /* 未root未连接.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244BE19ED54D3000B4E55 /* 未root未连接.jpg */; };
-		5932455C19ED54D3000B4E55 /* 未连接设备.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244BF19ED54D3000B4E55 /* 未连接设备.jpg */; };
 		5932455D19ED54D3000B4E55 /* dsyx_shoubing1.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244C119ED54D3000B4E55 /* dsyx_shoubing1.png */; };
 		5932455E19ED54D3000B4E55 /* dsyx_shoubing2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244C219ED54D3000B4E55 /* dsyx_shoubing2.png */; };
 		5932455F19ED54D3000B4E55 /* sbsj_kuang2.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244C319ED54D3000B4E55 /* sbsj_kuang2.9.png */; };
@@ -84,28 +75,15 @@
 		5932457A19ED54D3000B4E55 /* ty_sousuo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244DE19ED54D3000B4E55 /* ty_sousuo2.png */; };
 		5932457B19ED54D3000B4E55 /* ty_xinpin1.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244DF19ED54D3000B4E55 /* ty_xinpin1.png */; };
 		5932457C19ED54D3000B4E55 /* ty_xinpin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244E019ED54D3000B4E55 /* ty_xinpin2.png */; };
-		5932457D19ED54D3000B4E55 /* 下载管理.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244E119ED54D3000B4E55 /* 下载管理.jpg */; };
-		5932457E19ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244E219ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg */; };
-		5932457F19ED54D3000B4E55 /* 手机游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244E319ED54D3000B4E55 /* 手机游戏中心.jpg */; };
-		5932458019ED54D3000B4E55 /* 手游中心加载失败.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244E419ED54D3000B4E55 /* 手游中心加载失败.jpg */; };
-		5932458119ED54D3000B4E55 /* 手游中心没有内容.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244E519ED54D3000B4E55 /* 手游中心没有内容.jpg */; };
-		5932458219ED54D3000B4E55 /* 手游中心载入.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244E619ED54D3000B4E55 /* 手游中心载入.jpg */; };
-		5932458319ED54D3000B4E55 /* 电视游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244E719ED54D3000B4E55 /* 电视游戏中心.jpg */; };
 		5932458419ED54D3000B4E55 /* ks_queren.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244E919ED54D3000B4E55 /* ks_queren.png */; };
 		5932458519ED54D3000B4E55 /* ks_tuoluoyi.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244EA19ED54D3000B4E55 /* ks_tuoluoyi.png */; };
 		5932458619ED54D3000B4E55 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 593244EB19ED54D3000B4E55 /* Thumbs.db */; };
-		5932458719ED54D3000B4E55 /* 不支持空鼠.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244EC19ED54D3000B4E55 /* 不支持空鼠.jpg */; };
-		5932458819ED54D3000B4E55 /* 无线空鼠.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244ED19ED54D3000B4E55 /* 无线空鼠.jpg */; };
 		5932458919ED54D3000B4E55 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 593244EF19ED54D3000B4E55 /* Thumbs.db */; };
 		5932458A19ED54D3000B4E55 /* yxjs_morentu.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244F019ED54D3000B4E55 /* yxjs_morentu.png */; };
 		5932458B19ED54D3000B4E55 /* yxjs_shouji1.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244F119ED54D3000B4E55 /* yxjs_shouji1.png */; };
 		5932458C19ED54D3000B4E55 /* yxjs_shouji2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244F219ED54D3000B4E55 /* yxjs_shouji2.png */; };
 		5932458D19ED54D3000B4E55 /* yxjs_tv1.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244F319ED54D3000B4E55 /* yxjs_tv1.png */; };
 		5932458E19ED54D3000B4E55 /* yxjs_tv2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244F419ED54D3000B4E55 /* yxjs_tv2.png */; };
-		5932458F19ED54D3000B4E55 /* 游戏介绍.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244F519ED54D3000B4E55 /* 游戏介绍.jpg */; };
-		5932459019ED54D3000B4E55 /* 游戏介绍说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244F619ED54D3000B4E55 /* 游戏介绍说明.jpg */; };
-		5932459119ED54D3000B4E55 /* 使用帮助.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244F819ED54D3000B4E55 /* 使用帮助.jpg */; };
-		5932459219ED54D3000B4E55 /* 联系我们.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 593244F919ED54D3000B4E55 /* 联系我们.jpg */; };
 		5932459319ED54D3000B4E55 /* srf_fanhui1.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244FB19ED54D3000B4E55 /* srf_fanhui1.png */; };
 		5932459419ED54D3000B4E55 /* srf_fanhui2.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244FC19ED54D3000B4E55 /* srf_fanhui2.png */; };
 		5932459519ED54D3000B4E55 /* srf_kong1.png in Resources */ = {isa = PBXBuildFile; fileRef = 593244FD19ED54D3000B4E55 /* srf_kong1.png */; };
@@ -122,7 +100,6 @@
 		593245A019ED54D3000B4E55 /* srf_yk4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932450819ED54D3000B4E55 /* srf_yk4.png */; };
 		593245A119ED54D3000B4E55 /* srf_yk5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932450919ED54D3000B4E55 /* srf_yk5.png */; };
 		593245A219ED54D3000B4E55 /* srf_yk6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932450A19ED54D3000B4E55 /* srf_yk6.png */; };
-		593245A319ED54D3000B4E55 /* 输入法.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5932450B19ED54D3000B4E55 /* 输入法.jpg */; };
 		593245B919ED54D3000B4E55 /* sbcz_anniudi.9.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932452319ED54D3000B4E55 /* sbcz_anniudi.9.png */; };
 		593245BA19ED54D3000B4E55 /* sbcz_anniudi.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932452419ED54D3000B4E55 /* sbcz_anniudi.png */; };
 		593245BB19ED54D3000B4E55 /* sbcz_huitui3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932452519ED54D3000B4E55 /* sbcz_huitui3.png */; };
@@ -136,8 +113,6 @@
 		593245C319ED54D3000B4E55 /* sbsj_tishi.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932452D19ED54D3000B4E55 /* sbsj_tishi.png */; };
 		593245C419ED54D3000B4E55 /* sbsj_zhuye1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932452E19ED54D3000B4E55 /* sbsj_zhuye1.png */; };
 		593245C519ED54D3000B4E55 /* sbsj_zhuye2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5932452F19ED54D3000B4E55 /* sbsj_zhuye2.png */; };
-		593245C619ED54D3000B4E55 /* 鼠标传统.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5932453019ED54D3000B4E55 /* 鼠标传统.jpg */; };
-		593245C719ED54D3000B4E55 /* 鼠标双击.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5932453119ED54D3000B4E55 /* 鼠标双击.jpg */; };
 		59BDA0011A18B0940045AABF /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59BDA0001A18B0940045AABF /* CoreFoundation.framework */; };
 		59BDA11F1A18CC910045AABF /* HJCircularBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA10C1A18CC910045AABF /* HJCircularBuffer.m */; };
 		59BDA1201A18CC910045AABF /* HJManagedImageV.m in Sources */ = {isa = PBXBuildFile; fileRef = 59BDA10E1A18CC910045AABF /* HJManagedImageV.m */; };
@@ -195,8 +170,6 @@
 		960DDDCE19E66D77008528F1 /* sbcz_sshezhi2.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDD9E19E66D77008528F1 /* sbcz_sshezhi2.png */; };
 		960DDDCF19E66D77008528F1 /* sbcz_xuanzhong1.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDD9F19E66D77008528F1 /* sbcz_xuanzhong1.png */; };
 		960DDDD019E66D77008528F1 /* sbcz_xuanzhong2.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDA019E66D77008528F1 /* sbcz_xuanzhong2.png */; };
-		960DDDD119E66D77008528F1 /* 鼠标操作-传统.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDA119E66D77008528F1 /* 鼠标操作-传统.jpg */; };
-		960DDDD219E66D77008528F1 /* 鼠标操作-双击.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDA219E66D77008528F1 /* 鼠标操作-双击.jpg */; };
 		960DDDD319E66D77008528F1 /* yk_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDA419E66D77008528F1 /* yk_1.png */; };
 		960DDDD419E66D77008528F1 /* yk_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDA519E66D77008528F1 /* yk_2.png */; };
 		960DDDD519E66D77008528F1 /* yk_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDA619E66D77008528F1 /* yk_3.png */; };
@@ -220,8 +193,6 @@
 		960DDDE719E66D77008528F1 /* yk_yinjian.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDB819E66D77008528F1 /* yk_yinjian.png */; };
 		960DDDE819E66D77008528F1 /* yk_zhuye1.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDB919E66D77008528F1 /* yk_zhuye1.png */; };
 		960DDDE919E66D77008528F1 /* yk_zhuye2.png in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDBA19E66D77008528F1 /* yk_zhuye2.png */; };
-		960DDDEA19E66D77008528F1 /* 无线遥控.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 960DDDBB19E66D77008528F1 /* 无线遥控.jpg */; };
-		960F2A1D19BEAC5D00E09813 /* NullMouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960F2A1B19BEAC5D00E09813 /* NullMouseViewController.m */; };
 		960F2A1E19BEAC5D00E09813 /* NullMouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F2A1C19BEAC5D00E09813 /* NullMouseViewController.xib */; };
 		960F2A2219BECE1B00E09813 /* KeyPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960F2A2019BECE1B00E09813 /* KeyPadViewController.m */; };
 		960F2A2319BECE1B00E09813 /* KeyPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 960F2A2119BECE1B00E09813 /* KeyPadViewController.xib */; };
@@ -292,13 +263,6 @@
 		961034CA19F52BE3003A1E99 /* ty_xin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 961034B219F52BE3003A1E99 /* ty_xin2.png */; };
 		961034CB19F52BE3003A1E99 /* ty_xinpin1.png in Resources */ = {isa = PBXBuildFile; fileRef = 961034B319F52BE3003A1E99 /* ty_xinpin1.png */; };
 		961034CC19F52BE3003A1E99 /* ty_xinpin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 961034B419F52BE3003A1E99 /* ty_xinpin2.png */; };
-		961034CD19F52BE3003A1E99 /* 手机(电视游戏中心说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961034B519F52BE3003A1E99 /* 手机(电视游戏中心说明.jpg */; };
-		961034CE19F52BE3003A1E99 /* 手机游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961034B619F52BE3003A1E99 /* 手机游戏中心.jpg */; };
-		961034CF19F52BE3003A1E99 /* 手游中心加载失败.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961034B719F52BE3003A1E99 /* 手游中心加载失败.jpg */; };
-		961034D019F52BE3003A1E99 /* 手游中心没有内容.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961034B819F52BE3003A1E99 /* 手游中心没有内容.jpg */; };
-		961034D119F52BE3003A1E99 /* 手游中心载入.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961034B919F52BE3003A1E99 /* 手游中心载入.jpg */; };
-		961034D219F52BE3003A1E99 /* 电视应用.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961034BA19F52BE3003A1E99 /* 电视应用.jpg */; };
-		961034D319F52BE3003A1E99 /* 电视游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961034BB19F52BE3003A1E99 /* 电视游戏中心.jpg */; };
 		9611AEDF19D3AFDB00E12CB4 /* TvInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611AEDE19D3AFDB00E12CB4 /* TvInfo.m */; };
 		9611AEE219D3B72E00E12CB4 /* ParseJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 9611AEE119D3B72E00E12CB4 /* ParseJson.m */; };
 		9613360E19F0CB6C00984A8C /* NoConnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9613360C19F0CB6C00984A8C /* NoConnViewController.m */; };
@@ -308,38 +272,20 @@
 		9615140319EF940F003B0731 /* js_saoba2.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513DB19EF940F003B0731 /* js_saoba2.png */; };
 		9615140419EF940F003B0731 /* js_saoba3.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513DC19EF940F003B0731 /* js_saoba3.png */; };
 		9615140519EF940F003B0731 /* js_wancheng.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513DD19EF940F003B0731 /* js_wancheng.png */; };
-		9615140619EF940F003B0731 /* 分类.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513DE19EF940F003B0731 /* 分类.jpg */; };
-		9615140719EF940F003B0731 /* 弹框1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513DF19EF940F003B0731 /* 弹框1.jpg */; };
-		9615140819EF940F003B0731 /* 弹框2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513E019EF940F003B0731 /* 弹框2.jpg */; };
-		9615140919EF940F003B0731 /* 弹框3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513E119EF940F003B0731 /* 弹框3.jpg */; };
-		9615140A19EF940F003B0731 /* 弹框4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513E219EF940F003B0731 /* 弹框4.jpg */; };
-		9615140B19EF940F003B0731 /* 弹框5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513E319EF940F003B0731 /* 弹框5.jpg */; };
 		9615140C19EF940F003B0731 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 961513E519EF940F003B0731 /* Thumbs.db */; };
 		9615140D19EF940F003B0731 /* yxss_sousuo.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513E619EF940F003B0731 /* yxss_sousuo.png */; };
-		9615140E19EF940F003B0731 /* 游戏搜索1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513E719EF940F003B0731 /* 游戏搜索1.jpg */; };
-		9615140F19EF940F003B0731 /* 游戏搜索2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513E819EF940F003B0731 /* 游戏搜索2.jpg */; };
-		9615141019EF940F003B0731 /* 游戏搜索3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513E919EF940F003B0731 /* 游戏搜索3.jpg */; };
-		9615141119EF940F003B0731 /* 游戏搜索4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513EA19EF940F003B0731 /* 游戏搜索4.jpg */; };
-		9615141219EF940F003B0731 /* 电视加速1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513EB19EF940F003B0731 /* 电视加速1.jpg */; };
-		9615141319EF940F003B0731 /* 电视加速2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513EC19EF940F003B0731 /* 电视加速2.jpg */; };
-		9615141419EF940F003B0731 /* 电视加速3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513ED19EF940F003B0731 /* 电视加速3.jpg */; };
 		9615141519EF940F003B0731 /* hbj_di.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513EF19EF940F003B0731 /* hbj_di.png */; };
 		9615141619EF940F003B0731 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 961513F019EF940F003B0731 /* Thumbs.db */; };
 		9615141719EF940F003B0731 /* ty_start1.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513F119EF940F003B0731 /* ty_start1.png */; };
 		9615141819EF940F003B0731 /* ty_start2.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513F219EF940F003B0731 /* ty_start2.png */; };
 		9615141919EF940F003B0731 /* ty_xaunzhe1.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513F319EF940F003B0731 /* ty_xaunzhe1.png */; };
 		9615141A19EF940F003B0731 /* ty_xaunzhe2.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513F419EF940F003B0731 /* ty_xaunzhe2.png */; };
-		9615141B19EF940F003B0731 /* 红白机.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513F519EF940F003B0731 /* 红白机.jpg */; };
-		9615141C19EF940F003B0731 /* 红白机说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513F619EF940F003B0731 /* 红白机说明.jpg */; };
-		9615141D19EF940F003B0731 /* 网络异常.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513F719EF940F003B0731 /* 网络异常.jpg */; };
 		9615141E19EF940F003B0731 /* jj_di.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513F919EF940F003B0731 /* jj_di.png */; };
 		9615141F19EF940F003B0731 /* jj_yaogan.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513FA19EF940F003B0731 /* jj_yaogan.png */; };
 		9615142019EF940F003B0731 /* jj_yuan.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513FB19EF940F003B0731 /* jj_yuan.png */; };
 		9615142119EF940F003B0731 /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 961513FC19EF940F003B0731 /* Thumbs.db */; };
 		9615142219EF940F003B0731 /* ty_toubi1.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513FD19EF940F003B0731 /* ty_toubi1.png */; };
 		9615142319EF940F003B0731 /* ty_toubi2.png in Resources */ = {isa = PBXBuildFile; fileRef = 961513FE19EF940F003B0731 /* ty_toubi2.png */; };
-		9615142419EF940F003B0731 /* 街机.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 961513FF19EF940F003B0731 /* 街机.jpg */; };
-		9615142519EF940F003B0731 /* 街机说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9615140019EF940F003B0731 /* 街机说明.jpg */; };
 		9615142919EF94FC003B0731 /* JiejiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9615142719EF94FC003B0731 /* JiejiViewController.m */; };
 		9615142A19EF94FC003B0731 /* JiejiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9615142819EF94FC003B0731 /* JiejiViewController.xib */; };
 		9615C4DC1A03612D004EB244 /* SimulatorKeyEventPkg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9615C4DA1A03612D004EB244 /* SimulatorKeyEventPkg.cpp */; };
@@ -413,10 +359,6 @@
 		9635A43819CAD59A00BC8F17 /* zy_tixing.png in Resources */ = {isa = PBXBuildFile; fileRef = 9635A42019CAD59A00BC8F17 /* zy_tixing.png */; };
 		9635A43919CAD59A00BC8F17 /* zy_tongbu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9635A42119CAD59A00BC8F17 /* zy_tongbu.png */; };
 		9635A43A19CAD59A00BC8F17 /* zy_yaokong.png in Resources */ = {isa = PBXBuildFile; fileRef = 9635A42219CAD59A00BC8F17 /* zy_yaokong.png */; };
-		9635A43B19CAD59A00BC8F17 /* 主页1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9635A42319CAD59A00BC8F17 /* 主页1.jpg */; };
-		9635A43C19CAD59A00BC8F17 /* 主页2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9635A42419CAD59A00BC8F17 /* 主页2.jpg */; };
-		9635A43D19CAD59A00BC8F17 /* 主页3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9635A42519CAD59A00BC8F17 /* 主页3.jpg */; };
-		9635A43E19CAD59A00BC8F17 /* 主页3说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9635A42619CAD59A00BC8F17 /* 主页3说明.jpg */; };
 		963A2B791A64D33B00AD0C25 /* yaogan.png in Resources */ = {isa = PBXBuildFile; fileRef = 963A2B771A64D33B00AD0C25 /* yaogan.png */; };
 		963A2B7A1A64D33B00AD0C25 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 963A2B781A64D33B00AD0C25 /* ball.png */; };
 		963AB9CA19D2BB6A0083C486 /* Channel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 963AB99619D2BB6A0083C486 /* Channel.cpp */; };
@@ -463,6 +405,7 @@
 		966A13F21A5A9AF60045DB42 /* 66-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A13EF1A5A9AF60045DB42 /* 66-icon.png */; };
 		966A13F31A5A9AF60045DB42 /* 76-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A13F01A5A9AF60045DB42 /* 76-icon.png */; };
 		966A13F51A5A9B050045DB42 /* 120-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 966A13F41A5A9B050045DB42 /* 120-icon.png */; };
+		966C04761A761B0F00BC2996 /* NullMouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966C04751A761B0F00BC2996 /* NullMouseViewController.m */; };
 		9676FC611A3AD2EC008E37BA /* usb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9676FC601A3AD2EC008E37BA /* usb.png */; };
 		9676FC631A3AD313008E37BA /* zujian.png in Resources */ = {isa = PBXBuildFile; fileRef = 9676FC621A3AD313008E37BA /* zujian.png */; };
 		967872D719EE0C4D00FA20BE /* sbcz_huitui2.png in Resources */ = {isa = PBXBuildFile; fileRef = 967872D319EE0C4D00FA20BE /* sbcz_huitui2.png */; };
@@ -495,8 +438,6 @@
 		96D73E8B1A136351005A2187 /* xiazai2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D73E811A136351005A2187 /* xiazai2.png */; };
 		96D73E8C1A136351005A2187 /* xiazaiguanbi1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D73E821A136351005A2187 /* xiazaiguanbi1.png */; };
 		96D73E8D1A136351005A2187 /* xiazaiguanbi2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D73E831A136351005A2187 /* xiazaiguanbi2.png */; };
-		96D73E8E1A136351005A2187 /* 使用帮助.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D73E841A136351005A2187 /* 使用帮助.jpg */; };
-		96D73E8F1A136351005A2187 /* 加载手柄.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D73E851A136351005A2187 /* 加载手柄.jpg */; };
 		96DE25091A63C64C009440D9 /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96DE25081A63C64C009440D9 /* DXAlertView.m */; };
 		96E530BD19F77FD300B71D6A /* SurpriseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E530BC19F77FD300B71D6A /* SurpriseView.m */; };
 		96E5311619F784B100B71D6A /* daojishi.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530BF19F784B100B71D6A /* daojishi.png */; };
@@ -541,7 +482,6 @@
 		96E5313D19F784B100B71D6A /* psp_start2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530E719F784B100B71D6A /* psp_start2.png */; };
 		96E5313E19F784B100B71D6A /* psp_yuan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530E819F784B100B71D6A /* psp_yuan1.png */; };
 		96E5313F19F784B100B71D6A /* psp_yuan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530E919F784B100B71D6A /* psp_yuan2.png */; };
-		96E5314019F784B100B71D6A /* PSP说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E530EA19F784B100B71D6A /* PSP说明.jpg */; };
 		96E5314119F784B100B71D6A /* Thumbs.db in Resources */ = {isa = PBXBuildFile; fileRef = 96E530EB19F784B100B71D6A /* Thumbs.db */; };
 		96E5314219F784B100B71D6A /* ty_anniu1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530EC19F784B100B71D6A /* ty_anniu1.png */; };
 		96E5314319F784B100B71D6A /* ty_anniu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530ED19F784B100B71D6A /* ty_anniu2.png */; };
@@ -555,7 +495,6 @@
 		96E5314B19F784B100B71D6A /* sjjs_xiaz2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530F519F784B100B71D6A /* sjjs_xiaz2.png */; };
 		96E5314C19F784B100B71D6A /* tb_jiazai120.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530F619F784B100B71D6A /* tb_jiazai120.png */; };
 		96E5314E19F784B100B71D6A /* xzyk.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530F819F784B100B71D6A /* xzyk.png */; };
-		96E5314F19F784B100B71D6A /* 下载遥控.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E530F919F784B100B71D6A /* 下载遥控.jpg */; };
 		96E5315019F784B100B71D6A /* dsyx_shoubing1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530FB19F784B100B71D6A /* dsyx_shoubing1.png */; };
 		96E5315119F784B100B71D6A /* dsyx_shoubing2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530FC19F784B100B71D6A /* dsyx_shoubing2.png */; };
 		96E5315219F784B100B71D6A /* dsyy_guanli1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E530FD19F784B100B71D6A /* dsyy_guanli1.png */; };
@@ -573,16 +512,6 @@
 		96E5315E19F784B100B71D6A /* ty_xin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E5310919F784B100B71D6A /* ty_xin2.png */; };
 		96E5315F19F784B100B71D6A /* ty_xinpin1.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E5310A19F784B100B71D6A /* ty_xinpin1.png */; };
 		96E5316019F784B100B71D6A /* ty_xinpin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 96E5310B19F784B100B71D6A /* ty_xinpin2.png */; };
-		96E5316119F784B100B71D6A /* 手机(电视游戏中心说明.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5310C19F784B100B71D6A /* 手机(电视游戏中心说明.jpg */; };
-		96E5316219F784B100B71D6A /* 手机游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5310D19F784B100B71D6A /* 手机游戏中心.jpg */; };
-		96E5316319F784B100B71D6A /* 手游中心加载失败.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5310E19F784B100B71D6A /* 手游中心加载失败.jpg */; };
-		96E5316419F784B100B71D6A /* 手游中心没有内容.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5310F19F784B100B71D6A /* 手游中心没有内容.jpg */; };
-		96E5316519F784B100B71D6A /* 手游中心载入.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5311019F784B100B71D6A /* 手游中心载入.jpg */; };
-		96E5316619F784B100B71D6A /* 电视应用.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5311119F784B100B71D6A /* 电视应用.jpg */; };
-		96E5316719F784B100B71D6A /* 电视游戏中心.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5311219F784B100B71D6A /* 电视游戏中心.jpg */; };
-		96E5316819F784B100B71D6A /* 手机游戏介绍.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5311319F784B100B71D6A /* 手机游戏介绍.jpg */; };
-		96E5316919F784B100B71D6A /* 手机游戏介绍2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5311419F784B100B71D6A /* 手机游戏介绍2.jpg */; };
-		96E5316A19F784B100B71D6A /* 敬请期待.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96E5311519F784B100B71D6A /* 敬请期待.jpg */; };
 		96E5316C19F78AC600B71D6A /* SurpriseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E5316B19F78AC600B71D6A /* SurpriseView.xib */; };
 		96E5317019F7C09A00B71D6A /* CateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E5316E19F7C09A00B71D6A /* CateGameViewController.m */; };
 		96E5317119F7C09A00B71D6A /* CateGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96E5316F19F7C09A00B71D6A /* CateGameViewController.xib */; };
@@ -635,17 +564,8 @@
 		593244B019ED54D3000B4E55 /* ty_sousuo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_sousuo2.png; sourceTree = "<group>"; };
 		593244B119ED54D3000B4E55 /* ty_xinpin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin1.png; sourceTree = "<group>"; };
 		593244B219ED54D3000B4E55 /* ty_xinpin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin2.png; sourceTree = "<group>"; };
-		593244B319ED54D3000B4E55 /* 下载管理.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "下载管理.jpg"; sourceTree = "<group>"; };
-		593244B419ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机(电视游戏中心说明.jpg"; sourceTree = "<group>"; };
-		593244B519ED54D3000B4E55 /* 手机游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机游戏中心.jpg"; sourceTree = "<group>"; };
-		593244B619ED54D3000B4E55 /* 手游中心加载失败.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心加载失败.jpg"; sourceTree = "<group>"; };
-		593244B719ED54D3000B4E55 /* 手游中心没有内容.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心没有内容.jpg"; sourceTree = "<group>"; };
-		593244B819ED54D3000B4E55 /* 手游中心载入.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心载入.jpg"; sourceTree = "<group>"; };
-		593244B919ED54D3000B4E55 /* 电视游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视游戏中心.jpg"; sourceTree = "<group>"; };
 		593244BC19ED54D3000B4E55 /* root_tv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = root_tv.png; sourceTree = "<group>"; };
 		593244BD19ED54D3000B4E55 /* weilianjie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weilianjie.png; sourceTree = "<group>"; };
-		593244BE19ED54D3000B4E55 /* 未root未连接.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "未root未连接.jpg"; sourceTree = "<group>"; };
-		593244BF19ED54D3000B4E55 /* 未连接设备.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "未连接设备.jpg"; sourceTree = "<group>"; };
 		593244C119ED54D3000B4E55 /* dsyx_shoubing1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dsyx_shoubing1.png; sourceTree = "<group>"; };
 		593244C219ED54D3000B4E55 /* dsyx_shoubing2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dsyx_shoubing2.png; sourceTree = "<group>"; };
 		593244C319ED54D3000B4E55 /* sbsj_kuang2.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbsj_kuang2.9.png; sourceTree = "<group>"; };
@@ -678,28 +598,15 @@
 		593244DE19ED54D3000B4E55 /* ty_sousuo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_sousuo2.png; sourceTree = "<group>"; };
 		593244DF19ED54D3000B4E55 /* ty_xinpin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin1.png; sourceTree = "<group>"; };
 		593244E019ED54D3000B4E55 /* ty_xinpin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin2.png; sourceTree = "<group>"; };
-		593244E119ED54D3000B4E55 /* 下载管理.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "下载管理.jpg"; sourceTree = "<group>"; };
-		593244E219ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机(电视游戏中心说明.jpg"; sourceTree = "<group>"; };
-		593244E319ED54D3000B4E55 /* 手机游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机游戏中心.jpg"; sourceTree = "<group>"; };
-		593244E419ED54D3000B4E55 /* 手游中心加载失败.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心加载失败.jpg"; sourceTree = "<group>"; };
-		593244E519ED54D3000B4E55 /* 手游中心没有内容.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心没有内容.jpg"; sourceTree = "<group>"; };
-		593244E619ED54D3000B4E55 /* 手游中心载入.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心载入.jpg"; sourceTree = "<group>"; };
-		593244E719ED54D3000B4E55 /* 电视游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视游戏中心.jpg"; sourceTree = "<group>"; };
 		593244E919ED54D3000B4E55 /* ks_queren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ks_queren.png; sourceTree = "<group>"; };
 		593244EA19ED54D3000B4E55 /* ks_tuoluoyi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ks_tuoluoyi.png; sourceTree = "<group>"; };
 		593244EB19ED54D3000B4E55 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
-		593244EC19ED54D3000B4E55 /* 不支持空鼠.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "不支持空鼠.jpg"; sourceTree = "<group>"; };
-		593244ED19ED54D3000B4E55 /* 无线空鼠.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "无线空鼠.jpg"; sourceTree = "<group>"; };
 		593244EF19ED54D3000B4E55 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		593244F019ED54D3000B4E55 /* yxjs_morentu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yxjs_morentu.png; sourceTree = "<group>"; };
 		593244F119ED54D3000B4E55 /* yxjs_shouji1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yxjs_shouji1.png; sourceTree = "<group>"; };
 		593244F219ED54D3000B4E55 /* yxjs_shouji2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yxjs_shouji2.png; sourceTree = "<group>"; };
 		593244F319ED54D3000B4E55 /* yxjs_tv1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yxjs_tv1.png; sourceTree = "<group>"; };
 		593244F419ED54D3000B4E55 /* yxjs_tv2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yxjs_tv2.png; sourceTree = "<group>"; };
-		593244F519ED54D3000B4E55 /* 游戏介绍.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "游戏介绍.jpg"; sourceTree = "<group>"; };
-		593244F619ED54D3000B4E55 /* 游戏介绍说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "游戏介绍说明.jpg"; sourceTree = "<group>"; };
-		593244F819ED54D3000B4E55 /* 使用帮助.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "使用帮助.jpg"; sourceTree = "<group>"; };
-		593244F919ED54D3000B4E55 /* 联系我们.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "联系我们.jpg"; sourceTree = "<group>"; };
 		593244FB19ED54D3000B4E55 /* srf_fanhui1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = srf_fanhui1.png; sourceTree = "<group>"; };
 		593244FC19ED54D3000B4E55 /* srf_fanhui2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = srf_fanhui2.png; sourceTree = "<group>"; };
 		593244FD19ED54D3000B4E55 /* srf_kong1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = srf_kong1.png; sourceTree = "<group>"; };
@@ -716,7 +623,6 @@
 		5932450819ED54D3000B4E55 /* srf_yk4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = srf_yk4.png; sourceTree = "<group>"; };
 		5932450919ED54D3000B4E55 /* srf_yk5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = srf_yk5.png; sourceTree = "<group>"; };
 		5932450A19ED54D3000B4E55 /* srf_yk6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = srf_yk6.png; sourceTree = "<group>"; };
-		5932450B19ED54D3000B4E55 /* 输入法.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "输入法.jpg"; sourceTree = "<group>"; };
 		5932452319ED54D3000B4E55 /* sbcz_anniudi.9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_anniudi.9.png; sourceTree = "<group>"; };
 		5932452419ED54D3000B4E55 /* sbcz_anniudi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_anniudi.png; sourceTree = "<group>"; };
 		5932452519ED54D3000B4E55 /* sbcz_huitui3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_huitui3.png; sourceTree = "<group>"; };
@@ -730,8 +636,6 @@
 		5932452D19ED54D3000B4E55 /* sbsj_tishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbsj_tishi.png; sourceTree = "<group>"; };
 		5932452E19ED54D3000B4E55 /* sbsj_zhuye1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbsj_zhuye1.png; sourceTree = "<group>"; };
 		5932452F19ED54D3000B4E55 /* sbsj_zhuye2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbsj_zhuye2.png; sourceTree = "<group>"; };
-		5932453019ED54D3000B4E55 /* 鼠标传统.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "鼠标传统.jpg"; sourceTree = "<group>"; };
-		5932453119ED54D3000B4E55 /* 鼠标双击.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "鼠标双击.jpg"; sourceTree = "<group>"; };
 		59BDA0001A18B0940045AABF /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		59BDA10B1A18CC910045AABF /* HJCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJCircularBuffer.h; sourceTree = "<group>"; };
 		59BDA10C1A18CC910045AABF /* HJCircularBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJCircularBuffer.m; sourceTree = "<group>"; };
@@ -800,8 +704,6 @@
 		960DDD9E19E66D77008528F1 /* sbcz_sshezhi2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_sshezhi2.png; sourceTree = "<group>"; };
 		960DDD9F19E66D77008528F1 /* sbcz_xuanzhong1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_xuanzhong1.png; sourceTree = "<group>"; };
 		960DDDA019E66D77008528F1 /* sbcz_xuanzhong2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_xuanzhong2.png; sourceTree = "<group>"; };
-		960DDDA119E66D77008528F1 /* 鼠标操作-传统.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "鼠标操作-传统.jpg"; sourceTree = "<group>"; };
-		960DDDA219E66D77008528F1 /* 鼠标操作-双击.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "鼠标操作-双击.jpg"; sourceTree = "<group>"; };
 		960DDDA419E66D77008528F1 /* yk_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yk_1.png; sourceTree = "<group>"; };
 		960DDDA519E66D77008528F1 /* yk_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yk_2.png; sourceTree = "<group>"; };
 		960DDDA619E66D77008528F1 /* yk_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yk_3.png; sourceTree = "<group>"; };
@@ -825,9 +727,7 @@
 		960DDDB819E66D77008528F1 /* yk_yinjian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yk_yinjian.png; sourceTree = "<group>"; };
 		960DDDB919E66D77008528F1 /* yk_zhuye1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yk_zhuye1.png; sourceTree = "<group>"; };
 		960DDDBA19E66D77008528F1 /* yk_zhuye2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yk_zhuye2.png; sourceTree = "<group>"; };
-		960DDDBB19E66D77008528F1 /* 无线遥控.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "无线遥控.jpg"; sourceTree = "<group>"; };
 		960F2A1A19BEAC5D00E09813 /* NullMouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NullMouseViewController.h; sourceTree = "<group>"; };
-		960F2A1B19BEAC5D00E09813 /* NullMouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullMouseViewController.m; sourceTree = "<group>"; };
 		960F2A1C19BEAC5D00E09813 /* NullMouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NullMouseViewController.xib; sourceTree = "<group>"; };
 		960F2A1F19BECE1B00E09813 /* KeyPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPadViewController.h; sourceTree = "<group>"; };
 		960F2A2019BECE1B00E09813 /* KeyPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPadViewController.m; sourceTree = "<group>"; };
@@ -901,13 +801,6 @@
 		961034B219F52BE3003A1E99 /* ty_xin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xin2.png; sourceTree = "<group>"; };
 		961034B319F52BE3003A1E99 /* ty_xinpin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin1.png; sourceTree = "<group>"; };
 		961034B419F52BE3003A1E99 /* ty_xinpin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin2.png; sourceTree = "<group>"; };
-		961034B519F52BE3003A1E99 /* 手机(电视游戏中心说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机(电视游戏中心说明.jpg"; sourceTree = "<group>"; };
-		961034B619F52BE3003A1E99 /* 手机游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机游戏中心.jpg"; sourceTree = "<group>"; };
-		961034B719F52BE3003A1E99 /* 手游中心加载失败.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心加载失败.jpg"; sourceTree = "<group>"; };
-		961034B819F52BE3003A1E99 /* 手游中心没有内容.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心没有内容.jpg"; sourceTree = "<group>"; };
-		961034B919F52BE3003A1E99 /* 手游中心载入.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心载入.jpg"; sourceTree = "<group>"; };
-		961034BA19F52BE3003A1E99 /* 电视应用.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视应用.jpg"; sourceTree = "<group>"; };
-		961034BB19F52BE3003A1E99 /* 电视游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视游戏中心.jpg"; sourceTree = "<group>"; };
 		9611AEDD19D3AFDB00E12CB4 /* TvInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvInfo.h; sourceTree = "<group>"; };
 		9611AEDE19D3AFDB00E12CB4 /* TvInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvInfo.m; sourceTree = "<group>"; };
 		9611AEE019D3B72E00E12CB4 /* ParseJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseJson.h; sourceTree = "<group>"; };
@@ -921,38 +814,20 @@
 		961513DB19EF940F003B0731 /* js_saoba2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = js_saoba2.png; sourceTree = "<group>"; };
 		961513DC19EF940F003B0731 /* js_saoba3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = js_saoba3.png; sourceTree = "<group>"; };
 		961513DD19EF940F003B0731 /* js_wancheng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = js_wancheng.png; sourceTree = "<group>"; };
-		961513DE19EF940F003B0731 /* 分类.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "分类.jpg"; sourceTree = "<group>"; };
-		961513DF19EF940F003B0731 /* 弹框1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "弹框1.jpg"; sourceTree = "<group>"; };
-		961513E019EF940F003B0731 /* 弹框2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "弹框2.jpg"; sourceTree = "<group>"; };
-		961513E119EF940F003B0731 /* 弹框3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "弹框3.jpg"; sourceTree = "<group>"; };
-		961513E219EF940F003B0731 /* 弹框4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "弹框4.jpg"; sourceTree = "<group>"; };
-		961513E319EF940F003B0731 /* 弹框5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "弹框5.jpg"; sourceTree = "<group>"; };
 		961513E519EF940F003B0731 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		961513E619EF940F003B0731 /* yxss_sousuo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yxss_sousuo.png; sourceTree = "<group>"; };
-		961513E719EF940F003B0731 /* 游戏搜索1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "游戏搜索1.jpg"; sourceTree = "<group>"; };
-		961513E819EF940F003B0731 /* 游戏搜索2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "游戏搜索2.jpg"; sourceTree = "<group>"; };
-		961513E919EF940F003B0731 /* 游戏搜索3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "游戏搜索3.jpg"; sourceTree = "<group>"; };
-		961513EA19EF940F003B0731 /* 游戏搜索4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "游戏搜索4.jpg"; sourceTree = "<group>"; };
-		961513EB19EF940F003B0731 /* 电视加速1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视加速1.jpg"; sourceTree = "<group>"; };
-		961513EC19EF940F003B0731 /* 电视加速2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视加速2.jpg"; sourceTree = "<group>"; };
-		961513ED19EF940F003B0731 /* 电视加速3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视加速3.jpg"; sourceTree = "<group>"; };
 		961513EF19EF940F003B0731 /* hbj_di.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hbj_di.png; sourceTree = "<group>"; };
 		961513F019EF940F003B0731 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		961513F119EF940F003B0731 /* ty_start1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_start1.png; sourceTree = "<group>"; };
 		961513F219EF940F003B0731 /* ty_start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_start2.png; sourceTree = "<group>"; };
 		961513F319EF940F003B0731 /* ty_xaunzhe1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xaunzhe1.png; sourceTree = "<group>"; };
 		961513F419EF940F003B0731 /* ty_xaunzhe2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xaunzhe2.png; sourceTree = "<group>"; };
-		961513F519EF940F003B0731 /* 红白机.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "红白机.jpg"; sourceTree = "<group>"; };
-		961513F619EF940F003B0731 /* 红白机说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "红白机说明.jpg"; sourceTree = "<group>"; };
-		961513F719EF940F003B0731 /* 网络异常.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "网络异常.jpg"; sourceTree = "<group>"; };
 		961513F919EF940F003B0731 /* jj_di.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jj_di.png; sourceTree = "<group>"; };
 		961513FA19EF940F003B0731 /* jj_yaogan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jj_yaogan.png; sourceTree = "<group>"; };
 		961513FB19EF940F003B0731 /* jj_yuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jj_yuan.png; sourceTree = "<group>"; };
 		961513FC19EF940F003B0731 /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		961513FD19EF940F003B0731 /* ty_toubi1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_toubi1.png; sourceTree = "<group>"; };
 		961513FE19EF940F003B0731 /* ty_toubi2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_toubi2.png; sourceTree = "<group>"; };
-		961513FF19EF940F003B0731 /* 街机.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "街机.jpg"; sourceTree = "<group>"; };
-		9615140019EF940F003B0731 /* 街机说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "街机说明.jpg"; sourceTree = "<group>"; };
 		9615142619EF94FC003B0731 /* JiejiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JiejiViewController.h; sourceTree = "<group>"; };
 		9615142719EF94FC003B0731 /* JiejiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JiejiViewController.m; sourceTree = "<group>"; };
 		9615142819EF94FC003B0731 /* JiejiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JiejiViewController.xib; sourceTree = "<group>"; };
@@ -1053,10 +928,6 @@
 		9635A42019CAD59A00BC8F17 /* zy_tixing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_tixing.png; sourceTree = "<group>"; };
 		9635A42119CAD59A00BC8F17 /* zy_tongbu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_tongbu.png; sourceTree = "<group>"; };
 		9635A42219CAD59A00BC8F17 /* zy_yaokong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zy_yaokong.png; sourceTree = "<group>"; };
-		9635A42319CAD59A00BC8F17 /* 主页1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "主页1.jpg"; sourceTree = "<group>"; };
-		9635A42419CAD59A00BC8F17 /* 主页2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "主页2.jpg"; sourceTree = "<group>"; };
-		9635A42519CAD59A00BC8F17 /* 主页3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "主页3.jpg"; sourceTree = "<group>"; };
-		9635A42619CAD59A00BC8F17 /* 主页3说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "主页3说明.jpg"; sourceTree = "<group>"; };
 		963A2B771A64D33B00AD0C25 /* yaogan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yaogan.png; sourceTree = "<group>"; };
 		963A2B781A64D33B00AD0C25 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		963AB99619D2BB6A0083C486 /* Channel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Channel.cpp; sourceTree = "<group>"; };
@@ -1143,6 +1014,7 @@
 		966A13EF1A5A9AF60045DB42 /* 66-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-icon.png"; sourceTree = "<group>"; };
 		966A13F01A5A9AF60045DB42 /* 76-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "76-icon.png"; sourceTree = "<group>"; };
 		966A13F41A5A9B050045DB42 /* 120-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "120-icon.png"; sourceTree = "<group>"; };
+		966C04751A761B0F00BC2996 /* NullMouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullMouseViewController.m; sourceTree = "<group>"; };
 		9676FC601A3AD2EC008E37BA /* usb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = usb.png; sourceTree = "<group>"; };
 		9676FC621A3AD313008E37BA /* zujian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zujian.png; sourceTree = "<group>"; };
 		967872D319EE0C4D00FA20BE /* sbcz_huitui2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_huitui2.png; sourceTree = "<group>"; };
@@ -1182,8 +1054,6 @@
 		96D73E811A136351005A2187 /* xiazai2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiazai2.png; sourceTree = "<group>"; };
 		96D73E821A136351005A2187 /* xiazaiguanbi1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiazaiguanbi1.png; sourceTree = "<group>"; };
 		96D73E831A136351005A2187 /* xiazaiguanbi2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiazaiguanbi2.png; sourceTree = "<group>"; };
-		96D73E841A136351005A2187 /* 使用帮助.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "使用帮助.jpg"; sourceTree = "<group>"; };
-		96D73E851A136351005A2187 /* 加载手柄.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "加载手柄.jpg"; sourceTree = "<group>"; };
 		96DE25071A63C64C009440D9 /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
 		96DE25081A63C64C009440D9 /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
 		96E530BB19F77FD300B71D6A /* SurpriseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurpriseView.h; sourceTree = "<group>"; };
@@ -1230,7 +1100,6 @@
 		96E530E719F784B100B71D6A /* psp_start2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psp_start2.png; sourceTree = "<group>"; };
 		96E530E819F784B100B71D6A /* psp_yuan1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psp_yuan1.png; sourceTree = "<group>"; };
 		96E530E919F784B100B71D6A /* psp_yuan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = psp_yuan2.png; sourceTree = "<group>"; };
-		96E530EA19F784B100B71D6A /* PSP说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "PSP说明.jpg"; sourceTree = "<group>"; };
 		96E530EB19F784B100B71D6A /* Thumbs.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Thumbs.db; sourceTree = "<group>"; };
 		96E530EC19F784B100B71D6A /* ty_anniu1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_anniu1.png; sourceTree = "<group>"; };
 		96E530ED19F784B100B71D6A /* ty_anniu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_anniu2.png; sourceTree = "<group>"; };
@@ -1244,7 +1113,6 @@
 		96E530F519F784B100B71D6A /* sjjs_xiaz2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sjjs_xiaz2.png; sourceTree = "<group>"; };
 		96E530F619F784B100B71D6A /* tb_jiazai120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tb_jiazai120.png; sourceTree = "<group>"; };
 		96E530F819F784B100B71D6A /* xzyk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xzyk.png; sourceTree = "<group>"; };
-		96E530F919F784B100B71D6A /* 下载遥控.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "下载遥控.jpg"; sourceTree = "<group>"; };
 		96E530FB19F784B100B71D6A /* dsyx_shoubing1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dsyx_shoubing1.png; sourceTree = "<group>"; };
 		96E530FC19F784B100B71D6A /* dsyx_shoubing2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dsyx_shoubing2.png; sourceTree = "<group>"; };
 		96E530FD19F784B100B71D6A /* dsyy_guanli1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dsyy_guanli1.png; sourceTree = "<group>"; };
@@ -1262,16 +1130,6 @@
 		96E5310919F784B100B71D6A /* ty_xin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xin2.png; sourceTree = "<group>"; };
 		96E5310A19F784B100B71D6A /* ty_xinpin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin1.png; sourceTree = "<group>"; };
 		96E5310B19F784B100B71D6A /* ty_xinpin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ty_xinpin2.png; sourceTree = "<group>"; };
-		96E5310C19F784B100B71D6A /* 手机(电视游戏中心说明.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机(电视游戏中心说明.jpg"; sourceTree = "<group>"; };
-		96E5310D19F784B100B71D6A /* 手机游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机游戏中心.jpg"; sourceTree = "<group>"; };
-		96E5310E19F784B100B71D6A /* 手游中心加载失败.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心加载失败.jpg"; sourceTree = "<group>"; };
-		96E5310F19F784B100B71D6A /* 手游中心没有内容.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心没有内容.jpg"; sourceTree = "<group>"; };
-		96E5311019F784B100B71D6A /* 手游中心载入.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手游中心载入.jpg"; sourceTree = "<group>"; };
-		96E5311119F784B100B71D6A /* 电视应用.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视应用.jpg"; sourceTree = "<group>"; };
-		96E5311219F784B100B71D6A /* 电视游戏中心.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "电视游戏中心.jpg"; sourceTree = "<group>"; };
-		96E5311319F784B100B71D6A /* 手机游戏介绍.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机游戏介绍.jpg"; sourceTree = "<group>"; };
-		96E5311419F784B100B71D6A /* 手机游戏介绍2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "手机游戏介绍2.jpg"; sourceTree = "<group>"; };
-		96E5311519F784B100B71D6A /* 敬请期待.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "敬请期待.jpg"; sourceTree = "<group>"; };
 		96E5316B19F78AC600B71D6A /* SurpriseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SurpriseView.xib; sourceTree = "<group>"; };
 		96E5316D19F7C09A00B71D6A /* CateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateGameViewController.h; sourceTree = "<group>"; };
 		96E5316E19F7C09A00B71D6A /* CateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateGameViewController.m; sourceTree = "<group>"; };
@@ -1351,13 +1209,6 @@
 				593244B019ED54D3000B4E55 /* ty_sousuo2.png */,
 				593244B119ED54D3000B4E55 /* ty_xinpin1.png */,
 				593244B219ED54D3000B4E55 /* ty_xinpin2.png */,
-				593244B319ED54D3000B4E55 /* 下载管理.jpg */,
-				593244B419ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg */,
-				593244B519ED54D3000B4E55 /* 手机游戏中心.jpg */,
-				593244B619ED54D3000B4E55 /* 手游中心加载失败.jpg */,
-				593244B719ED54D3000B4E55 /* 手游中心没有内容.jpg */,
-				593244B819ED54D3000B4E55 /* 手游中心载入.jpg */,
-				593244B919ED54D3000B4E55 /* 电视游戏中心.jpg */,
 			);
 			name = "手机（电视游戏中心";
 			path = "Images.xcassets/手机（电视游戏中心";
@@ -1374,13 +1225,10 @@
 				96D73E811A136351005A2187 /* xiazai2.png */,
 				96D73E821A136351005A2187 /* xiazaiguanbi1.png */,
 				96D73E831A136351005A2187 /* xiazaiguanbi2.png */,
-				96D73E841A136351005A2187 /* 使用帮助.jpg */,
-				96D73E851A136351005A2187 /* 加载手柄.jpg */,
 				593244BB19ED54D3000B4E55 /* 其他 */,
 				593244C019ED54D3000B4E55 /* 手机（电视游戏中心 */,
 				593244E819ED54D3000B4E55 /* 无线空鼠 */,
 				593244EE19ED54D3000B4E55 /* 游戏介绍 */,
-				593244F719ED54D3000B4E55 /* 联系我们及帮助 */,
 			);
 			name = "新加的";
 			path = "Images.xcassets/新加的";
@@ -1391,8 +1239,6 @@
 			children = (
 				593244BC19ED54D3000B4E55 /* root_tv.png */,
 				593244BD19ED54D3000B4E55 /* weilianjie.png */,
-				593244BE19ED54D3000B4E55 /* 未root未连接.jpg */,
-				593244BF19ED54D3000B4E55 /* 未连接设备.jpg */,
 			);
 			path = "其他";
 			sourceTree = "<group>";
@@ -1432,13 +1278,6 @@
 				593244DE19ED54D3000B4E55 /* ty_sousuo2.png */,
 				593244DF19ED54D3000B4E55 /* ty_xinpin1.png */,
 				593244E019ED54D3000B4E55 /* ty_xinpin2.png */,
-				593244E119ED54D3000B4E55 /* 下载管理.jpg */,
-				593244E219ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg */,
-				593244E319ED54D3000B4E55 /* 手机游戏中心.jpg */,
-				593244E419ED54D3000B4E55 /* 手游中心加载失败.jpg */,
-				593244E519ED54D3000B4E55 /* 手游中心没有内容.jpg */,
-				593244E619ED54D3000B4E55 /* 手游中心载入.jpg */,
-				593244E719ED54D3000B4E55 /* 电视游戏中心.jpg */,
 			);
 			path = "手机（电视游戏中心";
 			sourceTree = "<group>";
@@ -1449,8 +1288,6 @@
 				593244E919ED54D3000B4E55 /* ks_queren.png */,
 				593244EA19ED54D3000B4E55 /* ks_tuoluoyi.png */,
 				593244EB19ED54D3000B4E55 /* Thumbs.db */,
-				593244EC19ED54D3000B4E55 /* 不支持空鼠.jpg */,
-				593244ED19ED54D3000B4E55 /* 无线空鼠.jpg */,
 			);
 			path = "无线空鼠";
 			sourceTree = "<group>";
@@ -1464,19 +1301,8 @@
 				593244F219ED54D3000B4E55 /* yxjs_shouji2.png */,
 				593244F319ED54D3000B4E55 /* yxjs_tv1.png */,
 				593244F419ED54D3000B4E55 /* yxjs_tv2.png */,
-				593244F519ED54D3000B4E55 /* 游戏介绍.jpg */,
-				593244F619ED54D3000B4E55 /* 游戏介绍说明.jpg */,
 			);
 			path = "游戏介绍";
-			sourceTree = "<group>";
-		};
-		593244F719ED54D3000B4E55 /* 联系我们及帮助 */ = {
-			isa = PBXGroup;
-			children = (
-				593244F819ED54D3000B4E55 /* 使用帮助.jpg */,
-				593244F919ED54D3000B4E55 /* 联系我们.jpg */,
-			);
-			path = "联系我们及帮助";
 			sourceTree = "<group>";
 		};
 		593244FA19ED54D3000B4E55 /* input */ = {
@@ -1498,7 +1324,6 @@
 				5932450819ED54D3000B4E55 /* srf_yk4.png */,
 				5932450919ED54D3000B4E55 /* srf_yk5.png */,
 				5932450A19ED54D3000B4E55 /* srf_yk6.png */,
-				5932450B19ED54D3000B4E55 /* 输入法.jpg */,
 			);
 			name = input;
 			path = Images.xcassets/input;
@@ -1524,8 +1349,6 @@
 				5932452D19ED54D3000B4E55 /* sbsj_tishi.png */,
 				5932452E19ED54D3000B4E55 /* sbsj_zhuye1.png */,
 				5932452F19ED54D3000B4E55 /* sbsj_zhuye2.png */,
-				5932453019ED54D3000B4E55 /* 鼠标传统.jpg */,
-				5932453119ED54D3000B4E55 /* 鼠标双击.jpg */,
 			);
 			name = shubiao111;
 			path = Images.xcassets/shubiao111;
@@ -1582,8 +1405,6 @@
 				960DDD9E19E66D77008528F1 /* sbcz_sshezhi2.png */,
 				960DDD9F19E66D77008528F1 /* sbcz_xuanzhong1.png */,
 				960DDDA019E66D77008528F1 /* sbcz_xuanzhong2.png */,
-				960DDDA119E66D77008528F1 /* 鼠标操作-传统.jpg */,
-				960DDDA219E66D77008528F1 /* 鼠标操作-双击.jpg */,
 			);
 			path = shubiao;
 			sourceTree = "<group>";
@@ -1614,7 +1435,6 @@
 				960DDDB819E66D77008528F1 /* yk_yinjian.png */,
 				960DDDB919E66D77008528F1 /* yk_zhuye1.png */,
 				960DDDBA19E66D77008528F1 /* yk_zhuye2.png */,
-				960DDDBB19E66D77008528F1 /* 无线遥控.jpg */,
 			);
 			path = yk;
 			sourceTree = "<group>";
@@ -1685,13 +1505,6 @@
 				961034B219F52BE3003A1E99 /* ty_xin2.png */,
 				961034B319F52BE3003A1E99 /* ty_xinpin1.png */,
 				961034B419F52BE3003A1E99 /* ty_xinpin2.png */,
-				961034B519F52BE3003A1E99 /* 手机(电视游戏中心说明.jpg */,
-				961034B619F52BE3003A1E99 /* 手机游戏中心.jpg */,
-				961034B719F52BE3003A1E99 /* 手游中心加载失败.jpg */,
-				961034B819F52BE3003A1E99 /* 手游中心没有内容.jpg */,
-				961034B919F52BE3003A1E99 /* 手游中心载入.jpg */,
-				961034BA19F52BE3003A1E99 /* 电视应用.jpg */,
-				961034BB19F52BE3003A1E99 /* 电视游戏中心.jpg */,
 			);
 			path = "包含应用中心";
 			sourceTree = "<group>";
@@ -1704,18 +1517,8 @@
 				961513DB19EF940F003B0731 /* js_saoba2.png */,
 				961513DC19EF940F003B0731 /* js_saoba3.png */,
 				961513DD19EF940F003B0731 /* js_wancheng.png */,
-				961513DE19EF940F003B0731 /* 分类.jpg */,
-				961513DF19EF940F003B0731 /* 弹框1.jpg */,
-				961513E019EF940F003B0731 /* 弹框2.jpg */,
-				961513E119EF940F003B0731 /* 弹框3.jpg */,
-				961513E219EF940F003B0731 /* 弹框4.jpg */,
-				961513E319EF940F003B0731 /* 弹框5.jpg */,
 				961513E419EF940F003B0731 /* 游戏搜索 */,
-				961513EB19EF940F003B0731 /* 电视加速1.jpg */,
-				961513EC19EF940F003B0731 /* 电视加速2.jpg */,
-				961513ED19EF940F003B0731 /* 电视加速3.jpg */,
 				961513EE19EF940F003B0731 /* 红白机 */,
-				961513F719EF940F003B0731 /* 网络异常.jpg */,
 				961513F819EF940F003B0731 /* 街机 */,
 			);
 			name = 10.15;
@@ -1727,10 +1530,6 @@
 			children = (
 				961513E519EF940F003B0731 /* Thumbs.db */,
 				961513E619EF940F003B0731 /* yxss_sousuo.png */,
-				961513E719EF940F003B0731 /* 游戏搜索1.jpg */,
-				961513E819EF940F003B0731 /* 游戏搜索2.jpg */,
-				961513E919EF940F003B0731 /* 游戏搜索3.jpg */,
-				961513EA19EF940F003B0731 /* 游戏搜索4.jpg */,
 			);
 			path = "游戏搜索";
 			sourceTree = "<group>";
@@ -1744,8 +1543,6 @@
 				961513F219EF940F003B0731 /* ty_start2.png */,
 				961513F319EF940F003B0731 /* ty_xaunzhe1.png */,
 				961513F419EF940F003B0731 /* ty_xaunzhe2.png */,
-				961513F519EF940F003B0731 /* 红白机.jpg */,
-				961513F619EF940F003B0731 /* 红白机说明.jpg */,
 			);
 			path = "红白机";
 			sourceTree = "<group>";
@@ -1759,8 +1556,6 @@
 				961513FC19EF940F003B0731 /* Thumbs.db */,
 				961513FD19EF940F003B0731 /* ty_toubi1.png */,
 				961513FE19EF940F003B0731 /* ty_toubi2.png */,
-				961513FF19EF940F003B0731 /* 街机.jpg */,
-				9615140019EF940F003B0731 /* 街机说明.jpg */,
 			);
 			path = "街机";
 			sourceTree = "<group>";
@@ -1840,10 +1635,6 @@
 				9635A42019CAD59A00BC8F17 /* zy_tixing.png */,
 				9635A42119CAD59A00BC8F17 /* zy_tongbu.png */,
 				9635A42219CAD59A00BC8F17 /* zy_yaokong.png */,
-				9635A42319CAD59A00BC8F17 /* 主页1.jpg */,
-				9635A42419CAD59A00BC8F17 /* 主页2.jpg */,
-				9635A42519CAD59A00BC8F17 /* 主页3.jpg */,
-				9635A42619CAD59A00BC8F17 /* 主页3说明.jpg */,
 			);
 			name = myPicture;
 			sourceTree = "<group>";
@@ -2081,7 +1872,7 @@
 				5932448E19ED511D000B4E55 /* CusMouseViewController.m */,
 				5932448F19ED511D000B4E55 /* CusMouseViewController.xib */,
 				960F2A1A19BEAC5D00E09813 /* NullMouseViewController.h */,
-				960F2A1B19BEAC5D00E09813 /* NullMouseViewController.m */,
+				966C04751A761B0F00BC2996 /* NullMouseViewController.m */,
 				960F2A1C19BEAC5D00E09813 /* NullMouseViewController.xib */,
 				9613360B19F0CB6C00984A8C /* NoConnViewController.h */,
 				9613360C19F0CB6C00984A8C /* NoConnViewController.m */,
@@ -2222,11 +2013,7 @@
 				96E530F519F784B100B71D6A /* sjjs_xiaz2.png */,
 				96E530F619F784B100B71D6A /* tb_jiazai120.png */,
 				96E530F819F784B100B71D6A /* xzyk.png */,
-				96E530F919F784B100B71D6A /* 下载遥控.jpg */,
 				96E530FA19F784B100B71D6A /* 包含应用中心 */,
-				96E5311319F784B100B71D6A /* 手机游戏介绍.jpg */,
-				96E5311419F784B100B71D6A /* 手机游戏介绍2.jpg */,
-				96E5311519F784B100B71D6A /* 敬请期待.jpg */,
 			);
 			path = 10.16;
 			sourceTree = "<group>";
@@ -2270,7 +2057,6 @@
 				96E530E719F784B100B71D6A /* psp_start2.png */,
 				96E530E819F784B100B71D6A /* psp_yuan1.png */,
 				96E530E919F784B100B71D6A /* psp_yuan2.png */,
-				96E530EA19F784B100B71D6A /* PSP说明.jpg */,
 				96E530EB19F784B100B71D6A /* Thumbs.db */,
 				96E530EC19F784B100B71D6A /* ty_anniu1.png */,
 				96E530ED19F784B100B71D6A /* ty_anniu2.png */,
@@ -2298,13 +2084,6 @@
 				96E5310919F784B100B71D6A /* ty_xin2.png */,
 				96E5310A19F784B100B71D6A /* ty_xinpin1.png */,
 				96E5310B19F784B100B71D6A /* ty_xinpin2.png */,
-				96E5310C19F784B100B71D6A /* 手机(电视游戏中心说明.jpg */,
-				96E5310D19F784B100B71D6A /* 手机游戏中心.jpg */,
-				96E5310E19F784B100B71D6A /* 手游中心加载失败.jpg */,
-				96E5310F19F784B100B71D6A /* 手游中心没有内容.jpg */,
-				96E5311019F784B100B71D6A /* 手游中心载入.jpg */,
-				96E5311119F784B100B71D6A /* 电视应用.jpg */,
-				96E5311219F784B100B71D6A /* 电视游戏中心.jpg */,
 			);
 			path = "包含应用中心";
 			sourceTree = "<group>";
@@ -2392,10 +2171,8 @@
 				961034CB19F52BE3003A1E99 /* ty_xinpin1.png in Resources */,
 				5932453419ED54D3000B4E55 /* sbsj_kuang2.9.png in Resources */,
 				96E5312719F784B100B71D6A /* psp_fx32.png in Resources */,
-				5932455819ED54D3000B4E55 /* 电视游戏中心.jpg in Resources */,
 				961C89461A2C4E6F00C6DC4F /* tb_morenren2.png in Resources */,
 				96D73E861A136351005A2187 /* logo.png in Resources */,
-				5932455419ED54D3000B4E55 /* 手机游戏中心.jpg in Resources */,
 				9635A43719CAD59A00BC8F17 /* zy_sousuo.png in Resources */,
 				5932457419ED54D3000B4E55 /* ty_lvanniu2.9.png in Resources */,
 				9610349519F4E731003A1E99 /* psp_start1.png in Resources */,
@@ -2408,7 +2185,6 @@
 				96D73E881A136351005A2187 /* tuichulan.png in Resources */,
 				9615140219EF940F003B0731 /* js_saoba1.png in Resources */,
 				9635A42819CAD59A00BC8F17 /* bai.9.png in Resources */,
-				96E5316619F784B100B71D6A /* 电视应用.jpg in Resources */,
 				960DDDE119E66D77008528F1 /* yk_guanji.png in Resources */,
 				9610348C19F4E731003A1E99 /* psp_l1.png in Resources */,
 				960DDDC819E66D77008528F1 /* sbcz_shou.png in Resources */,
@@ -2421,10 +2197,8 @@
 				593245BB19ED54D3000B4E55 /* sbcz_huitui3.png in Resources */,
 				9610348519F4E731003A1E99 /* psp_fx62.png in Resources */,
 				9635A42D19CAD59A00BC8F17 /* zy_gengduo1.png in Resources */,
-				5932458F19ED54D3000B4E55 /* 游戏介绍.jpg in Resources */,
 				96E5315019F784B100B71D6A /* dsyx_shoubing1.png in Resources */,
 				9615140419EF940F003B0731 /* js_saoba3.png in Resources */,
-				96E5316419F784B100B71D6A /* 手游中心没有内容.jpg in Resources */,
 				9610348019F4E731003A1E99 /* psp_fx32.png in Resources */,
 				5932456719ED54D3000B4E55 /* ty_fenlei1.png in Resources */,
 				96E5315319F784B100B71D6A /* dsyy_guanli2.png in Resources */,
@@ -2437,7 +2211,6 @@
 				96E5315C19F784B100B71D6A /* ty_remen2.png in Resources */,
 				9635A43419CAD59A00BC8F17 /* zy_logo.png in Resources */,
 				9615140519EF940F003B0731 /* js_wancheng.png in Resources */,
-				96D73E8F1A136351005A2187 /* 加载手柄.jpg in Resources */,
 				96E5313F19F784B100B71D6A /* psp_yuan2.png in Resources */,
 				9635A43519CAD59A00BC8F17 /* zy_remen.png in Resources */,
 				960B887419D258D400AFEF1D /* lj_shoubing2.png in Resources */,
@@ -2451,22 +2224,18 @@
 				5932459D19ED54D3000B4E55 /* srf_yk1.png in Resources */,
 				96E5314E19F784B100B71D6A /* xzyk.png in Resources */,
 				9635A43A19CAD59A00BC8F17 /* zy_yaokong.png in Resources */,
-				5932455C19ED54D3000B4E55 /* 未连接设备.jpg in Resources */,
 				96E5315719F784B100B71D6A /* sjyx_xiazai2.png in Resources */,
 				5932454F19ED54D3000B4E55 /* ty_sousuo2.png in Resources */,
 				5932457119ED54D3000B4E55 /* ty_ku.png in Resources */,
-				5932458119ED54D3000B4E55 /* 手游中心没有内容.jpg in Resources */,
 				5932454B19ED54D3000B4E55 /* ty_meiyou.png in Resources */,
 				5932454D19ED54D3000B4E55 /* ty_remen2.png in Resources */,
 				960DDDD819E66D77008528F1 /* yk_6.png in Resources */,
 				9615141A19EF940F003B0731 /* ty_xaunzhe2.png in Resources */,
 				960DDDBD19E66D77008528F1 /* sbcz_anniudi.9.png in Resources */,
-				9615140B19EF940F003B0731 /* 弹框5.jpg in Resources */,
 				967872D919EE0C4D00FA20BE /* sbcz_xuanzhong2.png in Resources */,
 				960DDDE519E66D77008528F1 /* yk_tuichu.png in Resources */,
 				963246F81A527F33007B52E1 /* UMFeedbackLocalizable.strings in Resources */,
 				960DDDE819E66D77008528F1 /* yk_zhuye1.png in Resources */,
-				9615141B19EF940F003B0731 /* 红白机.jpg in Resources */,
 				962416E719C6C621000CBA94 /* HotGameViewController.xib in Resources */,
 				5932459F19ED54D3000B4E55 /* srf_yk3.png in Resources */,
 				96E5314419F784B100B71D6A /* qd_jia.png in Resources */,
@@ -2492,7 +2261,6 @@
 				593245A219ED54D3000B4E55 /* srf_yk6.png in Resources */,
 				9615141819EF940F003B0731 /* ty_start2.png in Resources */,
 				9610347C19F4E731003A1E99 /* psp_fx12.png in Resources */,
-				9635A43D19CAD59A00BC8F17 /* 主页3.jpg in Resources */,
 				5932453D19ED54D3000B4E55 /* ty_fenlei2.png in Resources */,
 				9610349119F4E731003A1E99 /* psp_sanjiao1.png in Resources */,
 				9610348419F4E731003A1E99 /* psp_fx61.png in Resources */,
@@ -2504,7 +2272,6 @@
 				96E5316019F784B100B71D6A /* ty_xinpin2.png in Resources */,
 				5932458619ED54D3000B4E55 /* Thumbs.db in Resources */,
 				96E5313219F784B100B71D6A /* psp_fx92.png in Resources */,
-				961034D219F52BE3003A1E99 /* 电视应用.jpg in Resources */,
 				9635A42A19CAD59A00BC8F17 /* zy_banben.png in Resources */,
 				960DDDC119E66D77008528F1 /* sbcz_heidi.png in Resources */,
 				5932453E19ED54D3000B4E55 /* ty_huanganniu1.9.png in Resources */,
@@ -2512,7 +2279,6 @@
 				961034CA19F52BE3003A1E99 /* ty_xin2.png in Resources */,
 				96E5314919F784B100B71D6A /* sjjs_shouji2.png in Resources */,
 				96D73E891A136351005A2187 /* tuichuzi.png in Resources */,
-				5932455719ED54D3000B4E55 /* 手游中心载入.jpg in Resources */,
 				5932455F19ED54D3000B4E55 /* sbsj_kuang2.9.png in Resources */,
 				9610348E19F4E731003A1E99 /* psp_quan.png in Resources */,
 				960B887319D258D400AFEF1D /* lj_shoubing1.png in Resources */,
@@ -2521,26 +2287,17 @@
 				96E5311D19F784B100B71D6A /* psp_1.png in Resources */,
 				5932455E19ED54D3000B4E55 /* dsyx_shoubing2.png in Resources */,
 				960F2A2319BECE1B00E09813 /* KeyPadViewController.xib in Resources */,
-				9635A43C19CAD59A00BC8F17 /* 主页2.jpg in Resources */,
 				961A412D19B9604500DBC23D /* PlayTvGameViewController.xib in Resources */,
 				960DDDBC19E66D77008528F1 /* sbcz_anniu.png in Resources */,
 				9615142219EF940F003B0731 /* ty_toubi1.png in Resources */,
 				5932459B19ED54D3000B4E55 /* srf_shang1.png in Resources */,
-				5932455519ED54D3000B4E55 /* 手游中心加载失败.jpg in Resources */,
-				593245C719ED54D3000B4E55 /* 鼠标双击.jpg in Resources */,
-				960DDDEA19E66D77008528F1 /* 无线遥控.jpg in Resources */,
 				963AB9CB19D2BB6A0083C486 /* json_internalarray.inl in Resources */,
 				961034BD19F52BE3003A1E99 /* dsyx_shoubing2.png in Resources */,
 				960DDDD719E66D77008528F1 /* yk_5.png in Resources */,
-				9615140619EF940F003B0731 /* 分类.jpg in Resources */,
-				5932458819ED54D3000B4E55 /* 无线空鼠.jpg in Resources */,
-				9615141D19EF940F003B0731 /* 网络异常.jpg in Resources */,
-				9615141319EF940F003B0731 /* 电视加速2.jpg in Resources */,
 				5932456219ED54D3000B4E55 /* sjyx_xiazai1.png in Resources */,
 				961034C019F52BE3003A1E99 /* sjyx_shouyou1.png in Resources */,
 				960DDDDC19E66D77008528F1 /* yk_chumo1.png in Resources */,
 				960FC1B61A243D0500BAB175 /* czyx_zhonglikai.png in Resources */,
-				9635A43B19CAD59A00BC8F17 /* 主页1.jpg in Resources */,
 				960DDDE619E66D77008528F1 /* yk_yinjia.png in Resources */,
 				9610349819F4E731003A1E99 /* psp_yuan2.png in Resources */,
 				5932458919ED54D3000B4E55 /* Thumbs.db in Resources */,
@@ -2548,13 +2305,11 @@
 				9610347619F4E731003A1E99 /* psp_1.png in Resources */,
 				5932458E19ED54D3000B4E55 /* yxjs_tv2.png in Resources */,
 				960DDDD319E66D77008528F1 /* yk_1.png in Resources */,
-				96E5316A19F784B100B71D6A /* 敬请期待.jpg in Resources */,
 				960B888819D258D400AFEF1D /* ty_lvanniu2.png in Resources */,
 				5932455019ED54D3000B4E55 /* ty_xinpin1.png in Resources */,
 				960DDDBE19E66D77008528F1 /* sbcz_anniudi.png in Resources */,
 				5932459619ED54D3000B4E55 /* srf_kong2.png in Resources */,
 				5932454619ED54D3000B4E55 /* ty_ku.png in Resources */,
-				5932455319ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg in Resources */,
 				5932457519ED54D3000B4E55 /* ty_lvanniu2.png in Resources */,
 				96B80BE819B85AA60038928E /* LordViewController.xib in Resources */,
 				960DDDD919E66D77008528F1 /* yk_caidan1.png in Resources */,
@@ -2562,7 +2317,6 @@
 				960B888719D258D400AFEF1D /* ty_lvanniu2.9.png in Resources */,
 				960DDDC619E66D77008528F1 /* sbcz_moshi.9.png in Resources */,
 				5932455A19ED54D3000B4E55 /* weilianjie.png in Resources */,
-				96E5314F19F784B100B71D6A /* 下载遥控.jpg in Resources */,
 				5932459E19ED54D3000B4E55 /* srf_yk2.png in Resources */,
 				960B887F19D258D400AFEF1D /* ty_huianniu1.9.png in Resources */,
 				9610347A19F4E731003A1E99 /* psp_fang2.png in Resources */,
@@ -2584,7 +2338,6 @@
 				9635A43219CAD59A00BC8F17 /* zy_kongshu.png in Resources */,
 				5932455119ED54D3000B4E55 /* ty_xinpin2.png in Resources */,
 				96E5312819F784B100B71D6A /* psp_fx41.png in Resources */,
-				5932457E19ED54D3000B4E55 /* 手机(电视游戏中心说明.jpg in Resources */,
 				96E5311919F784B100B71D6A /* js_saoba2.png in Resources */,
 				960DDDE419E66D77008528F1 /* yk_shubiao2.png in Resources */,
 				9615141F19EF940F003B0731 /* jj_yaogan.png in Resources */,
@@ -2600,7 +2353,6 @@
 				960B887219D258D400AFEF1D /* lj_shebei3.png in Resources */,
 				593245BD19ED54D3000B4E55 /* sbcz_yaokong2.png in Resources */,
 				5932453219ED54D3000B4E55 /* dsyx_shoubing1.png in Resources */,
-				5932458719ED54D3000B4E55 /* 不支持空鼠.jpg in Resources */,
 				96E5315F19F784B100B71D6A /* ty_xinpin1.png in Resources */,
 				593245BA19ED54D3000B4E55 /* sbcz_anniudi.png in Resources */,
 				5932457B19ED54D3000B4E55 /* ty_xinpin1.png in Resources */,
@@ -2613,28 +2365,21 @@
 				9610349B19F4E731003A1E99 /* ty_anniu2.png in Resources */,
 				960DDDDF19E66D77008528F1 /* yk_fanhui1.png in Resources */,
 				5932453919ED54D3000B4E55 /* Thumbs.db in Resources */,
-				9615140E19EF940F003B0731 /* 游戏搜索1.jpg in Resources */,
-				9615140A19EF940F003B0731 /* 弹框4.jpg in Resources */,
 				5932458519ED54D3000B4E55 /* ks_tuoluoyi.png in Resources */,
 				9615142119EF940F003B0731 /* Thumbs.db in Resources */,
-				5932458019ED54D3000B4E55 /* 手游中心加载失败.jpg in Resources */,
 				96E5313419F784B100B71D6A /* psp_l2.png in Resources */,
 				9610348F19F4E731003A1E99 /* psp_r1.png in Resources */,
-				9615140F19EF940F003B0731 /* 游戏搜索2.jpg in Resources */,
 				960B887919D258D400AFEF1D /* ty_bai2.9.png in Resources */,
 				593245C419ED54D3000B4E55 /* sbsj_zhuye1.png in Resources */,
 				5932459419ED54D3000B4E55 /* srf_fanhui2.png in Resources */,
 				9615141E19EF940F003B0731 /* jj_di.png in Resources */,
-				9615141419EF940F003B0731 /* 电视加速3.jpg in Resources */,
 				593245BC19ED54D3000B4E55 /* sbcz_yaokong1.png in Resources */,
 				5932453719ED54D3000B4E55 /* sjyx_xiazai1.png in Resources */,
-				9635A43E19CAD59A00BC8F17 /* 主页3说明.jpg in Resources */,
 				960B887819D258D400AFEF1D /* ty_bai1.png in Resources */,
 				9615140119EF940F003B0731 /* js_qingli.png in Resources */,
 				961034A219F51B41003A1E99 /* psp_fx5.png in Resources */,
 				5932454C19ED54D3000B4E55 /* ty_remen1.png in Resources */,
 				96E5312219F784B100B71D6A /* psp_fx11.png in Resources */,
-				5932455B19ED54D3000B4E55 /* 未root未连接.jpg in Resources */,
 				966A13F21A5A9AF60045DB42 /* 66-icon.png in Resources */,
 				5932454219ED54D3000B4E55 /* ty_huianniu2.9.png in Resources */,
 				9610348119F4E731003A1E99 /* psp_fx41.png in Resources */,
@@ -2643,7 +2388,6 @@
 				96E5312619F784B100B71D6A /* psp_fx31.png in Resources */,
 				96E5315E19F784B100B71D6A /* ty_xin2.png in Resources */,
 				5932456F19ED54D3000B4E55 /* ty_jiazai.png in Resources */,
-				9615141219EF940F003B0731 /* 电视加速1.jpg in Resources */,
 				593245A019ED54D3000B4E55 /* srf_yk4.png in Resources */,
 				5932457019ED54D3000B4E55 /* ty_jiazaixiao.png in Resources */,
 				5932453819ED54D3000B4E55 /* sjyx_xiazai2.png in Resources */,
@@ -2659,31 +2403,22 @@
 				96E5313319F784B100B71D6A /* psp_l1.png in Resources */,
 				96E5315A19F784B100B71D6A /* ty_fenlei2.png in Resources */,
 				960FC1B51A243D0500BAB175 /* czyx_zhongliguan.png in Resources */,
-				961034CD19F52BE3003A1E99 /* 手机(电视游戏中心说明.jpg in Resources */,
 				960B887719D258D400AFEF1D /* ty_bai1.9.png in Resources */,
-				96E5316919F784B100B71D6A /* 手机游戏介绍2.jpg in Resources */,
-				9615141019EF940F003B0731 /* 游戏搜索3.jpg in Resources */,
 				5932456A19ED54D3000B4E55 /* ty_huanganniu2.9.png in Resources */,
 				5932456319ED54D3000B4E55 /* sjyx_xiazai2.png in Resources */,
 				5932453B19ED54D3000B4E55 /* ty_fanhui2.png in Resources */,
-				961034D019F52BE3003A1E99 /* 手游中心没有内容.jpg in Resources */,
 				96E5313519F784B100B71D6A /* psp_quan.png in Resources */,
-				961034CE19F52BE3003A1E99 /* 手机游戏中心.jpg in Resources */,
 				9635A43019CAD59A00BC8F17 /* zy_jiantou.png in Resources */,
-				5932459019ED54D3000B4E55 /* 游戏介绍说明.jpg in Resources */,
 				961034A019F4F5B4003A1E99 /* PSPViewController.xib in Resources */,
 				5932455D19ED54D3000B4E55 /* dsyx_shoubing1.png in Resources */,
 				96E5312519F784B100B71D6A /* psp_fx22.png in Resources */,
-				9615142519EF940F003B0731 /* 街机说明.jpg in Resources */,
 				9635A43119CAD59A00BC8F17 /* zy_jiasu.png in Resources */,
 				593245C119ED54D3000B4E55 /* sbsj_huitui2.png in Resources */,
-				960DDDD219E66D77008528F1 /* 鼠标操作-双击.jpg in Resources */,
 				960B887C19D258D400AFEF1D /* ty_bangzhu2.png in Resources */,
 				9610344C19F4E4DC003A1E99 /* HongbaijiViewController.xib in Resources */,
 				96E5313119F784B100B71D6A /* psp_fx91.png in Resources */,
 				5932457619ED54D3000B4E55 /* ty_meiyou.png in Resources */,
 				9610349419F4E731003A1E99 /* psp_select2.png in Resources */,
-				9615140719EF940F003B0731 /* 弹框1.jpg in Resources */,
 				960DDDE919E66D77008528F1 /* yk_zhuye2.png in Resources */,
 				9635A43319CAD59A00BC8F17 /* zy_lianjieok.png in Resources */,
 				96E5313C19F784B100B71D6A /* psp_start1.png in Resources */,
@@ -2693,17 +2428,12 @@
 				960B887519D258D400AFEF1D /* tb_jiazai.png in Resources */,
 				96E5314619F784B100B71D6A /* qd_weixin.png in Resources */,
 				9615140319EF940F003B0731 /* js_saoba2.png in Resources */,
-				961034D319F52BE3003A1E99 /* 电视游戏中心.jpg in Resources */,
 				5932456E19ED54D3000B4E55 /* ty_huianniu2.png in Resources */,
-				96D73E8E1A136351005A2187 /* 使用帮助.jpg in Resources */,
 				96E5317119F7C09A00B71D6A /* CateGameViewController.xib in Resources */,
 				9613360F19F0CB6C00984A8C /* NoConnViewController.xib in Resources */,
 				96E5312419F784B100B71D6A /* psp_fx21.png in Resources */,
-				9615142419EF940F003B0731 /* 街机.jpg in Resources */,
-				593245A319ED54D3000B4E55 /* 输入法.jpg in Resources */,
 				9610348219F4E731003A1E99 /* psp_fx42.png in Resources */,
 				960DDDDB19E66D77008528F1 /* yk_chumo1.9 .png in Resources */,
-				96E5316319F784B100B71D6A /* 手游中心加载失败.jpg in Resources */,
 				5932456419ED54D3000B4E55 /* Thumbs.db in Resources */,
 				9615140D19EF940F003B0731 /* yxss_sousuo.png in Resources */,
 				96E5314719F784B100B71D6A /* qd_yuan.png in Resources */,
@@ -2724,23 +2454,17 @@
 				960B887E19D258D400AFEF1D /* ty_fanhui2.png in Resources */,
 				9635A43619CAD59A00BC8F17 /* zy_shubiao.png in Resources */,
 				96E5312C19F784B100B71D6A /* psp_fx62.png in Resources */,
-				96E5316719F784B100B71D6A /* 电视游戏中心.jpg in Resources */,
 				96E5311E19F784B100B71D6A /* psp_cha1.png in Resources */,
-				96E5316519F784B100B71D6A /* 手游中心载入.jpg in Resources */,
 				593245BF19ED54D3000B4E55 /* sbsj_gongneng2.png in Resources */,
 				5932454319ED54D3000B4E55 /* ty_huianniu2.png in Resources */,
-				96E5316119F784B100B71D6A /* 手机(电视游戏中心说明.jpg in Resources */,
 				96E5315419F784B100B71D6A /* sjyx_shouyou1.png in Resources */,
 				96E5311B19F784B100B71D6A /* js_wancheng.png in Resources */,
 				960B888019D258D400AFEF1D /* ty_huianniu1.png in Resources */,
 				593245C019ED54D3000B4E55 /* sbsj_huitui1.png in Resources */,
 				961034C819F52BE3003A1E99 /* ty_remen2.png in Resources */,
 				9615140C19EF940F003B0731 /* Thumbs.db in Resources */,
-				9615140819EF940F003B0731 /* 弹框2.jpg in Resources */,
 				961034BC19F52BE3003A1E99 /* dsyx_shoubing1.png in Resources */,
 				96E5311F19F784B100B71D6A /* psp_cha2.png in Resources */,
-				961034CF19F52BE3003A1E99 /* 手游中心加载失败.jpg in Resources */,
-				5932455219ED54D3000B4E55 /* 下载管理.jpg in Resources */,
 				96E5312D19F784B100B71D6A /* psp_fx71.png in Resources */,
 				96E5312B19F784B100B71D6A /* psp_fx61.png in Resources */,
 				9627426D1A147B7300F28318 /* ContactViewController.xib in Resources */,
@@ -2765,10 +2489,8 @@
 				9635A42B19CAD59A00BC8F17 /* zy_dians.png in Resources */,
 				963AB9D119D2BB6A0083C486 /* sconscript in Resources */,
 				593245BE19ED54D3000B4E55 /* sbsj_gongneng1.png in Resources */,
-				5932459219ED54D3000B4E55 /* 联系我们.jpg in Resources */,
 				5932459A19ED54D3000B4E55 /* srf_shanchu2.png in Resources */,
 				5932456D19ED54D3000B4E55 /* ty_huianniu2.9.png in Resources */,
-				960DDDD119E66D77008528F1 /* 鼠标操作-传统.jpg in Resources */,
 				960DDDC319E66D77008528F1 /* sbcz_huitui2.png in Resources */,
 				960DDDD019E66D77008528F1 /* sbcz_xuanzhong2.png in Resources */,
 				5932456C19ED54D3000B4E55 /* ty_huianniu1.png in Resources */,
@@ -2781,11 +2503,9 @@
 				966A13F11A5A9AF60045DB42 /* 57-icon.png in Resources */,
 				960B888319D258D400AFEF1D /* ty_jiazai.png in Resources */,
 				960B888419D258D400AFEF1D /* ty_jiazaixiao.png in Resources */,
-				5932457F19ED54D3000B4E55 /* 手机游戏中心.jpg in Resources */,
 				960FC1BC1A24654F00BAB175 /* shou1.png in Resources */,
 				96E5311A19F784B100B71D6A /* js_saoba3.png in Resources */,
 				960F2A1E19BEAC5D00E09813 /* NullMouseViewController.xib in Resources */,
-				5932459119ED54D3000B4E55 /* 使用帮助.jpg in Resources */,
 				960DDDCB19E66D77008528F1 /* sbcz_shubiao1.png in Resources */,
 				9627427B1A14B14400F28318 /* tuichuzi.png in Resources */,
 				9635A43819CAD59A00BC8F17 /* zy_tixing.png in Resources */,
@@ -2793,16 +2513,13 @@
 				96B80BC019B85A470038928E /* InfoPlist.strings in Resources */,
 				960DDDCA19E66D77008528F1 /* sbcz_shoubing2.png in Resources */,
 				960DDDD419E66D77008528F1 /* yk_2.png in Resources */,
-				961034D119F52BE3003A1E99 /* 手游中心载入.jpg in Resources */,
 				5932457319ED54D3000B4E55 /* ty_lvanniu1.png in Resources */,
-				96E5316219F784B100B71D6A /* 手机游戏中心.jpg in Resources */,
 				5932453319ED54D3000B4E55 /* dsyx_shoubing2.png in Resources */,
 				967872DA19EE0C4D00FA20BE /* sbcz_xuanzhong3.png in Resources */,
 				9635A42C19CAD59A00BC8F17 /* zy_faxian.png in Resources */,
 				961034BF19F52BE3003A1E99 /* dsyy_guanli2.png in Resources */,
 				962075E01A35740F00131780 /* NoWIFIViewController.xib in Resources */,
 				5932454819ED54D3000B4E55 /* ty_lvanniu1.png in Resources */,
-				9615140919EF940F003B0731 /* 弹框3.jpg in Resources */,
 				961A413219B969FD00DBC23D /* SearchGameViewController.xib in Resources */,
 				5932454419ED54D3000B4E55 /* ty_jiazai.png in Resources */,
 				96D73E7B1A135ECC005A2187 /* AboutViewController.xib in Resources */,
@@ -2822,9 +2539,7 @@
 				963AB9CC19D2BB6A0083C486 /* json_internalmap.inl in Resources */,
 				9610348619F4E731003A1E99 /* psp_fx71.png in Resources */,
 				961034C619F52BE3003A1E99 /* ty_fenlei2.png in Resources */,
-				5932457D19ED54D3000B4E55 /* 下载管理.jpg in Resources */,
 				96E5313E19F784B100B71D6A /* psp_yuan1.png in Resources */,
-				5932458219ED54D3000B4E55 /* 手游中心载入.jpg in Resources */,
 				960B888219D258D400AFEF1D /* ty_huianniu2.png in Resources */,
 				593245C219ED54D3000B4E55 /* sbsj_kuang.9.png in Resources */,
 				9627427A1A14B14400F28318 /* tuichulan.png in Resources */,
@@ -2835,12 +2550,10 @@
 				961034C119F52BE3003A1E99 /* sjyx_shouyou2.png in Resources */,
 				9610348A19F4E731003A1E99 /* psp_fx91.png in Resources */,
 				967872D719EE0C4D00FA20BE /* sbcz_huitui2.png in Resources */,
-				5932458319ED54D3000B4E55 /* 电视游戏中心.jpg in Resources */,
 				5932449119ED511D000B4E55 /* CusMouseViewController.xib in Resources */,
 				9676FC611A3AD2EC008E37BA /* usb.png in Resources */,
 				9610348D19F4E731003A1E99 /* psp_l2.png in Resources */,
 				961034C319F52BE3003A1E99 /* sjyx_xiazai2.png in Resources */,
-				9615141C19EF940F003B0731 /* 红白机说明.jpg in Resources */,
 				9635A43919CAD59A00BC8F17 /* zy_tongbu.png in Resources */,
 				96E5314819F784B100B71D6A /* sjjs_shouji1.png in Resources */,
 				960DDDCC19E66D77008528F1 /* sbcz_shubiao2.png in Resources */,
@@ -2861,20 +2574,15 @@
 				96E5315619F784B100B71D6A /* sjyx_xiazai1.png in Resources */,
 				965ABFD41A19E38E00FF0F96 /* shanping1.png in Resources */,
 				9615141619EF940F003B0731 /* Thumbs.db in Resources */,
-				593245C619ED54D3000B4E55 /* 鼠标传统.jpg in Resources */,
 				962742731A14B12C00F28318 /* xiazai2.png in Resources */,
-				96E5316819F784B100B71D6A /* 手机游戏介绍.jpg in Resources */,
 				961A414119B9946300DBC23D /* MouseControlViewController.xib in Resources */,
 				96E5313019F784B100B71D6A /* psp_fx82.png in Resources */,
 				960DDDBF19E66D77008528F1 /* sbcz_fanhui1.png in Resources */,
 				96E5314B19F784B100B71D6A /* sjjs_xiaz2.png in Resources */,
 				5932456919ED54D3000B4E55 /* ty_huanganniu1.9.png in Resources */,
-				5932455619ED54D3000B4E55 /* 手游中心没有内容.jpg in Resources */,
 				963DF1581A5E21FB0073B0EE /* tvuLaunchImage副本.png in Resources */,
 				5932458C19ED54D3000B4E55 /* yxjs_shouji2.png in Resources */,
-				96E5314019F784B100B71D6A /* PSP说明.jpg in Resources */,
 				960B888119D258D400AFEF1D /* ty_huianniu2.9.png in Resources */,
-				9615141119EF940F003B0731 /* 游戏搜索4.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2898,6 +2606,7 @@
 				963AB9D219D2BB6A0083C486 /* MyJniTransport.cpp in Sources */,
 				9611AEE219D3B72E00E12CB4 /* ParseJson.m in Sources */,
 				963AB9D819D2BB6A0083C486 /* MouseMovePkg.cpp in Sources */,
+				966C04761A761B0F00BC2996 /* NullMouseViewController.m in Sources */,
 				96B80BC619B85A470038928E /* AppDelegate.m in Sources */,
 				9615C4DC1A03612D004EB244 /* SimulatorKeyEventPkg.cpp in Sources */,
 				963AB9CD19D2BB6A0083C486 /* json_reader.cpp in Sources */,
@@ -2930,7 +2639,6 @@
 				9640879219D93DBE00C935F1 /* EGOImageLoader.m in Sources */,
 				961A414019B9946300DBC23D /* MouseControlViewController.m in Sources */,
 				96B80BE719B85AA60038928E /* LordViewController.m in Sources */,
-				960F2A1D19BEAC5D00E09813 /* NullMouseViewController.m in Sources */,
 				96B80BC219B85A470038928E /* main.m in Sources */,
 				963AB9CE19D2BB6A0083C486 /* json_value.cpp in Sources */,
 				961A413B19B9879100DBC23D /* RemoteControlViewController.m in Sources */,

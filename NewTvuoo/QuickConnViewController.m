@@ -165,7 +165,6 @@
         }
         else
         {
-//            self.tvArray = [Singleton getSingle].tvArray;aa
             if(_hasTvFlag == NO)        //如果之前是没有数据的状态
             {
                 [self addConnView];
@@ -783,6 +782,7 @@
 //            [self pressDevBtn];
             [Singleton getSingle].conn_statue = 0;
             [self addNoConnView];
+            _hasTvFlag = NO;
         }
         else
         {
@@ -798,6 +798,7 @@
             [self.handLabel setTextColor:blueColor];
             [self.devBtn setBackgroundColor:blueColor];
             [self addNoConnView];
+            _hasSdkFlag = NO;
         }
     }
 }

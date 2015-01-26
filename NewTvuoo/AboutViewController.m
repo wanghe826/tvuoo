@@ -238,6 +238,18 @@
             [alertView show];
             [alertView release];
         }
+        else
+        {
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"暂无新版本" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+            [alertView show];
+            [alertView release];
+        }
+    }
+    else
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"暂无新版本" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+        [alertView show];
+        [alertView release];
     }
 }
 
@@ -551,21 +563,21 @@
     [line7 release];
 }
 
--(void)pressVer
-{
-    if([Singleton getSingle].updateInfo.isNeedUpdate == 1)
-    {
-        if([Singleton getSingle].updateInfo.update_model == 3)
-        {
-            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:[Singleton getSingle].updateInfo.update_title
-                                                                message:[Singleton getSingle].updateInfo.update_memo
-                                                               delegate:self
-                                                      cancelButtonTitle:@"暂不升级" otherButtonTitles:@"现在升级", nil];
-            [alertView show];
-            [alertView release];
-        }
-    }
-}
+//-(void)pressVer
+//{
+//    if([Singleton getSingle].updateInfo.isNeedUpdate == 1)
+//    {
+//        if([Singleton getSingle].updateInfo.update_model == 3)
+//        {
+//            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:[Singleton getSingle].updateInfo.update_title
+//                                                                message:[Singleton getSingle].updateInfo.update_memo
+//                                                               delegate:self
+//                                                      cancelButtonTitle:@"暂不升级" otherButtonTitles:@"现在升级", nil];
+//            [alertView show];
+//            [alertView release];
+//        }
+//    }
+//}
 
 -(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
