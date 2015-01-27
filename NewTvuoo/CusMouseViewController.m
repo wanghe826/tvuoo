@@ -256,7 +256,9 @@
     [self.view addSubview:huituiLabel];
     [huituiLabel release];
     
-    UIImageView* uv2 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
+    UIButton* uv2 = [[UIButton alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
+//    UIImageView* uv2 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
+    [uv2 addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchUpInside];
     [uv2 setBackgroundColor:[UIColor whiteColor]];
     [uv2.layer setBorderWidth:1.0];
     [uv2.layer setCornerRadius:4.0];

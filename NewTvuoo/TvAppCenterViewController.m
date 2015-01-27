@@ -579,7 +579,7 @@
         
         gameIntroduce.gameInfo = gameInfo;
         
-        [self.navigationController pushViewController:gameIntroduce animated:NO];
+        [self.navigationController pushViewController:gameIntroduce animated:YES];
         [gameIntroduce release];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
@@ -589,7 +589,7 @@
         AppIntroViewController* gameIntroduce = [[AppIntroViewController alloc] initWithNibName:nil bundle:nil];
         GameInfo* gameInfo = [self.array2 objectAtIndex:row];
         gameIntroduce.gameInfo = gameInfo;
-        [self.navigationController pushViewController:gameIntroduce animated:NO];
+        [self.navigationController pushViewController:gameIntroduce animated:YES];
         [gameIntroduce release];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
@@ -856,9 +856,9 @@
     //游戏截图
     UIScrollView* somePic = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 365, 280, 160)];
 //    NSArray* gssArray = _gameInfo.gameScrShoot;
+    int wid = 0;
     for(int i=0; i<3; ++i)
     {
-        static int wid = 0;
 //        GameScrShoot* gss = [gssArray objectAtIndex:i];
 //        EGOImageView* imageView = [[EGOImageView alloc] initWithFrame:CGRectMake(wid,10, 140, 160)];
         EGOImageView* imageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"tb_morenren2.png"]];

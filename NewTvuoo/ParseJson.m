@@ -396,7 +396,7 @@
     gameInfo.tvuSupport = [[dic objectForKey:@"tvusupport"] intValue];
     gameInfo.imgZipUrl = [dic objectForKey:@"img_zip_url"];
     gameInfo.supportDpad = [[dic objectForKey:@"suppportdpad"] intValue];
-    
+    gameInfo.gravity = [[dic objectForKey:@"gravity"] intValue];
     //keyBeans 是一个数组
     NSArray* keyBeanArray = [dic objectForKey:@"keybeans"];
     gameInfo.keyBeans = [[self class] createGameKeyBeanArrayFromArray:keyBeanArray];

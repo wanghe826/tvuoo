@@ -76,7 +76,7 @@
         alert = [[DXAlertView alloc] initWithTitle:@"发现SDK游戏" contentImageUrl:@"" leftButtonTitle:@"启动游戏" rightButtonTitle:@"取消"];
         [alert show];
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            sleep(5);
+            sleep(8);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [alert removeFromSuperview];
             });
@@ -254,10 +254,9 @@
     [_connectTvTimer invalidate];
     [self.timer invalidate];
 //    self.single.myDelegate = nil;
-    UIAlertView* alertView = (UIAlertView*)[self.view viewWithTag:111];
-    if(alertView != nil)
+    if(_upgradeAlertView != nil)
     {
-        [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        [_upgradeAlertView dismissWithClickedButtonIndex:0 animated:YES];
     }
 }
 
@@ -272,10 +271,9 @@
 //    [notification addObserver:self selector:@selector(gotoHandle:) name:@"gameActed" object:nil];
 //    [notification addObserver:self selector:@selector(findSDKGame:) name:@"findSDK" object:nil];
     
-    UIAlertView* alertView = (UIAlertView*)[self.view viewWithTag:111];
-    if(alertView != nil)
+    if(_upgradeAlertView != nil)
     {
-        [alertView show];
+        [_upgradeAlertView show];
     }
     
     
@@ -923,13 +921,13 @@
             {
                 cancelBtnTitle = @"退出";
             }
-            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:self.single.updateInfo.update_title
+            _upgradeAlertView = [[UIAlertView alloc] initWithTitle:self.single.updateInfo.update_title
                                                                 message:self.single.updateInfo.update_memo
                                                                delegate:self
                                                       cancelButtonTitle:cancelBtnTitle otherButtonTitles:@"现在升级", nil];
-            alertView.tag = 111;
-            [self.view addSubview:alertView];
-            [alertView show];
+            _upgradeAlertView.tag = 111;
+            [self.view addSubview:_upgradeAlertView];
+            [_upgradeAlertView show];
             [cancelBtnTitle release];
             
         }
@@ -950,6 +948,11 @@
             else if(self.single.updateInfo.update_model == 2)
             {
                 NSLog(@"退出程序被按下了");
+                if(_upgradeAlertView != nil)
+                {
+                    [_upgradeAlertView release];
+                    _upgradeAlertView = nil;
+                }
                 exit(0);
             }
         }
@@ -961,11 +964,13 @@
                              52];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
-        if(alertView != nil)
+        
+        if(_upgradeAlertView != nil)
         {
-            [alertView release];
-            alertView = nil;
+            [_upgradeAlertView release];
+            _upgradeAlertView = nil;
         }
+        
         return;
     }
 

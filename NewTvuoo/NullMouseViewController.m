@@ -448,7 +448,7 @@
     
     if(_motionManager.gyroAvailable)
     {
-        _motionManager.gyroUpdateInterval = 0.03;
+        _motionManager.gyroUpdateInterval = 0.01;
         [_motionManager startGyroUpdatesToQueue:queue withHandler:^(CMGyroData* gyroData, NSError* error)
         {
            if(error)
@@ -457,9 +457,9 @@
            }
            else
            {
-               float x = gyroData.rotationRate.x*3*9.8;
-               float y = gyroData.rotationRate.y*3*9.8;
-               float z = gyroData.rotationRate.z*3*9.8;
+               float x = gyroData.rotationRate.x*4*9.8;
+               float y = gyroData.rotationRate.y*4*9.8;
+               float z = gyroData.rotationRate.z*4*9.8;
                if(abs((int)x) <= 15)
                {
                    x = 0;

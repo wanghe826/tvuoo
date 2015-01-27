@@ -62,7 +62,7 @@
     UIButton* _huituiBtn;
     UILabel* _huituiLabel;
     
-    UIImageView* _uv2;
+    UIButton* _uv2;
     UIButton* _xuanzhongBtn;
     UILabel* _xuanzhongLabel;
     
@@ -109,6 +109,7 @@
     
     BOOL _isMutilplePoint;
     NSMutableArray* _mutilPointArray;
+    NSUInteger _numOfPoint;
 }
 
 @property (retain, nonatomic) NSArray* keyBeanArray;

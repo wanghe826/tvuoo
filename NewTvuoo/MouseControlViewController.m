@@ -138,14 +138,19 @@
     [mouseOpBtn setBackgroundColor:[UIColor blackColor]];
     
     //重力相关
-    [self.view addSubview:_uvGes];
-    [self.view addSubview:_gesBtnOn];
-    [self.view addSubview:_gesBtnOff];
+    if(self.currentGameInfo.gravity == 1)
+    {
+        [self.view addSubview:_uvGes];
+        [self.view addSubview:_gesBtnOn];
+        [self.view addSubview:_gesBtnOff];
+    }
     
     //手势相关
-    [self.view addSubview:_gesFrame];
-    [self.view addSubview:_gesBtn];
-    
+    if(self.currentGameInfo.bgTouch == 1)
+    {
+        [self.view addSubview:_gesFrame];
+        [self.view addSubview:_gesBtn];
+    }
     [self beginInitgameOptUI];
 }
 
@@ -515,6 +520,7 @@
 {
     [super viewDidLoad];
     
+    _numOfPoint = 0;
     _touchMessArray = [[NSMutableArray alloc] initWithCapacity:5];
     _mutilPointArray = [[NSMutableArray alloc] initWithCapacity:5];
     
@@ -608,7 +614,8 @@
     _huituiLabel.textColor = [UIColor whiteColor];
     [self.view addSubview:_huituiLabel];
     
-    _uv2 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
+    _uv2 = [[UIButton alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
+    [_uv2 addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchUpInside];
 //    [_uv2 setBackgroundColor:[UIColor blackColor]];
     [_uv2.layer setBorderWidth:1.0];
     [_uv2.layer setCornerRadius:4.0];
@@ -752,20 +759,7 @@
     [Singleton getSingle].myExitGameDelegate = self;
     [Singleton getSingle].mySdkBreakDownDelegate = self;
     
-    if(self.currentGameInfo.gravity == 1)
-    {
-        _btn3Flag = NO;
-        [self pressGesBtnOn];
-        
-        NSLog(@"支持重力");
-    }
-    else
-    {
-        _btn3Flag = YES;
-        [self pressGesBtnOff];
-        
-        NSLog(@"不支持重力");
-    }
+    
     
     _loadingView = [[LoadingView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     [self.view addSubview:_loadingView];
@@ -793,6 +787,30 @@
      GameInfo* gameInfo = [ParseJson createGameInfoFromJson:jsonStr];
      if (gameInfo)
      {
+         NSLog(@"是否支持背景触摸, %d", gameInfo.bgTouch);
+         self.currentGameInfo.bgTouch = gameInfo.bgTouch;
+         self.currentGameInfo.gravity = gameInfo.gravity;
+         
+         if(gameInfo.gravity == 1)
+         {
+             _btn3Flag = NO;
+//             [self pressGesBtnOn];
+             [self performSelectorOnMainThread:@selector(pressGesBtnOn) withObject:nil waitUntilDone:YES];
+             
+             NSLog(@"支持重力");
+         }
+         else
+         {
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [_uvGes removeFromSuperview];
+                 [_gesBtnOn removeFromSuperview];
+                 [_gesBtnOff removeFromSuperview];
+             });
+             
+             NSLog(@"不支持重力");
+         }
+         
+         
          _rockerArray = gameInfo.rockers;
          [_rockerArray retain];
          if([gameInfo.imgZipUrl isEqualToString:@""])
@@ -1178,24 +1196,89 @@
 }
 
 
+- (void) backgroundTouchBegan:(UIEvent*)event
+{
+    for(UITouch* touch in  [event allTouches])
+    {
+        if(touch.phase == 0)
+        {
+            CGPoint point = [touch locationInView:self.view];
+            int width = 0, height = 0;
+            if(self.single.tvType != 1)
+            {
+                width = self.single.current_sdkTvInfo.width*point.x/self.view.frame.size.width;
+                height = self.single.current_sdkTvInfo.width*point.y/self.view.frame.size.height;
+            }
+            else
+            {
+                width = self.single.current_tvInfo.width*point.x/self.view.frame.size.width;
+                height = self.single.current_tvInfo.height*point.y/self.view.frame.size.height;
+            }
+            NSTvuPoint* tvuPoint = [[NSTvuPoint alloc] init];
+            tvuPoint.p_x = width;
+            tvuPoint.p_y = height;
+            tvuPoint.p_id = 0;
+            tvuPoint.current_touch = touch;
+            [_mutilPointArray addObject:tvuPoint];
+            [tvuPoint release];
+            if(self.single.tvType == 1)
+            {
+                sendMutiEvent(self.single.current_tv.tvIp,self.single.current_tv.tvServerport,self.single.current_tv.tvUdpPort, 0, [_mutilPointArray count], _mutilPointArray);
+            }
+            else
+            {
+                sendMutiEvent(self.single.current_sdk.tvIp,self.single.current_sdk.tvServerport,self.single.current_sdk.tvUdpPort, 0, [_mutilPointArray count], _mutilPointArray);
+            }
+        }
+    }
+}
 
-/*
- <UITouchesEvent: 0x14693ae0> timestamp: 148691 touches: {(
- <UITouch: 0x15aacd60> phase: Began tap count: 1 window: <UIWindow: 0x145dc550; frame = (0 0; 568 320); gestureRecognizers = <NSArray: 0x145dcd00>; layer = <UIWindowLayer: 0x145dc7e0>> view: <UIView: 0x14719020; frame = (0 0; 568 320); autoresize = W+H; layer = <CALayer: 0x14718ff0>> location in window: {234.5, 168} previous location in window: {234.5, 168} location in view: {234.5, 168} previous location in view: {234.5, 168}
- )}*/
-
-/*
- <UITouchesEvent: 0x14693ae0> timestamp: 148699 touches: {(
- <UITouch: 0x159f93c0> phase: Began tap count: 1 window: <UIWindow: 0x145dc550; frame = (0 0; 568 320); gestureRecognizers = <NSArray: 0x145dcd00>; layer = <UIWindowLayer: 0x145dc7e0>> view: <UIView: 0x14719020; frame = (0 0; 568 320); autoresize = W+H; layer = <CALayer: 0x14718ff0>> location in window: {99, 95} previous location in window: {99, 95} location in view: {99, 95} previous location in view: {99, 95},
- <UITouch: 0x15aacd60> phase: Moved tap count: 1 window: <UIWindow: 0x145dc550; frame = (0 0; 568 320); gestureRecognizers = <NSArray: 0x145dcd00>; layer = <UIWindowLayer: 0x145dc7e0>> view: <UIView: 0x14719020; frame = (0 0; 568 320); autoresize = W+H; layer = <CALayer: 0x14718ff0>> location in window: {236, 170.5} previous location in window: {236, 170} location in view: {236, 170.5} previous location in view: {236, 170}
- )}
- */
-
+- (void) backgroundTouchMove:(UIEvent*)event
+{
+    for(UITouch* everyTouch in [event allTouches])
+    {
+        if(everyTouch.phase == 1)
+        {
+            for(NSTvuPoint* point in _mutilPointArray)
+            {
+                if([everyTouch isEqual:point.current_touch])
+                {
+                    CGPoint locPoint = [everyTouch locationInView:self.view];
+                    int width = 0, height = 0;
+                    
+                    if(self.single.tvType != 1)
+                    {
+                        width = self.single.current_sdkTvInfo.width*locPoint.x/self.view.frame.size.width;
+                        height = self.single.current_sdkTvInfo.width*locPoint.y/self.view.frame.size.height;
+                    }
+                    else
+                    {
+                        width = self.single.current_tvInfo.width*locPoint.x/self.view.frame.size.width;
+                        height = self.single.current_tvInfo.height*locPoint.y/self.view.frame.size.height;
+                    }
+                    point.p_x = width;
+                    point.p_y = height;
+                    
+                    if(self.single.tvType == 1)
+                    {
+                        sendMutiEvent(single.current_tv.tvIp,single.current_tv.tvServerport,single.current_tv.tvUdpPort, 2, [_mutilPointArray count], _mutilPointArray);
+                    }
+                    else
+                    {
+                        sendMutiEvent(self.single.current_sdk.tvIp,single.current_sdk.tvServerport,self.single.current_sdk.tvUdpPort, 2, [_mutilPointArray count], _mutilPointArray);
+                    }
+                    break;
+                }
+            }
+        }
+    }
+}
 
 //屏幕触摸处理            // n*256+5（第n个手指按下，n>=0）     n*256+6（第n个手指抬起, n>=0)
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    BOOL isInButton = NO;
     UITouch* touch = [touches anyObject];
     CGPoint loc = [touch locationInView:self.view];
     if(_btn2Flag != NO)
@@ -1231,7 +1314,7 @@
     else
     {
         NSSet* touchSet = [event allTouches];
-        NSInteger numOfPoint = 0;
+//        NSInteger numOfPoint = 0;
         
         int action = 0;
         for(UITouch* everyTouch in touchSet)
@@ -1240,10 +1323,11 @@
             {
                 if(CGRectContainsPoint(button.frame, [everyTouch locationInView:self.view]))
                 {
-                    ++numOfPoint;       //是否多点触摸
                     if(everyTouch.phase == 0)
                     {
+                        ++_numOfPoint;       //是否多点触摸
                         _avalibaleTouchNum++;
+                        isInButton = YES;       //该touch 是否在button上面
                         [button setImage:button.imageDown forState:UIControlStateNormal];
                         int tag = button.tag;
                         for(KeyBean* keyBean in self.keyBeanArray)
@@ -1356,10 +1440,10 @@
             {
                 if(CGRectContainsPoint(_yaoganRange, [everyTouch locationInView:self.view]))
                 {
-                    
-                    numOfPoint++;
                     if(everyTouch.phase == 0)
                     {
+                        _numOfPoint++;
+                        isInButton = YES;       //该touch是否在摇杆上面
                         CGPoint currentPoint = [everyTouch locationInView:self.view];
                         Rocker* rocker = [_rockerArray objectAtIndex:0];
                         
@@ -1438,7 +1522,15 @@
             }
         }
         
-        if(numOfPoint > 1)
+        
+        if(isInButton == NO)
+        {
+            _numOfPoint++;
+            [self backgroundTouchBegan:event];
+        }
+        
+        
+        if(_numOfPoint > 1)
         {
             _isMutilplePoint = YES;     //多点
         }
@@ -1447,12 +1539,11 @@
             _isMutilplePoint = NO;      //单点
         }
     }
-    
 }
 
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
+    BOOL isInButton = NO;
     UITouch* touch = [touches anyObject];
     CGPoint loc = [touch locationInView:self.view];
     CGPoint preLoc = [touch previousLocationInView:self.view];
@@ -1492,7 +1583,7 @@
             int port = tv.tvUdpPort;
 
             mouseIV.frame = CGRectMake(loc.x, loc.y, 40, 40);
-            mouseMove(ip, port, (loc.x-preLoc.x)*w_rate, (loc.y-preLoc.y)*h_rate);
+            mouseMove(ip, port, (loc.x-preLoc.x)*1.5*w_rate, (loc.y-preLoc.y)*1.5*h_rate);
         }
     }
     else
@@ -1504,69 +1595,16 @@
             
             for(AndroidGameButton* button in _androidGameBtnArray)
             {
-                /*
-                //手指从某个按钮上移出
-                if([self button_move_out:everyTouch withAction:action withAndroidGameBtn:button] == 0)
-                {
-                    break;
-                }
-                
-                //手指移动到按钮上面
-                if([self button_move_in:everyTouch withAction:action withAndroidGameBtn:button] == 0)
-                {
-                    break;
-                }
-                */
-                
-            }
-            //手指从摇杆移出
-            //处理摇杆
-            
-            /*
-            for(UIImageView* iv in _rockerImageArray)
-            {
                 if(everyTouch.phase == 1)
                 {
-                    if(!CGRectContainsPoint(_yaoganRange, [everyTouch locationInView:self.view]) && CGRectContainsPoint(_yaoganRange, [everyTouch previousLocationInView:self.view]))
+                    if(CGRectContainsPoint(button.frame, [everyTouch locationInView:self.view]))
                     {
-                        for(NSTvuPoint* point in _mutilPointArray)
-                        {
-                            if([everyTouch isEqual:point.current_touch])
-                            {
-                                int action = 0;
-                                if(_isMutilplePoint)
-                                {
-                                    if([[event allTouches] count] == 1)
-                                    {
-                                        action = 1;
-                                    }
-                                    else
-                                    {
-                                        action = point.p_id*256+6;
-                                    }
-                                }
-                                else
-                                {
-                                    action = 1;
-                                }
-                                
-                                iv.center = _yaoganCenter;
-                                
-                                if(self.single.tvType == 1)
-                                {
-                                    sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
-                                }
-                                else
-                                {
-                                    sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
-                                }
-                                [_mutilPointArray removeObject:point];
-                            }
-                        }
+                        isInButton = YES;
                     }
                 }
             }
-             */
+            //手指从摇杆移出
+            //处理摇杆
             
             //手指滑动摇杆
 //            [self yaogan_move_in:everyTouch withAction:action];
@@ -1577,12 +1615,12 @@
                 {
                     if(CGRectContainsPoint(_yaoganRange, [everyTouch locationInView:self.view]))
                     {
+                        isInButton = YES;
                         //手指刚刚进入摇杆区域
                         if(!CGRectContainsPoint(_yaoganRange, [everyTouch previousLocationInView:self.view]))
                         {
                             CGPoint currentPoint = [everyTouch locationInView:self.view];
                             Rocker* rocker = [_rockerArray objectAtIndex:0];
-                            
                             int width = 0, height = 0;
                             
                             float ratX = 0, ratY = 0;
@@ -1698,14 +1736,16 @@
                                 [point release];
                                 [_mutilPointArray addObject:point];
                             }
-                            
+                            iv.center = [everyTouch locationInView:self.view];
                             if(self.single.tvType == 1)
                             {
                                 sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                                return;
                             }
                             else
                             {
                                 sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                                return;
                             }
                         }
                         //手指在摇杆区域内移动
@@ -1781,20 +1821,21 @@
                              if(self.single.tvType == 1)
                              {
                              sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                                 return;
                              }
                              else
                              {
                              sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                                 return;
                              }
                             
                         }
                     }
                 }
             }
-            
         }
+    [self backgroundTouchMove:event];
     }
-    
 }
 
 - (int) typeEqual2:(NSSet*)touchSet
@@ -1849,17 +1890,19 @@
     
     if(![self typeEqual2:touchSet])         //如果返回0，说明key的type为2，则发送keyEvent事件， 后面不用处理多点
     {
+        NSLog(@"返回");
         return;
     }
     else                                    //如果返回非0，说明key的type为1， 则继续发送多点事件.
     {
-        
+        NSLog(@"非0返回");
     }
     
     for(UITouch* everyTouch in touchSet)
     {
         if(everyTouch.phase == 3)
         {
+            
             for(NSTvuPoint* point in _mutilPointArray)
             {
                 if([everyTouch isEqual: point.current_touch])
@@ -1872,6 +1915,7 @@
                     else
                     {
                         NSLog(@"摇杆的抬起事件");
+                        if([_rockerImageArray count] != 0)
                         ((UIImageView*)[_rockerImageArray objectAtIndex:0]).center = _yaoganCenter;
                     }
                     int action = 0;
@@ -1908,6 +1952,7 @@
                     return;
                 }
             }
+            _numOfPoint--;
         }
     }
     return;
@@ -2524,7 +2569,6 @@
     }
     
 }
-
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     Singleton* single = [Singleton getSingle];

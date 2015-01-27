@@ -109,14 +109,16 @@
     [yaogan release];
     
     UIButton* coinBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [coinBtn addTarget:self action:@selector(putCoin) forControlEvents:UIControlEventTouchUpInside];
+    [coinBtn addTarget:self action:@selector(putCoin) forControlEvents:UIControlEventTouchDown];
+    [coinBtn addTarget:self action:@selector(putCoinUp) forControlEvents:UIControlEventTouchUpInside];
     coinBtn.frame = CGRectMake(310, 18, 75, 40);
     [coinBtn setImage:[UIImage imageNamed:@"ty_toubi1.png"] forState:UIControlStateNormal];
     [coinBtn setImage:[UIImage imageNamed:@"ty_toubi2.png"] forState:UIControlStateHighlighted];
     [self.view addSubview:coinBtn];
     
     UIButton* startBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [startBtn addTarget:self action:@selector(startGame) forControlEvents:UIControlEventTouchUpInside];
+    [startBtn addTarget:self action:@selector(startGame) forControlEvents:UIControlEventTouchDown];
+    [startBtn addTarget:self action:@selector(startGameUp) forControlEvents:UIControlEventTouchUpInside];
     startBtn.frame = CGRectMake(400, 18, 90, 40);
     [startBtn setImage:[UIImage imageNamed:@"ty_start1.png"] forState:UIControlStateNormal];
     [startBtn setImage:[UIImage imageNamed:@"ty_start2.png"] forState:UIControlStateHighlighted];
@@ -244,12 +246,22 @@
     if(self.btnFlag == NO)
     {
         sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 35);
-        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 35);
     }
     else
     {
 
         sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 109);
+    }
+}
+
+- (void) putCoinUp
+{
+    if(self.btnFlag == NO)          //p2
+    {
+        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 35);
+    }
+    else                            //p1
+    {
         sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 109);
     }
 }
@@ -259,15 +271,28 @@
     if(self.btnFlag == NO)
     {
         sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 36);
-        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 36);
+//        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 36);
     }
     else
     {
         sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 108);
-        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 108);
+//        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 108);
     }
 }
 
+- (void) startGameUp
+{
+    if(self.btnFlag == NO)
+    {
+//        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 36);
+        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 36);
+    }
+    else
+    {
+//        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 108);
+        sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 108);
+    }
+}
 - (void) addPlayerView
 {
     UIImageView* frameUV = [[UIImageView alloc] initWithFrame:CGRectMake(30, 18, 108, 40)];
@@ -524,7 +549,8 @@
     //摇杆离开方向盘，归位
     if(!CGRectContainsPoint(range, currentPoint))
     {
-        self.yaoganIv.center = self.yuanImageView.center;
+//        self.yaoganIv.center = self.yuanImageView.center;
+        return;
     }
     
     if(CGRectContainsPoint(_up, currentPoint))
@@ -801,7 +827,7 @@
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    self.yaoganIv.center = self.yuanImageView.center;
+//    self.yaoganIv.center = self.yuanImageView.center;
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event

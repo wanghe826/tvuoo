@@ -240,7 +240,18 @@
     _gameCapa = [[UILabel alloc] initWithFrame:CGRectMake(250, 135, 100, 30)];
     [_gameCapa setFont:[UIFont fontWithName:@"Courier New" size:17]];
 //    _gameCapa.text = @"1024Mb";
-    _gameCapa.text = [NSString stringWithFormat:@"%ldMb",self.gameInfo.androidPkgSize/1024/1024];
+    
+    int mb = (int)(self.gameInfo.tvSize)/1024/1024;
+    if(mb <= 0)
+    {
+        _gameCapa.text = [NSString stringWithFormat:@"%ldKb", (self.gameInfo.tvSize)/1024];
+    }
+    else
+    {
+        _gameCapa.text = [NSString stringWithFormat:@"%ldMb", (self.gameInfo.tvSize)/1024/1024];
+    }
+    
+//    _gameCapa.text = [NSString stringWithFormat:@"%ldMb",self.gameInfo.androidPkgSize/1024/1024];
     _gameCapa.textColor = [UIColor colorWithRed:179.0/255.0 green:179.0/255.0 blue:179.0/255.0 alpha:1]; //灰色
     [self.view addSubview:_gameCapa];
     

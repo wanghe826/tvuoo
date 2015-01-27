@@ -33,6 +33,7 @@
     NSTimer* _connectTvTimer;
     
     NSTimer* _updateDeviceTimer;
+    UIAlertView* _upgradeAlertView;
 }
 
 - (void) pressBtn: (id)sender;
