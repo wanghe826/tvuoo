@@ -103,6 +103,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 if(alert != nil)
                 {
+                    [alert setGameLabel:gameInfo.name];
                     [alert setImageUrl:gameInfo.iconUrl];
                     [url release];
                 }
@@ -110,7 +111,11 @@
         }
     });
 
-    
+    if(alert != nil)
+    {
+        [alert release];
+        alert = nil;
+    }
 }
 
 - (void) getStartSdk
@@ -1322,7 +1327,16 @@
      */
     if([Singleton getSingle].conn_statue == 0)
     {
-        [self.connIV setImage:[UIImage imageNamed:@"zy_sousuo.png"]];
+//        [self.connIV setImage:[UIImage imageNamed:@"zy_sousuo.png"]];
+//        if(![self.timer isValid])
+//        {
+//            [self.timer fire];
+//        }
+//        [self.searchBtn setTitle:@"搜不到" forState:UIControlStateNormal];
+        
+        schLabel.text = @"正在搜索设备";
+        self.nLabel.hidden = YES;
+        self.hintIv.hidden = YES;
         if(![self.timer isValid])
         {
             [self.timer fire];

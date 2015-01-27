@@ -10,6 +10,9 @@
 #import "EGOImageLoader/EGOImageView.h"
 
 @interface DXAlertView : UIView
+{
+    UILabel* _gameLabel;
+}
 
 - (id)initWithTitle:(NSString *)title
         contentImageUrl:(NSString *)content
@@ -18,7 +21,7 @@
 
 - (void)show;
 - (void)setImageUrl:(NSString*)url;
-
+- (void)setGameLabel:(NSString*)gameName;
 @property (nonatomic, copy) dispatch_block_t leftBlock;
 @property (nonatomic, copy) dispatch_block_t rightBlock;
 @property (nonatomic, copy) dispatch_block_t dismissBlock;

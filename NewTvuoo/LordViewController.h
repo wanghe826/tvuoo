@@ -35,7 +35,7 @@
     NSTimer* _updateDeviceTimer;
     UIAlertView* _upgradeAlertView;
 }
-
+- (void) updateAvalibleTv;
 - (void) pressBtn: (id)sender;
 
 @property (nonatomic, retain) Singleton* single;

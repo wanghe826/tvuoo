@@ -11,7 +11,7 @@
 
 
 #define kAlertWidth 245.0f
-#define kAlertHeight 160.0f
+#define kAlertHeight 190.0f
 
 @interface DXAlertView ()
 {
@@ -60,6 +60,11 @@
     self.alertImageView.imageURL = [NSURL URLWithString:url];
 }
 
+-(void) setGameLabel:(NSString *)gameName
+{
+    _gameLabel.text = gameName;
+}
+
 - (id)initWithTitle:(NSString *)title
         contentImageUrl:(NSString *)content
     leftButtonTitle:(NSString *)leftTitle
@@ -73,15 +78,16 @@
         self.alertTitleLabel.textColor = [UIColor colorWithRed:56.0/255.0 green:64.0/255.0 blue:71.0/255.0 alpha:1];
         [self addSubview:self.alertTitleLabel];
         
+        _gameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.alertTitleLabel.center.y+kTitleHeight/2, kAlertWidth, 30)];
+//        _gameLabel.center = CGPointMake(kAlertWidth/2+20, self.alertTitleLabel.center.y+kTitleHeight/2+15);
+        _gameLabel.textAlignment = NSTextAlignmentCenter;
+        _gameLabel.text = @"sdk游戏";
+//        [_gameLabel sizeToFit];
+        [self addSubview:_gameLabel];
+        
         CGFloat contentLabelWidth = kAlertWidth - 16;
-//        self.alertContentLabel = [[UILabel alloc] initWithFrame:CGRectMake((kAlertWidth - contentLabelWidth) * 0.5, CGRectGetMaxY(self.alertTitleLabel.frame), contentLabelWidth, 60)];
-//        self.alertContentLabel.numberOfLines = 0;
-//        self.alertContentLabel.textAlignment = self.alertTitleLabel.textAlignment = NSTextAlignmentCenter;
-//        self.alertContentLabel.textColor = [UIColor colorWithRed:127.0/255.0 green:127.0/255.0 blue:127.0/255.0 alpha:1];
-//        self.alertContentLabel.font = [UIFont systemFontOfSize:15.0f];
-//        [self addSubview:self.alertContentLabel];
         self.alertImageView = [[EGOImageView alloc] initWithPlaceholderImage:[UIImage imageNamed:@"tb_moren2.png"]];
-        self.alertImageView.frame = CGRectMake((kAlertWidth - contentLabelWidth) * 0.5+86, CGRectGetMaxY(self.alertTitleLabel.frame), 60, 60);
+        self.alertImageView.frame = CGRectMake((kAlertWidth - contentLabelWidth) * 0.5+86, CGRectGetMaxY(self.alertTitleLabel.frame)+30, 60, 60);
 //        self.alertImageView.imageURL = [NSURL URLWithString:content];
         [self addSubview:self.alertImageView];
         

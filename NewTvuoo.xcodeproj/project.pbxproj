@@ -413,6 +413,8 @@
 		967872D919EE0C4D00FA20BE /* sbcz_xuanzhong2.png in Resources */ = {isa = PBXBuildFile; fileRef = 967872D519EE0C4D00FA20BE /* sbcz_xuanzhong2.png */; };
 		967872DA19EE0C4D00FA20BE /* sbcz_xuanzhong3.png in Resources */ = {isa = PBXBuildFile; fileRef = 967872D619EE0C4D00FA20BE /* sbcz_xuanzhong3.png */; };
 		967F4E751A31A53B00FD14D8 /* icon_72.png in Resources */ = {isa = PBXBuildFile; fileRef = 967F4E741A31A53B00FD14D8 /* icon_72.png */; };
+		96A528AD1A77A33D00759D82 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A528AC1A77A33D00759D82 /* Reachability.m */; };
+		96A528AF1A77A39E00759D82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A528AE1A77A39E00759D82 /* SystemConfiguration.framework */; };
 		96B80BB619B85A470038928E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B80BB519B85A470038928E /* Foundation.framework */; };
 		96B80BB819B85A470038928E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B80BB719B85A470038928E /* CoreGraphics.framework */; };
 		96B80BBA19B85A470038928E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B80BB919B85A470038928E /* UIKit.framework */; };
@@ -1022,6 +1024,9 @@
 		967872D519EE0C4D00FA20BE /* sbcz_xuanzhong2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_xuanzhong2.png; sourceTree = "<group>"; };
 		967872D619EE0C4D00FA20BE /* sbcz_xuanzhong3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sbcz_xuanzhong3.png; sourceTree = "<group>"; };
 		967F4E741A31A53B00FD14D8 /* icon_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_72.png; sourceTree = "<group>"; };
+		96A528AB1A77A33D00759D82 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		96A528AC1A77A33D00759D82 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		96A528AE1A77A39E00759D82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		96B80BB219B85A470038928E /* NewTvuoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewTvuoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B80BB519B85A470038928E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96B80BB719B85A470038928E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1143,6 +1148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A528AF1A77A39E00759D82 /* SystemConfiguration.framework in Frameworks */,
 				963246D31A527B7B007B52E1 /* libz.dylib in Frameworks */,
 				962CCDDF1A22E91D00A34F77 /* MobileCoreServices.framework in Frameworks */,
 				962CCDDB1A22E8F500A34F77 /* CFNetwork.framework in Frameworks */,
@@ -1796,6 +1802,7 @@
 		96B80BB419B85A470038928E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96A528AE1A77A39E00759D82 /* SystemConfiguration.framework */,
 				96235CB21A5B7F870041F622 /* libunzip_simulator.a */,
 				96235CB31A5B7F870041F622 /* libunzip.a */,
 				963246D21A527B7B007B52E1 /* libz.dylib */,
@@ -1829,6 +1836,8 @@
 				9663634619FE410A00A9B0E7 /* unZip */,
 				963246F21A527F33007B52E1 /* UMengFeedback_SDK_2.0.3 */,
 				963246CF1A527B25007B52E1 /* MobClick.h */,
+				96A528AB1A77A33D00759D82 /* Reachability.h */,
+				96A528AC1A77A33D00759D82 /* Reachability.m */,
 				96DE25071A63C64C009440D9 /* DXAlertView.h */,
 				96DE25081A63C64C009440D9 /* DXAlertView.m */,
 				96B80BE419B85AA60038928E /* LordViewController.h */,
@@ -2605,6 +2614,7 @@
 				59BDA1211A18CC910045AABF /* HJMOBigFileCache.m in Sources */,
 				963AB9D219D2BB6A0083C486 /* MyJniTransport.cpp in Sources */,
 				9611AEE219D3B72E00E12CB4 /* ParseJson.m in Sources */,
+				96A528AD1A77A33D00759D82 /* Reachability.m in Sources */,
 				963AB9D819D2BB6A0083C486 /* MouseMovePkg.cpp in Sources */,
 				966C04761A761B0F00BC2996 /* NullMouseViewController.m in Sources */,
 				96B80BC619B85A470038928E /* AppDelegate.m in Sources */,

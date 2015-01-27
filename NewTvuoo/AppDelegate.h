@@ -10,14 +10,17 @@
 #import "LordViewController.h"
 #import "ViewControllerOrientation.h"
 #import "Singleton.h"
+#import "Reachability.h"
 
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 {
     Singleton* single;
     __block UIBackgroundTaskIdentifier _bgTask;
     NSTimer* _timer;
     
+    //监听网络
+    Reachability *_reach;
+    NetworkStatus _status;
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UINavigationController* navController;

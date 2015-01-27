@@ -103,8 +103,77 @@ static int myClock = 0;
     [self.window makeKeyAndVisible];
     [self.window release];
     [viewControllerOrientation release];
+    
+    [self startWatchingNetworkStatus];
     return YES;
 }
+
+#pragma mark Network Watching
+- (void)startWatchingNetworkStatus {
+    //监测网络状况
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    _reach = [Reachability reachabilityWithHostName:@"www.google.com"];
+    [_reach startNotifier];
+    _status = ReachableViaWiFi;
+}
+
+- (void)reachabilityChanged:(NSNotification* )note {
+    Reachability *curReach = [note object];
+    NSParameterAssert([curReach isKindOfClass:[Reachability class]]);
+    
+    //检测站点的网络连接状态
+    NetworkStatus curStatus = [curReach currentReachabilityStatus];
+    if (curStatus != _status) {
+        NSString *str = nil;
+        
+        //根据不同的网络状态，UI或者程序中关于数据的下载需要做出相应的调整，自己实现
+        switch (curStatus) {
+            case NotReachable:
+            {
+                str = @"网络不可用";
+                if([Singleton getSingle].viewController == nil)
+                    return;
+                
+                UIAlertView* noNet = [[UIAlertView alloc] initWithTitle:@"网络已经断开" message:@"是否关闭程序" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"关闭", nil];
+                [self.window addSubview:noNet];
+                [noNet show];
+                
+                [Singleton getSingle].conn_statue = 0;
+                [[Singleton getSingle].tvArray removeAllObjects];
+                [[Singleton getSingle].sdkArray removeAllObjects];
+                [(LordViewController*)([Singleton getSingle].viewController) updateAvalibleTv];
+                [noNet release];
+                break;
+            }
+            case ReachableViaWiFi:
+                str = @"wifi网络可用";
+                break;
+            case ReachableViaWWAN:
+                str = @"3G/GPRS网络可用";
+                break;
+                
+            default:
+                str = @"未知网络";
+                break;
+        }
+        NSLog(@"%@", str);
+    }
+    
+    _status = curStatus;
+}
+
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 0)
+    {
+        return;
+    }
+    if(buttonIndex == 1)
+    {
+        exit(0);
+    }
+}
+
 
 - (void) initData
 {
