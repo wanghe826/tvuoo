@@ -1849,51 +1849,6 @@
     }
 }
 
-- (int) typeEqual2:(NSSet*)touchSet
-{
-    for(UITouch* everyTouch in touchSet)
-    {
-        for(AndroidGameButton* button in _androidGameBtnArray)
-        {
-            if(CGRectContainsPoint(button.frame, [everyTouch locationInView:self.view]))
-            {
-                if(everyTouch.phase == 3)
-                {
-                    [button setImage:button.imageUp forState:UIControlStateNormal];
-                    int tag = button.tag;
-                    for(KeyBean* keyBean in self.keyBeanArray)
-                    {
-                        if (keyBean.idd == tag)
-                        {
-                           if(keyBean.type == 2)
-                            {
-                                if(self.single.tvType == 1)
-                                {
-                                    NSLog(@"发送keyTarget: %d", keyBean.targetKey);
-                                    NSLog(@"发送idd: %d", keyBean.idd);
-                                    keyEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, 1, keyBean.targetKey, 0);
-                                }
-                                else
-                                {
-                                    keyEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, 1, keyBean.targetKey, 0);
-                                }
-                                return 0;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return -1;
-}
-
-- (void) sendKeyEventFunc:(UIEvent*)event
-{
-    
-}
-
-
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
  
@@ -1903,18 +1858,6 @@
     {
         return;
     }
-    
-    /*
-    if(![self typeEqual2:touchSet])         //如果返回0，说明key的type为2，则发送keyEvent事件， 后面不用处理多点
-    {
-        NSLog(@"返回");
-        return;
-    }
-    else                                    //如果返回非0，说明key的type为1， 则继续发送多点事件.
-    {
-        NSLog(@"非0返回");
-    }
-     */
     for(UITouch* touch in [event allTouches])
     {
         for(NSTvuPoint* tvuPoint in _keyEventArray)
@@ -1934,6 +1877,7 @@
                     {
                         keyEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, 1, tvuPoint.keyBean.targetKey, 0);
                     }
+                    [_keyEventArray removeObject:tvuPoint];
                     return;
                 }
             }
