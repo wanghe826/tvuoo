@@ -17,7 +17,7 @@
     Singleton* single;
     __block UIBackgroundTaskIdentifier _bgTask;
     NSTimer* _timer;
-    
+    NSTimer* _hintTimer;
     //监听网络
     Reachability *_reach;
     NetworkStatus _status;

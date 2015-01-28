@@ -390,7 +390,7 @@
     [self.view addSubview:iv2];
 
 //    if(self.single.switcher.tvu_showgame_switch != 0)
-    if([[AllUrl getInstance] tvu_showgame_switch] != 0)
+    if([[AllUrl getInstance] tvu_showgame_switch] == 1)
     {
         UIImageView *iv3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zy_jiantou.png"]];
         iv3.frame = CGRectMake(0, 385, 31*w_rate, 18*h_rate);
@@ -468,7 +468,7 @@
     if(iPhone5)
     {
 //        if(self.single.switcher.tvu_showgame_switch != 0)
-        if([[AllUrl getInstance] tvu_showgame_switch] != 0)
+        if([[AllUrl getInstance] tvu_showgame_switch] == 1)
         {
             btn1.frame = CGRectMake(30*w_rate, 828*h_rate+20, 200*w_rate, 175*h_rate);
             btn2.frame = CGRectMake(250*w_rate, 828*h_rate+20, 200*w_rate, 175*h_rate);
@@ -514,7 +514,7 @@
     else if(iPhone4)
     {
 //        if(self.single.switcher.tvu_showgame_switch != 0)
-        if([[AllUrl getInstance] tvu_showgame_switch] != 0)
+        if([[AllUrl getInstance] tvu_showgame_switch] == 1)
         {
             btn1.frame = CGRectMake(30*w_rate, 828*h_rate+20, 200*w_rate, 175*h_rate);
             btn2.frame = CGRectMake(250*w_rate, 828*h_rate+20, 200*w_rate, 175*h_rate);
@@ -627,8 +627,8 @@
     label2.center = CGPointMake(282*w_rate, 600*h_rate+20);
     [self.view addSubview:label2];
     [label2 release];
-//    if(self.single.switcher.tvu_showgame_switch != 0)
-    if([[AllUrl getInstance] tvu_showgame_switch] != 0)
+
+    if([[AllUrl getInstance] tvu_showgame_switch] == 1)
     {
         UIButton* btn3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         btn3.tag = 23;
@@ -658,7 +658,7 @@
     
 
 //    if(self.single.switcher.tvu_showgame_switch != 0)
-    if([[AllUrl getInstance] tvu_showgame_switch] != 0)
+    if([[AllUrl getInstance] tvu_showgame_switch] == 1)
     {
         UIImageView* uv3 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zy_remen.png"]];
         uv3.frame = CGRectMake(30*w_rate, 300, 84*w_rate, 84*h_rate);
@@ -728,7 +728,7 @@
     [self.view addSubview:lineView1];
     
 //    if(self.single.switcher.tvu_showgame_switch != 0)
-    if([[AllUrl getInstance] tvu_showgame_switch] != 0)
+    if([[AllUrl getInstance] tvu_showgame_switch] == 1)
     {
         UIImageView* lineView2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 806*h_rate+20, 320, 2*h_rate)];
         lineView2.backgroundColor = [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1];
@@ -910,13 +910,19 @@
     recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:recognizer];
     [recognizer release];
-    
-    
+    [self updateHint];
+}
+
+//更新提示
+- (void) updateHint
+{
     if(self.single.updateInfo.isNeedUpdate == 1)
     {
         if(self.single.updateInfo.update_model == 1 || self.single.updateInfo.update_model == 2)
         {
-            NSLog(@"有新版本");
+            NSLog(@"有新版本 %@", self.single.updateInfo.update_url);
+            if([self.single.updateInfo.update_url isEqualToString:@""])
+                return;
             NSString* cancelBtnTitle = [[NSString alloc] init];
             if(self.single.updateInfo.update_model == 1)
             {
@@ -927,10 +933,10 @@
                 cancelBtnTitle = @"退出";
             }
             _upgradeAlertView = [[UIAlertView alloc] initWithTitle:self.single.updateInfo.update_title
-                                                                message:self.single.updateInfo.update_memo
-                                                               delegate:self
-                                                      cancelButtonTitle:cancelBtnTitle otherButtonTitles:@"现在升级", nil];
-            _upgradeAlertView.tag = 111;
+                                                           message:self.single.updateInfo.update_memo
+                                                          delegate:self
+                                                 cancelButtonTitle:cancelBtnTitle otherButtonTitles:@"现在升级", nil];
+            _upgradeAlertView.tag = 334;
             [self.view addSubview:_upgradeAlertView];
             [_upgradeAlertView show];
             [cancelBtnTitle release];
@@ -939,18 +945,18 @@
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(alertView.tag == 111)
+    if(alertView.tag == 334)
     {
+        UpdateInfo* updateInfo = [Singleton getSingle].updateInfo;
         if(buttonIndex == 0)
         {
             NSLog(@"暂不升级被按下了");
-            if(self.single.updateInfo.update_model == 1)
+            if(updateInfo.update_model == 1)
             {
-                [alertView removeFromSuperview];
             }
-            else if(self.single.updateInfo.update_model == 2)
+            else if(updateInfo.update_model == 2)
             {
                 NSLog(@"退出程序被按下了");
                 if(_upgradeAlertView != nil)
@@ -964,22 +970,23 @@
         if(buttonIndex == 1)
         {
             //跳转到app store中指定的应用
-            NSString *str = [NSString stringWithFormat:
-                             @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d",
-                             52];
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+//            NSString *str = [NSString stringWithFormat:
+//                             @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d",
+//                             52];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:updateInfo.update_url]];
+            
         }
-        
-        if(_upgradeAlertView != nil)
+        [_upgradeAlertView removeFromSuperview];
+        if(alertView != nil)
         {
             [_upgradeAlertView release];
             _upgradeAlertView = nil;
         }
-        
         return;
     }
-
 }
+
+
 
 #pragma ip 进行连接但连接失败的ip
 - (void) connFailed:(int)ip

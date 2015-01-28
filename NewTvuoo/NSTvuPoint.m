@@ -15,6 +15,7 @@
 @synthesize current_touch;
 @synthesize button;
 @synthesize keyBean;
+@synthesize tag;
 - (id) init
 {
     if(self = [super init])

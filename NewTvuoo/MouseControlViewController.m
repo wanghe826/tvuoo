@@ -791,6 +791,7 @@
          NSLog(@"是否支持背景触摸, %d", gameInfo.bgTouch);
          self.currentGameInfo.bgTouch = gameInfo.bgTouch;
          self.currentGameInfo.gravity = gameInfo.gravity;
+         self.currentGameInfo.itunesPath = gameInfo.itunesPath;
          
          if(gameInfo.gravity == 1)
          {
@@ -1884,9 +1885,6 @@
         }
     }
     
-    
-    
-    
     for(UITouch* everyTouch in touchSet)
     {
         if(everyTouch.phase == 3)
@@ -1945,143 +1943,6 @@
         }
     }
     return;
-    
-    if (_btn2Flag == NO)
-    {
-        int action = 0;
-        for(UITouch* everyTouch in touchSet)
-        {
-            for(AndroidGameButton* button in _androidGameBtnArray)
-            {
-                if(CGRectContainsPoint(button.frame, [everyTouch locationInView:self.view]))
-                {
-                    if(everyTouch.phase == 3)
-                    {
-                        [button setImage:button.imageUp forState:UIControlStateNormal];
-                        int tag = button.tag;
-                        int pointId = _avalibaleTouchNum;
-                        for(KeyBean* keyBean in self.keyBeanArray)
-                        {
-                            if (keyBean.idd == tag)
-                            {
-                                int width = 0, height = 0;
-                                if(self.single.tvType != 1)
-                                {
-                                    width = [Singleton getSingle].current_sdkTvInfo.width*keyBean.tvX/1920;
-                                    height = [Singleton getSingle].current_sdkTvInfo.height*keyBean.tvY/1080;
-                                }
-                                else
-                                {
-                                    width = [Singleton getSingle].current_tvInfo.width*keyBean.tvX/1920;
-                                    height = [Singleton getSingle].current_tvInfo.height*keyBean.tvY/1080;
-                                }
-  
-                                break;
-                            }
-                        }
-                        
-                        
-                        
-                        if(_isMutilplePoint)
-                        {
-//                            action = pointId*256+6;
-                            for(NSTvuPoint* point in _mutilPointArray)
-                            {
-                                if([everyTouch isEqual:point.current_touch])
-                                {
-                                    action = point.p_id*256+6;
-                                    break;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            action = 1;
-                        }
-                        
-                        if(self.single.tvType == 1)
-                        {
-                            sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, _avalibaleTouchNum, _mutilPointArray);
-                        }
-                        else
-                        {
-                            sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, _avalibaleTouchNum, _mutilPointArray);
-                        }
-                        
-                        NSLog(@"发送抬起事件:%d个手指，action=%d", _avalibaleTouchNum, action);
-                        
-                        for(NSTvuPoint* point in _mutilPointArray)
-                        {
-                            if([everyTouch isEqual:point.current_touch])
-                            {
-                                [_mutilPointArray removeObject:point];
-                                break;
-                            }
-                        }
-                        _avalibaleTouchNum--;
-                    }
-                }
-            }
-            
-            //处理摇杆
-            for(UIImageView* iv in _rockerImageArray)
-            {
-                if(everyTouch.phase == 3)
-                {
-                    if(CGRectContainsPoint(_yaoganRange, [everyTouch locationInView:self.view]))
-                    {
-                        for(NSTvuPoint* point in _mutilPointArray)
-                        {
-                            if([everyTouch isEqual:point.current_touch])
-                            {
-                                int action = 0;
-                                if(_isMutilplePoint)
-                                {
-                                    if([[event allTouches] count] == 1)
-                                    {
-                                        action = 1;
-                                    }
-                                    else
-                                    {
-                                        action = point.p_id*256+6;
-                                    }
-                                }
-                                else
-                                {
-                                    action = 1;
-                                }
-                                
-                                if(self.single.tvType == 1)
-                                {
-                                    sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
-                                }
-                                else
-                                {
-                                    sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
-                                }
-                                [_mutilPointArray removeObject:point];
-                            }
-                        }
-
-                        iv.center = _yaoganCenter;
-
-                        
-                        if(self.single.tvType == 1)
-                        {
-                            sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, _avalibaleTouchNum, _mutilPointArray);
-                        }
-                        else
-                        {
-                            sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, _avalibaleTouchNum, _mutilPointArray);
-                        }
-                    }
-                }
-            }
-        }
-        
-        
-    }
-
 }
 
 -(void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -2159,18 +2020,94 @@
     
 }
 
+- (void) closeWebView:(UIButton*)btn
+{
+    [btn removeFromSuperview];
+    UIWebView* webView = (UIWebView*)[self.view viewWithTag:1010];
+    if(webView != nil)
+    {
+        [webView removeFromSuperview];
+        [webView release];
+    }
+}
 
 #pragma mark
 - (void) leftBtnPressed
 {
     //获取超值手柄
-    NSLog(@"leftBtnPressed");
+    NSLog(@"leftBtnPressed: %@", [[AllUrl getInstance] handshangkBuyUrl]);
+    if([[[AllUrl getInstance] handshangkBuyUrl] isEqualToString:@""])
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"暂无" message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+        [alertView show];
+        [alertView release];
+        return;
+    }
+    UIWebView* webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 568)];
+    webView.center = self.view.center;
+    webView.tag = 1010;
+    CGFloat duration = [UIApplication sharedApplication].statusBarOrientationAnimationDuration;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:duration];
+    webView.transform = CGAffineTransformMakeRotation(-M_PI/2);
+    [UIView commitAnimations];
+    webView.delegate = self;
+    NSURLRequest* request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[[AllUrl getInstance] handshangkBuyUrl] ]];
+    [self.view addSubview:webView];
+    
+    UIButton* closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    closeBtn.frame = CGRectMake(0, 0, 50, 50);
+    [closeBtn addTarget:self action:@selector(closeWebView:) forControlEvents:UIControlEventTouchUpInside];
+    [closeBtn setImage:[UIImage imageNamed:@"xiazaiguanbi1.png"] forState:UIControlStateNormal];
+    [closeBtn setImage:[UIImage imageNamed:@"xiazaiguanbi2.png"] forState:UIControlEventTouchDown];
+    closeBtn.frame = CGRectMake(450, 25, 40, 40);
+    [self.view addSubview:closeBtn];
+    
+    [webView loadRequest:request];
+//    [webView release];
 }
 
+#pragma 加载网页
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"加载失败" message:@"网络不给力哦！O(∩_∩)O~" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alertView show];
+    [alertView release];
+}
+- (void) webViewDidStartLoad:(UIWebView *)webView
+{
+    //webView开始加载
+    UIActivityIndicatorView* activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activity.center = self.view.center;
+    activity.tag = 1114;
+    [self.view addSubview:activity];
+    activity.hidden = NO;
+    [activity startAnimating];
+}
+- (void) webViewDidFinishLoad:(UIWebView *)webView
+{
+    //webView加载完成
+    UIActivityIndicatorView* activity = (UIActivityIndicatorView*)[self.view viewWithTag:1114];
+    if(activity != nil)
+    {
+        [activity stopAnimating];
+        [activity removeFromSuperview];
+        [activity release];
+    }
+}
 - (void) rightBtnPressed
 {
     //免费下载游戏
     NSLog(@"rightBtnPressed");
+    if([self.currentGameInfo.itunesPath isEqualToString:@""])
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"暂无" message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+        [alertView show];
+        [alertView release];
+        return;
+    }
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.currentGameInfo.itunesPath]];
 }
 
 @end
@@ -2467,12 +2404,11 @@
     return self;
 }
 
-
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if([[event allTouches] count] > 2)
         return;
-    
+
     for(UITouch* touch in  [event allTouches])
     {
         if(touch.phase == 0)
@@ -2482,7 +2418,7 @@
             if([Singleton getSingle].tvType != 1)
             {
                 width = [Singleton getSingle].current_sdkTvInfo.width*point.x/self.frame.size.width;
-                height = [Singleton getSingle].current_sdkTvInfo.width*point.y/self.frame.size.height;
+                height = [Singleton getSingle].current_sdkTvInfo.height*point.y/self.frame.size.height;
             }
             else
             {
@@ -2493,8 +2429,14 @@
             tvuPoint.p_x = width;
             tvuPoint.p_y = height;
             tvuPoint.p_id = 0;
+            tvuPoint.tag = 1234;
             tvuPoint.current_touch = touch;
+            
             [_mutilPoint addObject:tvuPoint];
+            NSLog(@"手势按下: %@", _mutilPoint);
+            NSLog(@"px-- %f", tvuPoint.p_x);
+            NSLog(@"py-- %f", tvuPoint.p_y);
+            
             [tvuPoint release];
             Singleton* single = [Singleton getSingle];
             if(single.tvType == 1)
@@ -2503,27 +2445,26 @@
             }
             else
             {
+                
                 sendMutiEvent(single.current_sdk.tvIp,single.current_sdk.tvServerport,single.current_sdk.tvUdpPort, 0, [_mutilPoint count], _mutilPoint);
             }
         }
     }
-
-    
 }
-
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     if([[event allTouches] count] > 2)
     {
         return;
     }
+    
     for(UITouch* everyTouch in [event allTouches])
     {
         if(everyTouch.phase == 1)
         {
             for(NSTvuPoint* point in _mutilPoint)
             {
-                if([everyTouch isEqual:point.current_touch])
+                if([everyTouch isEqual:point.current_touch] && point.tag == 1234)
                 {
                     CGPoint locPoint = [everyTouch locationInView:self];
                     int width = 0, height = 0;
@@ -2533,7 +2474,7 @@
                     if(single.tvType != 1)
                     {
                         width = single.current_sdkTvInfo.width*locPoint.x/self.frame.size.width;
-                        height = single.current_sdkTvInfo.width*locPoint.y/self.frame.size.height;
+                        height = single.current_sdkTvInfo.height*locPoint.y/self.frame.size.height;
                     }
                     else
                     {

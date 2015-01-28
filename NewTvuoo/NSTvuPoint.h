@@ -15,6 +15,6 @@
 @property (nonatomic, assign) float p_y;
 @property (nonatomic, retain) UITouch* current_touch;
 @property (nonatomic, retain) AndroidGameButton* button;
-
+@property (nonatomic, assign) int tag;
 @property (nonatomic, retain) KeyBean* keyBean;
 @end

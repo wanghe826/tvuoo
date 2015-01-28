@@ -42,7 +42,7 @@
 @class TouchMess;
 @class NSTvuPoint;
 
-@interface MouseControlViewController : UIViewController<UIGestureRecognizerDelegate,ExitHandle,UIAlertViewDelegate,LoadFailedDelegate, CallBack>
+@interface MouseControlViewController : UIViewController<UIGestureRecognizerDelegate,ExitHandle,UIAlertViewDelegate,LoadFailedDelegate, CallBack, UIWebViewDelegate>
 {
     int _avalibaleTouchNum ;
     

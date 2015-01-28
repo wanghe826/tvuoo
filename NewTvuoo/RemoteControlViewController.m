@@ -241,17 +241,18 @@
         [self.gestureRemote setBackgroundColor:[UIColor whiteColor]];
         
 //        if(single.switcher.tvu_showremote_switch == 0)
-        if([[AllUrl getInstance] tvu_showgame_switch] != 0)
-        {
-            SurpriseView* surprise = [[SurpriseView alloc] initWithNibName:@"SurpriseView" bundle:nil];
-            [self.navigationController pushViewController:surprise animated:NO];
-            [surprise release];
-        }
-        else
+//        NSLog(@"是否显示超级遥控:%d", [AllUrl getInstance] tvu_s)
+        if([[AllUrl getInstance] tvu_showremote_switch] == 1)
         {
             DownloadRemoteViewController* downRemote = [[DownloadRemoteViewController alloc] initWithNibName:@"DownloadRemoteViewController" bundle:nil];
             [self.navigationController pushViewController:downRemote animated:NO];
             [downRemote release];
+        }
+        else
+        {
+            SurpriseView* surprise = [[SurpriseView alloc] initWithNibName:@"SurpriseView" bundle:nil];
+            [self.navigationController pushViewController:surprise animated:NO];
+            [surprise release];
         }
     }
 }

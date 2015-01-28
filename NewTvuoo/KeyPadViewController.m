@@ -593,17 +593,17 @@
         _hKeyPadLabel.textColor = blueColor;
     }
 //    if([Singleton getSingle].switcher.tvu_showremote_switch == 0)
-    if([[AllUrl getInstance] tvu_showgame_switch] != 0)
-    {
-        SurpriseView* surprise = [[SurpriseView alloc] initWithNibName:@"SurpriseView" bundle:nil];
-        [self.navigationController pushViewController:surprise animated:NO];
-        [surprise release];
-    }
-    else
+    if([[AllUrl getInstance] tvu_showgame_switch] == 1)
     {
         DownloadRemoteViewController* download = [[DownloadRemoteViewController alloc] initWithNibName:@"DownloadRemoteViewController" bundle:nil];
         [self.navigationController pushViewController:download animated:NO];
         [download release];
+    }
+    else
+    {
+        SurpriseView* surprise = [[SurpriseView alloc] initWithNibName:@"SurpriseView" bundle:nil];
+        [self.navigationController pushViewController:surprise animated:NO];
+        [surprise release];
     }
     
 }

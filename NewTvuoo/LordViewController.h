@@ -37,6 +37,7 @@
 }
 - (void) updateAvalibleTv;
 - (void) pressBtn: (id)sender;
+- (void) updateHint;
 
 @property (nonatomic, retain) Singleton* single;
 @property (nonatomic, retain) UIImageView* hintIv;

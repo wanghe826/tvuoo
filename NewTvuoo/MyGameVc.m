@@ -187,7 +187,7 @@
     [self.view addSubview:self.activityIndicator];
     [self initFailedUI];
     
-    [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(timerTarget) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(timerTarget) userInfo:nil repeats:YES];
     
     self.gameList = [[UITableView alloc] initWithFrame:CGRectMake(0,141,320,380) style:UITableViewStylePlain];
     self.flag = HOT;

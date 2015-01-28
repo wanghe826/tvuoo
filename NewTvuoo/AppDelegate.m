@@ -43,20 +43,22 @@ static int myClock = 0;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     startJni();         //  通讯开始
+    [self initData];
     
     [MobClick startWithAppkey:@"53d7015d56240b939406556c"];
     [UMFeedback setAppkey:@"53d7015d56240b939406556c"];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];   //禁用自动休眠定时器
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    [self initData];
+    
     SplashView* splashView = [[[SplashView alloc] initWithNibName:nil bundle:nil] autorelease];
     splashView.view.alpha = 0;
-    
+    sleep(5);
     LordViewController* lordViewController = [[[LordViewController alloc] initWithNibName:@"LordViewController" bundle:nil] autorelease];
     ViewControllerOrientation* viewControllerOrientation = nil;
     
-    NSLog(@"topMessage == %d", [self topMessage]);
+    
+    NSLog(@"是否显示手机游戏%d",[[AllUrl getInstance] tvu_showgame_switch]);
     if([self topMessage] == 5)
     {
         viewControllerOrientation = [[ViewControllerOrientation alloc] initWithRootViewController:lordViewController];
@@ -64,6 +66,7 @@ static int myClock = 0;
         
         [Singleton getSingle].viewController = lordViewController;
         //            [splashView.navigationController pushViewController:lordViewController animated:YES];
+        
         [viewControllerOrientation.navigationController pushViewController:lordViewController animated:YES];
     }
     else
@@ -98,6 +101,7 @@ static int myClock = 0;
         }
     }];
      */
+//    [self getUrlAndUpdate];
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = viewControllerOrientation;
     [self.window makeKeyAndVisible];
@@ -106,6 +110,31 @@ static int myClock = 0;
     
     [self startWatchingNetworkStatus];
     return YES;
+}
+
+- (void) getUrlAndUpdate
+{
+    AllUrl* allUrl = [AllUrl getInstance];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSMutableString* updateUrl = [[NSMutableString alloc] initWithString:[allUrl updatedUrl]];
+        [updateUrl appendString:@"?cid="];
+        [updateUrl appendString:[NSString stringWithFormat:@"%d", 9527]];
+        [updateUrl appendString:@"&pkg="];
+        NSString* bundleId = [[NSBundle mainBundle] bundleIdentifier];
+        [updateUrl appendString:bundleId];
+        [updateUrl appendString:@"&vcode="];
+        NSString* vcodeStr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        [updateUrl appendString:vcodeStr];
+        [updateUrl appendString:@"&plat="];
+        [updateUrl appendString:[NSString stringWithFormat:@"%d",4]];
+        NSLog(@"updateUrl-----:%@", updateUrl);
+        [Singleton getSingle].updateInfo  = [ParseJson createUpdateInfoFromJson:updateUrl];
+        if(single.viewController != nil)
+        {
+            [single.viewController performSelectorOnMainThread:@selector(updateHint) withObject:nil waitUntilDone:YES];
+        }
+        [updateUrl release];
+    });
 }
 
 #pragma mark Network Watching
@@ -208,11 +237,14 @@ static int myClock = 0;
         [updateUrl appendString:@"&vcode="];
         NSString* vcodeStr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         [updateUrl appendString:vcodeStr];
+        [updateUrl appendString:@"&plat="];
+        [updateUrl appendString:[NSString stringWithFormat:@"%d",4]];
         NSLog(@"updateUrl-----:%@", updateUrl);
         [Singleton getSingle].updateInfo  = [ParseJson createUpdateInfoFromJson:updateUrl];
         [updateUrl release];
     });
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -579,7 +579,7 @@
         
         gameIntroduce.gameInfo = gameInfo;
         
-        [self.navigationController pushViewController:gameIntroduce animated:YES];
+        [self.navigationController pushViewController:gameIntroduce animated:NO];
         [gameIntroduce release];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
@@ -589,7 +589,7 @@
         AppIntroViewController* gameIntroduce = [[AppIntroViewController alloc] initWithNibName:nil bundle:nil];
         GameInfo* gameInfo = [self.array2 objectAtIndex:row];
         gameIntroduce.gameInfo = gameInfo;
-        [self.navigationController pushViewController:gameIntroduce animated:YES];
+        [self.navigationController pushViewController:gameIntroduce animated:NO];
         [gameIntroduce release];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
