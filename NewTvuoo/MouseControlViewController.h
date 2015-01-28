@@ -110,6 +110,8 @@
     BOOL _isMutilplePoint;
     NSMutableArray* _mutilPointArray;
     NSUInteger _numOfPoint;
+    
+    NSMutableArray* _keyEventArray;
 }
 
 @property (retain, nonatomic) NSArray* keyBeanArray;

@@ -14,12 +14,21 @@
 @synthesize p_y;
 @synthesize current_touch;
 @synthesize button;
+@synthesize keyBean;
 - (id) init
 {
     if(self = [super init])
     {
-        
+        self.keyBean = nil;
     }
     return self;
+}
+
+- (void) dealloc
+{
+    self.current_touch = nil;
+    self.button = nil;
+    self.keyBean = nil;
+    [super dealloc];
 }
 @end

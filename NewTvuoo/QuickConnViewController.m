@@ -885,6 +885,14 @@
                     [mouseVc release];
                 });
             }
+            else
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"载入失败" message:@"网络不给力，请重新连接" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    [alertView show];
+                    [alertView release];
+                });
+            }
         });
     }
     

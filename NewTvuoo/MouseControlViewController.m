@@ -523,6 +523,7 @@
     _numOfPoint = 0;
     _touchMessArray = [[NSMutableArray alloc] initWithCapacity:5];
     _mutilPointArray = [[NSMutableArray alloc] initWithCapacity:5];
+    _keyEventArray = [[NSMutableArray alloc] initWithCapacity:5];
     
     _isMutilplePoint = NO;
     _avalibaleTouchNum = 0;
@@ -1021,6 +1022,7 @@
 
 - (void)dealloc
 {
+    [_keyEventArray release];
     [_touchMessArray release];
     [_rockerArray release];
     [_rockerImageArray release];
@@ -1358,11 +1360,20 @@
                                     if(self.single.tvType == 1)
                                     {
                                         keyEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, 0, keyBean.targetKey, 0);
+                                        
                                     }
                                     else
                                     {
                                         keyEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, 0, keyBean.targetKey, 0);
                                     }
+                                    
+                                    NSTvuPoint* tvuPoint = [[NSTvuPoint alloc] init];
+                                    tvuPoint.current_touch = everyTouch;
+                                    tvuPoint.button = button;
+                                    tvuPoint.keyBean = keyBean;
+                                    [_keyEventArray addObject:tvuPoint];
+                                    [tvuPoint release];
+                                    
                                     return;
                                 }
                                 
@@ -1877,6 +1888,11 @@
     return -1;
 }
 
+- (void) sendKeyEventFunc:(UIEvent*)event
+{
+    
+}
+
 
 -(void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -1888,6 +1904,7 @@
         return;
     }
     
+    /*
     if(![self typeEqual2:touchSet])         //如果返回0，说明key的type为2，则发送keyEvent事件， 后面不用处理多点
     {
         NSLog(@"返回");
@@ -1897,6 +1914,34 @@
     {
         NSLog(@"非0返回");
     }
+     */
+    for(UITouch* touch in [event allTouches])
+    {
+        for(NSTvuPoint* tvuPoint in _keyEventArray)
+        {
+            if([touch isEqual:tvuPoint.current_touch])
+            {
+                if(tvuPoint.keyBean != nil)
+                {
+                    [tvuPoint.button setImage:tvuPoint.button.imageUp forState:UIControlStateNormal];
+                    if(self.single.tvType == 1)
+                    {
+                        NSLog(@"发送keyTarget: %d", tvuPoint.keyBean.targetKey);
+                        NSLog(@"发送idd: %d", tvuPoint.keyBean.idd);
+                        keyEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, 1, tvuPoint.keyBean.targetKey, 0);
+                    }
+                    else
+                    {
+                        keyEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, 1, tvuPoint.keyBean.targetKey, 0);
+                    }
+                    return;
+                }
+            }
+        }
+    }
+    
+    
+    
     
     for(UITouch* everyTouch in touchSet)
     {
