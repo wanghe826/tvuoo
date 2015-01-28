@@ -162,33 +162,40 @@ static int myClock = 0;
                 str = @"网络不可用";
                 if([Singleton getSingle].viewController == nil)
                     return;
-                
-                UIAlertView* noNet = [[UIAlertView alloc] initWithTitle:@"网络已经断开" message:@"是否关闭程序" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"关闭", nil];
-                [self.window addSubview:noNet];
-                [noNet show];
-                
-                [Singleton getSingle].conn_statue = 0;
-                [[Singleton getSingle].tvArray removeAllObjects];
-                [[Singleton getSingle].sdkArray removeAllObjects];
-                [(LordViewController*)([Singleton getSingle].viewController) updateAvalibleTv];
-                [noNet release];
+                [self noWifi];
                 break;
             }
             case ReachableViaWiFi:
                 str = @"wifi网络可用";
+                [self noWifi];
                 break;
             case ReachableViaWWAN:
                 str = @"3G/GPRS网络可用";
+                [self noWifi];
                 break;
                 
             default:
                 str = @"未知网络";
+                [self noWifi];
                 break;
         }
         NSLog(@"%@", str);
     }
     
     _status = curStatus;
+}
+
+- (void) noWifi
+{
+    UIAlertView* noNet = [[UIAlertView alloc] initWithTitle:@"网络已经断开" message:@"是否关闭程序" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"关闭", nil];
+    [self.window addSubview:noNet];
+    [noNet show];
+    
+    [Singleton getSingle].conn_statue = 0;
+    [[Singleton getSingle].tvArray removeAllObjects];
+    [[Singleton getSingle].sdkArray removeAllObjects];
+    [(LordViewController*)([Singleton getSingle].viewController) updateAvalibleTv];
+    [noNet release];
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
