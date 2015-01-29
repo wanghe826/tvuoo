@@ -1071,133 +1071,6 @@
     
 }
 
-- (int) button_move_in:(UITouch*)everyTouch withAction:(int)action withAndroidGameBtn:(AndroidGameButton*)button
-{
-    if(CGRectContainsPoint(button.frame, [everyTouch locationInView:self.view]) && !CGRectContainsPoint(button.frame, [everyTouch previousLocationInView:self.view]))
-    {
-        if(everyTouch.phase == 1)
-        {
-            _avalibaleTouchNum++;
-            [button setImage:button.imageDown forState:UIControlStateNormal];
-            int tag = button.tag;
-            for(KeyBean* keyBean in self.keyBeanArray)
-            {
-                if (keyBean.idd == tag)
-                {
-                    int width = 0, height = 0;
-                    if(self.single.tvType != 1)
-                    {
-                        width = [Singleton getSingle].current_sdkTvInfo.width*keyBean.tvX/1920;
-                        height = [Singleton getSingle].current_sdkTvInfo.height*keyBean.tvY/1080;
-                    }
-                    else
-                    {
-                        width = [Singleton getSingle].current_tvInfo.width*keyBean.tvX/1920;
-                        height = [Singleton getSingle].current_tvInfo.height*keyBean.tvY/1080;
-                    }
-                    TvuPoint* point = new TvuPoint();
-                    point->setId(_avalibaleTouchNum-1);
-                    point->setX(width);
-                    point->setY(height);
-                    _pointArray[_avalibaleTouchNum-1] = point;
-                    
-                    break;
-                }
-            }
-            //            if(_avalibaleTouchNum == 1)
-            //            {
-            //                action = 0;
-            //            }
-            //            else if(_avalibaleTouchNum > 1)
-            //            {
-            //                action = (_avalibaleTouchNum-1)*256+5;
-            //            }
-            
-            if(_isMutilplePoint)
-            {
-                action = (_avalibaleTouchNum-1)*256+6;
-            }
-            else
-            {
-                action = 1;
-            }
-            
-            if(self.single.tvType == 1)
-            {
-                //                sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, _avalibaleTouchNum, _pointArray);
-            }
-            else
-            {
-                //                sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, _avalibaleTouchNum, _pointArray);
-            }
-            return 0;
-        }
-    }
-    return -1;
-}
-
-
-- (int) button_move_out:(UITouch*)everyTouch withAction:(int)action withAndroidGameBtn:(AndroidGameButton*)button
-{
-    if(CGRectContainsPoint(button.frame, [everyTouch previousLocationInView:self.view]) && !CGRectContainsPoint(button.frame, [everyTouch locationInView:self.view]))
-        //    if(CGRectContainsPoint(button.frame, [everyTouch previousLocationInView:self.view]) && !CGRectContainsPoint(button.frame, [everyTouch locationInView:(UIView*)button]))
-    {
-        if(everyTouch.phase == 1)
-        {
-            [button setImage:button.imageUp forState:UIControlStateNormal];
-            int tag = button.tag;
-            int pointId = 0;        //触摸点的ID；
-            
-            for(KeyBean* keyBean in self.keyBeanArray)
-            {
-                if (keyBean.idd == tag)
-                {
-                    int width = 0, height = 0;
-                    if(self.single.tvType != 1)
-                    {
-                        width = [Singleton getSingle].current_sdkTvInfo.width*keyBean.tvX/1920;
-                        height = [Singleton getSingle].current_sdkTvInfo.height*keyBean.tvY/1080;
-                    }
-                    else
-                    {
-                        width = [Singleton getSingle].current_tvInfo.width*keyBean.tvX/1920;
-                        height = [Singleton getSingle].current_tvInfo.height*keyBean.tvY/1080;
-                    }
-                    
-                    TvuPoint* point = new TvuPoint();
-                    point->setId(pointId);
-                    point->setX(width);
-                    point->setY(height);
-                    _pointArray[pointId] = point;
-                    
-                    break;
-                }
-            }
-            if(_avalibaleTouchNum == 1)
-            {
-                action = 1;
-            }
-            else if(_avalibaleTouchNum > 1)
-            {
-                action = pointId*256+6;
-            }
-            
-            if(self.single.tvType == 1)
-            {
-                //                sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, _avalibaleTouchNum, _pointArray);
-            }
-            else
-            {
-                //                sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, _avalibaleTouchNum, _pointArray);
-            }
-            
-            _avalibaleTouchNum--;
-            return 0;
-        }
-    }
-    return -1;
-}
-
 
 - (void) backgroundTouchBegan:(UIEvent*)event
 {
@@ -1526,7 +1399,6 @@
                         {
                             sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
                         }
-                        
                     }
                     
                 }
@@ -1612,6 +1484,7 @@
                     if(CGRectContainsPoint(button.frame, [everyTouch locationInView:self.view]))
                     {
                         isInButton = YES;
+                        return;
                     }
                 }
             }
@@ -1936,10 +1809,11 @@
                         sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
                     }
                     [_mutilPointArray removeObject:point];
+                    _numOfPoint--;
                     return;
                 }
             }
-            _numOfPoint--;
+            
         }
     }
     return;

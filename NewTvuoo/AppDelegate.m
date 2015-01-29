@@ -68,6 +68,7 @@ static int myClock = 0;
         //            [splashView.navigationController pushViewController:lordViewController animated:YES];
         
         [viewControllerOrientation.navigationController pushViewController:lordViewController animated:YES];
+        [self startWatchingNetworkStatus];
     }
     else
     {
@@ -108,7 +109,7 @@ static int myClock = 0;
     [self.window release];
     [viewControllerOrientation release];
     
-    [self startWatchingNetworkStatus];
+    
     return YES;
 }
 
@@ -167,7 +168,6 @@ static int myClock = 0;
             }
             case ReachableViaWiFi:
                 str = @"wifi网络可用";
-                [self noWifi];
                 break;
             case ReachableViaWWAN:
                 str = @"3G/GPRS网络可用";
@@ -187,7 +187,7 @@ static int myClock = 0;
 
 - (void) noWifi
 {
-    UIAlertView* noNet = [[UIAlertView alloc] initWithTitle:@"网络已经断开" message:@"是否关闭程序" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"关闭", nil];
+    UIAlertView* noNet = [[UIAlertView alloc] initWithTitle:@"当前网络不可用" message:@"是否关闭程序" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"关闭", nil];
     [self.window addSubview:noNet];
     [noNet show];
     
