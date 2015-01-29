@@ -263,6 +263,7 @@ static int myClock = 0;
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
 //    [[Singleton getSingle] release];
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     NSLog(@"applicationDidEnterBackground");
     UIApplication* app = [UIApplication sharedApplication];
     _bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
@@ -308,6 +309,7 @@ static int myClock = 0;
 {
     NSLog(@"applicationWillTerminate");
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window

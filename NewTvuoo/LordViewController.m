@@ -811,6 +811,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //获得用户许可
+//    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+//    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    
     
     _updateDeviceTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(updateDeviceList) userInfo:nil repeats:YES];
     
@@ -1363,6 +1367,7 @@
         
 //        self.nLabel.text = [NSString stringWithFormat:@"%ld",(unsigned long)[self.tvArray count]];
         self.nLabel.text = [NSString stringWithFormat:@"%ld",(unsigned long)[[Singleton getSingle].tvArray count]];
+        
         [self.view addSubview:self.nLabel];
         self.nLabel.hidden = NO;
         self.hintIv.hidden = NO;
