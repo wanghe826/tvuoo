@@ -43,6 +43,8 @@
 @property (nonatomic, retain) id<CallBack> myExitGameDelegate;
 @property (nonatomic, retain) id<CallBack> mySdkBreakDownDelegate;
 @property (nonatomic, retain) id<CallBack> myAddTvInfoOrSdk;
+@property (nonatomic, retain) id<CallBack> myGetTvStateDelegate;
+@property (nonatomic, retain) id<CallBack> myGotoGetTvStateVcDelegate;
 
 @property int tag;
 

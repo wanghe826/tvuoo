@@ -25,6 +25,8 @@
 @synthesize myExitGameDelegate;
 @synthesize mySdkBreakDownDelegate;
 @synthesize myAddTvInfoOrSdk;
+@synthesize myGetTvStateDelegate;
+@synthesize myGotoGetTvStateVcDelegate;
 
 @synthesize conn_statue;    //0 没有发现连接   1 发现连接    2 连接成功
 @synthesize current_tvInfo;

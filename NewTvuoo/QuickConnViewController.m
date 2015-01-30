@@ -292,7 +292,7 @@
     
     
     
-    SearchBtn* searchBtn = [[SearchBtn alloc] initWithFrame:CGRectMake(649*w_rate, 40*h_rate+20, 40*w_rate, 40*h_rate)];
+    SearchBtn* searchBtn = [[SearchBtn alloc] initWithFrame:CGRectMake(649*w_rate-10, 40*h_rate+20, 30, 30)];
     //        [searchBtn sizeToFit];
     [searchBtn addTarget:self action:@selector(pressSearchBtn) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:searchBtn];

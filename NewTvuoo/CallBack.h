@@ -42,4 +42,6 @@
 
 - (void) addSdk;
 - (void) addTvInfo;
+
+- (void) gotoGetTvStateVc;
 @end

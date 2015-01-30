@@ -90,14 +90,6 @@
     //        label.center = CGPointMake(160, 36.33*h_rate+20);
     [self.view addSubview:label];
     [label release];
-    
-    UIButton* moreBtn = [[UIButton alloc] initWithFrame:CGRectMake(649*w_rate, 40*h_rate+20, 40*w_rate, 40*h_rate)];
-    //        [searchBtn sizeToFit];
-    [moreBtn setBackgroundImage:[UIImage imageNamed:@"zy_gengduo1.png"] forState:UIControlStateNormal];
-    [moreBtn setBackgroundImage:[UIImage imageNamed:@"zy_gengduo2.png"] forState:UIControlStateHighlighted];
-    [moreBtn addTarget:self action:@selector(pressMoreBtn) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:moreBtn];
-    [moreBtn release];
     // Do any additional setup after loading the view from its nib.
     
     //外边框
@@ -186,7 +178,7 @@
     }
     
     MBProgressHUD* hud = [[MBProgressHUD alloc] initWithView:self.view];
-    hud.labelText = @"很抱歉已经断开连接, 请重连!";
+    hud.labelText = @"网络异常,手机与电视连接断开,请您重新连接!";
     [self.view addSubview:hud];
     [self.view bringSubviewToFront:hud];
     [hud show:YES];
@@ -413,11 +405,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) pressMoreBtn
-{
-    
-}
-
 
 - (void) pressReturn
 {
@@ -428,6 +415,7 @@
 {
     
 }
+
 
 
 @end

@@ -61,7 +61,7 @@
 - (void) disconnectedWithSdk
 {
     MBProgressHUD* hud = [[MBProgressHUD alloc] initWithView:self.view];
-    hud.labelText = @"很抱歉,SDK已经断开连接, 请重连!";
+    hud.labelText = @"网络异常,手机与SDK游戏连接断开请您重新连接, 请重连!";
     [self.view addSubview:hud];
     [self.view bringSubviewToFront:hud];
     [hud show:YES];
@@ -616,7 +616,8 @@
     [self.view addSubview:_huituiLabel];
     
     _uv2 = [[UIButton alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
-    [_uv2 addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchUpInside];
+    [_uv2 addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchDown];
+    [_uv2 addTarget:self action:@selector(pressSelectedUp) forControlEvents:UIControlEventTouchUpInside];
 //    [_uv2 setBackgroundColor:[UIColor blackColor]];
     [_uv2.layer setBorderWidth:1.0];
     [_uv2.layer setCornerRadius:4.0];
@@ -626,7 +627,9 @@
 //    _xuanzhongBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     _xuanzhongBtn = [[UIButton alloc] init];
     _xuanzhongBtn.frame = CGRectMake(36,200, 45,45);
-    [_xuanzhongBtn addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchUpInside];
+    [_xuanzhongBtn addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchDown];
+    [_xuanzhongBtn addTarget:self action:@selector(pressSelectedUp) forControlEvents:UIControlEventTouchUpInside];
+    
     [_xuanzhongBtn setBackgroundImage:[UIImage imageNamed:@"sbcz_xuanzhong1.png"] forState:UIControlStateNormal];
     [_xuanzhongBtn setBackgroundImage:[UIImage imageNamed:@"sbcz_xuanzhong2.png"] forState:UIControlStateSelected];
     [self.view addSubview:_xuanzhongBtn];
@@ -982,14 +985,29 @@
     if(self.currentGameInfo.gameRoot == 0)
     {
         mouseEvent(single.current_sdk.tvIp, single.current_sdk.tvServerport, 0, 0, 0, 0);
-        mouseEvent(single.current_sdk.tvIp, single.current_sdk.tvServerport, 1, 0, 0, 0);
+//        mouseEvent(single.current_sdk.tvIp, single.current_sdk.tvServerport, 1, 0, 0, 0);
     }
     else
     {
         mouseEvent(single.current_tv.tvIp, single.current_tv.tvServerport, 0, 0, 0, 0);
+//        mouseEvent(single.current_tv.tvIp, single.current_tv.tvServerport, 1, 0, 0, 0);
+    }
+}
+
+- (void) pressSelectedUp
+{
+    if(self.currentGameInfo.gameRoot == 0)
+    {
+//        mouseEvent(single.current_sdk.tvIp, single.current_sdk.tvServerport, 0, 0, 0, 0);
+        mouseEvent(single.current_sdk.tvIp, single.current_sdk.tvServerport, 1, 0, 0, 0);
+    }
+    else
+    {
+//        mouseEvent(single.current_tv.tvIp, single.current_tv.tvServerport, 0, 0, 0, 0);
         mouseEvent(single.current_tv.tvIp, single.current_tv.tvServerport, 1, 0, 0, 0);
     }
 }
+
 - (void) pressHuituiBtn
 {
     if(self.currentGameInfo.gameRoot == 0)
@@ -1467,7 +1485,14 @@
             int port = tv.tvUdpPort;
 
             mouseIV.frame = CGRectMake(loc.x, loc.y, 40, 40);
-            mouseMove(ip, port, (loc.x-preLoc.x)*1.5*w_rate, (loc.y-preLoc.y)*1.5*h_rate);
+            if(_uv2.selected || _xuanzhongBtn.selected)
+            {
+                mouseMoveDown(ip, port, (loc.x-preLoc.x)*1.5*w_rate, (loc.y-preLoc.y)*1.5*h_rate);
+            }
+            else
+            {
+                mouseMove(ip, port, (loc.x-preLoc.x)*1.5*w_rate, (loc.y-preLoc.y)*1.5*h_rate);
+            }
         }
     }
     else
@@ -1624,12 +1649,12 @@
                             iv.center = [everyTouch locationInView:self.view];
                             if(self.single.tvType == 1)
                             {
-                                sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                                sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvUdpPort, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
                                 return;
                             }
                             else
                             {
-                                sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                                sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvUdpPort, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
                                 return;
                             }
                         }
@@ -1705,12 +1730,12 @@
                              iv.center = [everyTouch locationInView:self.view];
                              if(self.single.tvType == 1)
                              {
-                             sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                             sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvUdpPort, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
                                  return;
                              }
                              else
                              {
-                             sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                             sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvUdpPort, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
                                  return;
                              }
                             
@@ -1802,11 +1827,11 @@
                     NSLog(@"抬起要发送的数组是：%@", _mutilPointArray);
                     if(self.single.tvType == 1)
                     {
-                        sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                        sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvServerport, action, [_mutilPointArray count], _mutilPointArray);
                     }
                     else
                     {
-                        sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
+                        sendMutiEvent(self.single.current_sdk.tvIp, self.single.current_sdk.tvServerport, self.single.current_sdk.tvServerport, action, [_mutilPointArray count], _mutilPointArray);
                     }
                     [_mutilPointArray removeObject:point];
                     _numOfPoint--;

@@ -43,6 +43,7 @@ void  closeTcpClient(int ip, int port);
 void validatePostion(float paramFloat1, float paramFloat2);
 void  connectServer(int ip, int port);
     void  mouseMove(int ip, int port, float x, float y);
+    void  mouseMoveDown(int ip, int port, float x, float y);
     void  sendGame(int ip, int port, int act, string gameInfo);
 /*
 //获取设备名

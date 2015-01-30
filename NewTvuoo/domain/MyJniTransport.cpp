@@ -24,6 +24,7 @@
 #include <vector>
 #include "AllUrl.h"
 #import "NSTvuPoint.h"
+//#import "LordViewController.h"
 //#define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "native-activity", __VA_ARGS__))
 //#define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, "native-activity", __VA_ARGS__))
 //#define LOGE(...) ((void)__android_log_print(ANDROID_LOG_ERROR, "native-activity", __VA_ARGS__))
@@ -210,7 +211,7 @@ char* parseIp(int ip)
 //连接状态 conflag 0 失败 1成功
 void conStatue(int ip, int conflag)
 {
-    if(conflag <= 1)
+    if(conflag < 1)
     {
         char* ipAddr = parseIp(ip);
         NSLog(@"连接失败 %s\n，，， %d", ipAddr, conflag);
@@ -324,7 +325,6 @@ void  closeTcpClient(int ip, int port) {
 		int pIp = ip;
 		int pport = port;
 		device->closeTcpClient(pIp, pport);
-		breakDev(pIp, pport);
 	}
 
 }
@@ -1039,14 +1039,30 @@ void checkUseState(int ip, int port)
     
 void getUseState(int state)
 {
-    if([Singleton getSingle].myDelegate)
+    NSLog(@"getUseStateeeeeeee");
+    if([Singleton getSingle].myGetTvStateDelegate)          //在相关页面
     {
-        if([[Singleton getSingle].myDelegate respondsToSelector:@selector(getTvState:)])
+        if([[Singleton getSingle].myGetTvStateDelegate respondsToSelector:@selector(getTvState:)])
         {
 //            [[Singleton getSingle].myDelegate getTvState:state];
-            NSObject* object = [Singleton getSingle].myDelegate;
+            NSObject* object = [Singleton getSingle].myGetTvStateDelegate;
             [object performSelectorOnMainThread:@selector(getTvState:) withObject:[NSNumber numberWithInt:state] waitUntilDone:YES];
         }
+    }
+    else                                                    //在其他页面
+    {
+        NSLog(@"跳转页面");
+        [Singleton getSingle].current_tvInfo.canadb = 0;
+        
+        if([Singleton getSingle].myGotoGetTvStateVcDelegate != nil)
+        {
+            if([[Singleton getSingle].myGotoGetTvStateVcDelegate respondsToSelector:@selector(gotoGetTvStateVc)])
+            {
+                [[Singleton getSingle].myGotoGetTvStateVcDelegate gotoGetTvStateVc];
+            }
+        }
+        
+        
     }
 }
     

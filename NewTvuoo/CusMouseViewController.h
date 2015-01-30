@@ -10,7 +10,10 @@
 #import "Singleton.h"
 #import "CallBack.h"
 @interface CusMouseViewController : UIViewController<CallBack>
-
+{
+    UIButton* _uv2;
+    UIButton* _xuanzhongBtn;
+}
 @property (retain, nonatomic) Singleton* single;
 @property float h_rate;
 @property float w_rate;

@@ -160,23 +160,24 @@ static int myClock = 0;
         switch (curStatus) {
             case NotReachable:
             {
-                str = @"网络不可用";
+                str = @"当前网络不可用";
                 if([Singleton getSingle].viewController == nil)
                     return;
-                [self noWifi];
+                [self noWifi:str];
                 break;
             }
             case ReachableViaWiFi:
                 str = @"wifi网络可用";
                 break;
             case ReachableViaWWAN:
-                str = @"3G/GPRS网络可用";
-                [self noWifi];
+//                str = @"3G/GPRS网络可用";
+                str = @"您正在使用非WiFi网络";
+                [self noWifi:str];
                 break;
                 
             default:
                 str = @"未知网络";
-                [self noWifi];
+                [self noWifi:str];
                 break;
         }
         NSLog(@"%@", str);
@@ -185,9 +186,9 @@ static int myClock = 0;
     _status = curStatus;
 }
 
-- (void) noWifi
+- (void) noWifi:(NSString*)str
 {
-    UIAlertView* noNet = [[UIAlertView alloc] initWithTitle:@"当前网络不可用" message:@"是否关闭程序" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"关闭", nil];
+    UIAlertView* noNet = [[UIAlertView alloc] initWithTitle:str message:@"是否关闭程序" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"关闭", nil];
     [self.window addSubview:noNet];
     [noNet show];
     

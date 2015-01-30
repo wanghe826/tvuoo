@@ -241,8 +241,7 @@
     _activityView.center = self.view.center;
     [self.view addSubview:_activityView];
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(rotateImage) userInfo:nil repeats:YES];
-    [_timer fire];
+    
     
     UILabel* label1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
     label1.textAlignment = NSTextAlignmentCenter;
@@ -253,6 +252,7 @@
     
     [label1 release];
     [Singleton getSingle].myDelegate = self;
+    
 }
 
 #pragma getState
@@ -264,8 +264,9 @@
         case 0:
         {
             [Singleton getSingle].current_tvInfo.canadb = 1;
-            LordViewController* loadVC = [Singleton getSingle].viewController;
-            [self.navigationController pushViewController:loadVC animated:NO];
+//            LordViewController* loadVC = [Singleton getSingle].viewController;
+//            [self.navigationController pushViewController:loadVC animated:NO];
+            [self.navigationController popToRootViewControllerAnimated:YES];
             break;
         }
         case 1:
@@ -303,12 +304,17 @@
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:YES];
+    [Singleton getSingle].myGetTvStateDelegate = nil;
+    if([_timer isValid])
     [_timer invalidate];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    [Singleton getSingle].myGetTvStateDelegate = self;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(rotateImage) userInfo:nil repeats:YES];
+    [_timer fire];
     checkUseState([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport);
 }
 

@@ -227,7 +227,6 @@
 #pragma callback 连接异常断开了
 - (void) disconnectedWithTv
 {
-    NSLog(@"LordView 的 回调");
     //    int iP = [ip intValue];
     //    const char* disConnIp = parseIp(iP);
     //    NSString* str = [NSString stringWithFormat:@"%s", disConnIp];
@@ -242,7 +241,7 @@
     }
     
     MBProgressHUD* hud = [[MBProgressHUD alloc] initWithView:self.view];
-    hud.labelText = @"很抱歉已经断开连接, 请重连!";
+    hud.labelText = @"网络异常,手机与电视连接断开,请您重新连接";
     [self.view addSubview:hud];
     [self.view bringSubviewToFront:hud];
     [hud show:YES];
@@ -915,6 +914,19 @@
     [self.view addGestureRecognizer:recognizer];
     [recognizer release];
     [self updateHint];
+    self.single.myGotoGetTvStateVcDelegate = self;
+}
+
+#pragma gotoGetTvStateVc
+- (void) gotoGetTvStateVc
+{
+    NSLog(@"gggggggggggd");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        GetTvStateViewController* getTvStatueVc = [[GetTvStateViewController alloc] initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:getTvStatueVc animated:YES];
+        [getTvStatueVc release];
+    });
+    
 }
 
 //更新提示

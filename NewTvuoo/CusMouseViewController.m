@@ -187,7 +187,7 @@
     }
     
     MBProgressHUD* hud = [[MBProgressHUD alloc] initWithView:self.view];
-    hud.labelText = @"很抱歉已经断开连接, 请重连!";
+    hud.labelText = @"网络异常,手机与电视连接断开,请您重新连接!";
     [self.view addSubview:hud];
     [self.view bringSubviewToFront:hud];
     [hud show:YES];
@@ -256,22 +256,26 @@
     [self.view addSubview:huituiLabel];
     [huituiLabel release];
     
-    UIButton* uv2 = [[UIButton alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
+    _uv2 = [[UIButton alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
 //    UIImageView* uv2 = [[UIImageView alloc] initWithFrame:CGRectMake(10, 162, 98, 140)];
-    [uv2 addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchUpInside];
-    [uv2 setBackgroundColor:[UIColor whiteColor]];
-    [uv2.layer setBorderWidth:1.0];
-    [uv2.layer setCornerRadius:4.0];
-    [uv2.layer setBorderColor:[blueColor CGColor]];
-    [self.view addSubview:uv2];
-    [uv2 release];
+    [_uv2 addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchDown];
+    [_uv2 addTarget:self action:@selector(pressSelectedUp) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton* xuanzhongBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    xuanzhongBtn.frame = CGRectMake(36,200, 45,45);
-    [xuanzhongBtn addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchUpInside];
-    [xuanzhongBtn setImage:[UIImage imageNamed:@"sbcz_xuanzhong3.png"] forState:UIControlStateNormal];
-    [xuanzhongBtn setImage:[UIImage imageNamed:@"sbcz_xuanzhong2.png"] forState:UIControlStateHighlighted];
-    [self.view addSubview:xuanzhongBtn];
+    [_uv2 setBackgroundColor:[UIColor whiteColor]];
+    [_uv2.layer setBorderWidth:1.0];
+    [_uv2.layer setCornerRadius:4.0];
+    [_uv2.layer setBorderColor:[blueColor CGColor]];
+    [self.view addSubview:_uv2];
+//    [uv2 release];
+    
+    _xuanzhongBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _xuanzhongBtn.frame = CGRectMake(36,200, 45,45);
+    [_xuanzhongBtn addTarget:self action:@selector(pressSelected) forControlEvents:UIControlEventTouchDown];
+    [_xuanzhongBtn addTarget:self action:@selector(pressSelectedUp) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_xuanzhongBtn setImage:[UIImage imageNamed:@"sbcz_xuanzhong3.png"] forState:UIControlStateNormal];
+    [_xuanzhongBtn setImage:[UIImage imageNamed:@"sbcz_xuanzhong2.png"] forState:UIControlStateHighlighted];
+    [self.view addSubview:_xuanzhongBtn];
     UILabel* xuanzhongLabel = [[UILabel alloc] initWithFrame:CGRectMake(42, 240, 35, 45)];
     xuanzhongLabel.text = @"选中";
     xuanzhongLabel.textColor = [UIColor blackColor];
@@ -455,8 +459,14 @@
 - (void) pressSelected
 {
     mouseEvent(single.current_tv.tvIp, single.current_tv.tvServerport, 0, 0, 0, 0);
+}
+
+- (void) pressSelectedUp
+{
     mouseEvent(single.current_tv.tvIp, single.current_tv.tvServerport, 1, 0, 0, 0);
 }
+
+
 - (void) pressHuituiBtn
 {
     keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 0, 4, 0);
@@ -577,7 +587,14 @@
         {
            mouseIV.frame = CGRectMake(loc.x, loc.y, 40, 40);
         }
-        mouseMove(ip, port, (loc.x-preLoc.x+0.5)*self.w_rate, (loc.y-preLoc.y)*2.8*self.h_rate);
+        if(_uv2.isSelected || _xuanzhongBtn.isSelected)
+        {
+            mouseMoveDown(ip, port, (loc.x-preLoc.x+0.5)*self.w_rate, (loc.y-preLoc.y)*2.8*self.h_rate);
+        }
+        else
+        {
+            mouseMove(ip, port, (loc.x-preLoc.x+0.5)*self.w_rate, (loc.y-preLoc.y)*2.8*self.h_rate);
+        }
     }
 }
 

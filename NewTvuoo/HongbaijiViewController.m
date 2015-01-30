@@ -75,7 +75,7 @@
     }
     
     MBProgressHUD* hud = [[MBProgressHUD alloc] initWithView:self.view];
-    hud.labelText = @"很抱歉已经断开连接, 请重连!";
+    hud.labelText = @"网络异常,手机与电视连接断开,请您重新连接!";
     [self.view addSubview:hud];
     [self.view bringSubviewToFront:hud];
     [hud show:YES];
