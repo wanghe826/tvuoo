@@ -873,7 +873,7 @@
     [self.view addSubview:tvuooIV];
     [tvuooIV release];
     
-    UIButton* btn1 = [[UIButton alloc] initWithFrame:CGRectMake(659*w_rate, 40*h_rate+20, 40*w_rate, 40*h_rate)];
+    UIButton* btn1 = [[UIButton alloc] initWithFrame:CGRectMake(659*w_rate, 40*h_rate+20, 40*w_rate+5, 40*h_rate+5)];
     [btn1 addTarget:self action:@selector(pressMoreBtn) forControlEvents:UIControlEventTouchUpInside];
     [btn1 setBackgroundImage:[UIImage imageNamed:@"zy_gengduo1.png"] forState:UIControlStateNormal];
     [self.view addSubview:btn1];

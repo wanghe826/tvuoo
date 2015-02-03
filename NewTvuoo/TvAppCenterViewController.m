@@ -259,28 +259,31 @@
     [bottomIv release];
     
     _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    _btn1.frame = CGRectMake(50,525,100, 20);
+    _btn1.frame = CGRectMake(50,525,100, 25);
     [_btn1 setImage:[UIImage imageNamed:@"sjyx_shouyou2.png"] forState:UIControlStateNormal];
     [_btn1 addTarget:self action:@selector(btn1PressDown) forControlEvents:UIControlEventTouchDown];
     [_btn1 addTarget:self action:@selector(btn1Press) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btn1];
     
     _label1 = [[UILabel alloc] init];
-    _label1.frame = CGRectMake(65,545, 100, 20);
+    _label1.frame = CGRectMake(70,550, 100, 20);
     _label1.text = @"电视软件";
+    [_label1 setFont:[UIFont fontWithName:@"Courier New" size:14]];
     _label1.textColor = blueColor;
     [self.view addSubview:_label1];
     
     _btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    _btn2.frame = CGRectMake(210,525,40, 20);
+    _btn2.frame = CGRectMake(210,525,35, 25);
     [_btn2 setImage:[UIImage imageNamed:@"dsyy_guanli1.png"] forState:UIControlStateNormal];
+    [_btn2 setImage:[UIImage imageNamed:@"dsyy_guanli2.png"] forState:UIControlStateHighlighted];
     [_btn2 addTarget:self action:@selector(btn2PressDown) forControlEvents:UIControlEventTouchDown];
     [_btn2 addTarget:self action:@selector(btn2Press) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_btn2];
     
     _label2 = [[UILabel alloc] init];
-    _label2.frame = CGRectMake(195,545, 100, 20);
+    _label2.frame = CGRectMake(200,550, 100, 20);
     _label2.text = @"应用管理";
+    [_label2 setFont:[UIFont fontWithName:@"Courier New" size:14]];
     _label2.textColor = myGrayColor;
     [self.view addSubview:_label2];
 }
