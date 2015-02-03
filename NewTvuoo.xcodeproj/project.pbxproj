@@ -318,7 +318,6 @@
 		962075DF1A35740F00131780 /* NoWIFIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962075DD1A35740F00131780 /* NoWIFIViewController.m */; };
 		962075E01A35740F00131780 /* NoWIFIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962075DE1A35740F00131780 /* NoWIFIViewController.xib */; };
 		962075E21A35745800131780 /* wl_wifi.png in Resources */ = {isa = PBXBuildFile; fileRef = 962075E11A35745800131780 /* wl_wifi.png */; };
-		96235CB41A5B7F870041F622 /* libunzip_simulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96235CB21A5B7F870041F622 /* libunzip_simulator.a */; };
 		96235CB51A5B7F870041F622 /* libunzip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96235CB31A5B7F870041F622 /* libunzip.a */; };
 		962416E619C6C621000CBA94 /* HotGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 962416E419C6C621000CBA94 /* HotGameViewController.m */; };
 		962416E719C6C621000CBA94 /* HotGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962416E519C6C621000CBA94 /* HotGameViewController.xib */; };
@@ -880,7 +879,6 @@
 		962075DD1A35740F00131780 /* NoWIFIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoWIFIViewController.m; sourceTree = "<group>"; };
 		962075DE1A35740F00131780 /* NoWIFIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoWIFIViewController.xib; sourceTree = "<group>"; };
 		962075E11A35745800131780 /* wl_wifi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wl_wifi.png; sourceTree = "<group>"; };
-		96235CB21A5B7F870041F622 /* libunzip_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libunzip_simulator.a; sourceTree = "<group>"; };
 		96235CB31A5B7F870041F622 /* libunzip.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libunzip.a; sourceTree = "<group>"; };
 		962416E319C6C621000CBA94 /* HotGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotGameViewController.h; sourceTree = "<group>"; };
 		962416E419C6C621000CBA94 /* HotGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotGameViewController.m; sourceTree = "<group>"; };
@@ -1158,7 +1156,6 @@
 				963246F91A527F33007B52E1 /* libUMFeedback.a in Frameworks */,
 				965340261A0A1D960076CB4B /* AudioToolbox.framework in Frameworks */,
 				9663631019FE362400A9B0E7 /* libz.1.2.5.dylib in Frameworks */,
-				96235CB41A5B7F870041F622 /* libunzip_simulator.a in Frameworks */,
 				965C2D0A19D426BD003809B7 /* QuartzCore.framework in Frameworks */,
 				96235CB51A5B7F870041F622 /* libunzip.a in Frameworks */,
 				96B80BB819B85A470038928E /* CoreGraphics.framework in Frameworks */,
@@ -1803,7 +1800,6 @@
 			isa = PBXGroup;
 			children = (
 				96A528AE1A77A39E00759D82 /* SystemConfiguration.framework */,
-				96235CB21A5B7F870041F622 /* libunzip_simulator.a */,
 				96235CB31A5B7F870041F622 /* libunzip.a */,
 				963246D21A527B7B007B52E1 /* libz.dylib */,
 				962CCDE01A22E9A200A34F77 /* libz.1.1.3.dylib */,
@@ -2768,11 +2764,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -2803,12 +2799,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -2816,7 +2812,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
@@ -2846,11 +2842,11 @@
 					/Users/xubo/NewTvuoo,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2859,7 +2855,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = armv7;
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
@@ -2867,7 +2863,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_MODULES_AUTOLINK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: chen yibin (B26BTS3XQ6)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: chen yibin";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: chen yibin";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: chen yibin";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
@@ -2890,11 +2886,11 @@
 					/Users/xubo/NewTvuoo,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "arm64 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
