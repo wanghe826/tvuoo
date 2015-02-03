@@ -223,7 +223,6 @@
     [url release];
 }
 
-
 #pragma callback 连接异常断开了
 - (void) disconnectedWithTv
 {
