@@ -82,14 +82,11 @@
             });
         });
         alert.leftBlock = ^() {
-            NSLog(@"启动游戏11111111");
             [self getStartSdk];
         };
         alert.rightBlock = ^() {
-            NSLog(@"right button clicked");
         };
         alert.dismissBlock = ^() {
-            NSLog(@"Do something interesting after dismiss block");
         };
         
     });
@@ -123,11 +120,8 @@
     //启动游戏
     //        TvInfo* tvInfo = (TvInfo*)alertView.tag;
     TvInfo* tvInfo = _sdkGameTvInfo;
-    NSLog(@"开始启动dddddddd");
     if(tvInfo != nil)
     {
-        NSLog(@"tvinfo地址是：%p", tvInfo);
-        NSLog(@"name: %@", tvInfo.pkgName);
         NSMutableString* url = [[NSMutableString alloc] initWithString:[[AllUrl getInstance] gameInfoUrl]];
         [url appendString:@"?gamepkg="];
         [url appendString:tvInfo.pkgName];
@@ -148,7 +142,7 @@
             }
             else
             {
-                NSLog(@"没有连接");
+                
             }
         });
         [url release];
@@ -291,11 +285,9 @@
         {
 //            if(![self.timer isValid])
             [self.timer fire];
-            NSLog(@"self.timer不是空!");
         }
         else
         {
-            NSLog(@"self.time是空得！");
         }
     }
     else if(self.single.conn_statue == 1)
@@ -778,17 +770,23 @@
 
 - (void)hudWasHidden:(MBProgressHUD *)hud
 {
-    NSLog(@"hud is 隐藏!");
 }
 
 - (void) updateDeviceList
 {
-    
+    if([self.single.tvArray count] == 0)
+    {
+        [self updateAvalibleTv];
+    }
     for(TvInfo* tvInfo in self.single.tvArray)
     {
         int deltTime = [[NSDate date] timeIntervalSinceDate:tvInfo.date];
         if(abs(deltTime) > 200)
         {
+            if([self.single.current_tv isEqual:tvInfo])
+            {
+                continue;
+            }
             [self.single.tvArray removeObject:tvInfo];
             break;
         }
@@ -816,7 +814,6 @@
     
     _updateDeviceTimer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(updateDeviceList) userInfo:nil repeats:YES];
     
-    NSLog(@"home Path: %@", NSHomeDirectory());
     self.single = [Singleton getSingle];
     self.single.myDelegate = self;
     self.single.mySdkConnDelegate = self;
@@ -919,7 +916,6 @@
 #pragma gotoGetTvStateVc
 - (void) gotoGetTvStateVc
 {
-    NSLog(@"gggggggggggd");
     dispatch_async(dispatch_get_main_queue(), ^{
         GetTvStateViewController* getTvStatueVc = [[GetTvStateViewController alloc] initWithNibName:nil bundle:nil];
         [self.navigationController pushViewController:getTvStatueVc animated:YES];
@@ -935,7 +931,6 @@
     {
         if(self.single.updateInfo.update_model == 1 || self.single.updateInfo.update_model == 2)
         {
-            NSLog(@"有新版本 %@", self.single.updateInfo.update_url);
             if([self.single.updateInfo.update_url isEqualToString:@""])
                 return;
             NSString* cancelBtnTitle = [[NSString alloc] init];
@@ -967,13 +962,11 @@
         UpdateInfo* updateInfo = [Singleton getSingle].updateInfo;
         if(buttonIndex == 0)
         {
-            NSLog(@"暂不升级被按下了");
             if(updateInfo.update_model == 1)
             {
             }
             else if(updateInfo.update_model == 2)
             {
-                NSLog(@"退出程序被按下了");
                 if(_upgradeAlertView != nil)
                 {
                     [_upgradeAlertView release];
@@ -1007,7 +1000,6 @@
 - (void) connFailed:(int)ip
 {
     //连接失败的回调
-    NSLog(@"连接SDK失败的回调");
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if(_startSdk != nil)
@@ -1028,7 +1020,6 @@
 - (void) connSuccess:(NSData *)data
 {
     //连接成功的回调
-    NSLog(@"连接SDK成功的回调");
     if(_startSdk != nil)
     {
         [_startSdk removeFromSuperview];

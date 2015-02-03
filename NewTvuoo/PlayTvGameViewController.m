@@ -236,7 +236,6 @@
     
     _hotGameUrl = [[NSMutableString alloc] initWithString:[[AllUrl getInstance] topicUrl]];
     [_hotGameUrl appendString:[NSString stringWithFormat:@"?topicid=1"]];
-    NSLog(@"hotGameUrl : %@", _hotGameUrl);
     _newGameUrl = [[NSMutableString alloc] initWithString:[[AllUrl getInstance] topicUrl]];
     [_newGameUrl appendString:[NSString stringWithFormat:@"?topicid=2"]];
     _categoryUrl = [[NSMutableString alloc] initWithString:[[AllUrl getInstance] gameTypeUrl]];
@@ -369,7 +368,6 @@
 {
     
     [_failedIv removeFromSuperview];
-    NSLog(@"label的地址: %p", _failedLabel);
     if(_failedLabel != nil);
     [_failedLabel removeFromSuperview];
     [_listUv removeFromSuperview];
@@ -443,8 +441,6 @@
         if(self.hotPageNum == 1)       //第一次加载
         {
 //            _hotGameUrl = [_hotGameUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-            NSLog(@"hotJson: %@", HOT_JSON);
-            NSLog(@"hotGameUrl:%@", _hotGameUrl);
             self.hotGameArray = [ParseJson createGameInfoArrayFromJson:_hotGameUrl];
             
             if([self.hotGameArray count] > 0)
@@ -494,7 +490,6 @@
             }
             else
             {
-                NSLog(@"loadFailed!");
                 [self performSelectorOnMainThread:@selector(loadFailed) withObject:nil waitUntilDone:YES];
             }
         }
@@ -680,11 +675,9 @@
             [self connSuccRemoveSomeView];
             [self.view addSubview:self.gameList];
             [self.gameList reloadData];
-            NSLog(@"不等于0");
         }
         else
         {
-            NSLog(@"等于0");
             [self fetchDataIng];
         }
     }
@@ -714,11 +707,9 @@
             [self connSuccRemoveSomeView];
             [self.view addSubview:self.gameList];
             [self.gameList reloadData];
-            NSLog(@"self.cateGameArray count != 0");
         }
         else
         {
-            NSLog(@"self.cateGameArray count == 0");
             [self fetchDataIng];
         }
     }
@@ -1026,7 +1017,6 @@
     if ((height - scrollView.contentSize.height + scrollView.contentOffset.y) / height > 0.2)
     {
         // 调用上拉刷新方法
-        NSLog(@"上拉");
         
         if (self.flag == HOT)
         {

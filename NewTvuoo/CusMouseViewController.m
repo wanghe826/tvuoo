@@ -55,7 +55,6 @@
         }
         if(iPhone4)
         {
-            NSLog(@"is iphone4");
         }
         
     }
@@ -144,14 +143,12 @@
 
 - (void) zhuyeBtnPressed
 {
-    NSLog(@"主页按钮");
     keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 0, 3, 0);
     keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 1, 3, 0);
 }
 
 - (void) menuBtnPressed
 {
-    NSLog(@"菜单按钮");
     keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 0, 82, 0);
     keyEvent([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 1, 82, 0);
 }

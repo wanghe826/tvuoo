@@ -208,7 +208,6 @@
 {
     if(self.currentGameInfo == nil)
     {
-        NSLog(@"返回了");
         return;
     }
     UIView* yaoganIv = [self.view viewWithTag:827];
@@ -227,8 +226,6 @@
     {
         for(UIButton* button in _androidGameBtnArray)
         {
-            NSLog(@"增加按钮lllll %@", button);
-            
             [self.view addSubview:button];
         }
         return;
@@ -240,7 +237,6 @@
     /****增加摇杆****/
     if(_rockerArray == nil)
     {
-        NSLog(@"rocker是空得");
     }
     else
     {
@@ -251,7 +247,6 @@
             yaoganIv.frame = CGRectMake(0, 0, 80, 80);
             yaoganIv.center = CGPointMake(rocker.centerX/locRatX1*0.9, rocker.centerY/locRatY1*0.9-15);
             [self.view addSubview:yaoganIv];
-            NSLog(@"摇杆中心点是:%@", NSStringFromCGPoint(CGPointMake(rocker.centerX/locRatX*0.9-5, rocker.centerY/locRatY*0.9)));
             
             UIImageView* ballIv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ball.png"]];
             ballIv.tag = 826;
@@ -327,7 +322,6 @@
 #pragma mark diy delegate
 - (void) closeHandle
 {
-    NSLog(@"close Handler");
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
@@ -341,7 +335,6 @@
 }
 - (void) exitBtnPressed
 {
-    NSLog(@"exitBtnPressed");
     [_loadFailed removeFromSuperview];
     [self dismissViewControllerAnimated:NO completion:nil];
 }
@@ -787,11 +780,9 @@
      
      //进行第一次网络请求;
      NSError* error = nil;
-         NSLog(@"jsssssjjjjj %@", jsonStr);
      GameInfo* gameInfo = [ParseJson createGameInfoFromJson:jsonStr];
      if (gameInfo)
      {
-         NSLog(@"是否支持背景触摸, %d", gameInfo.bgTouch);
          self.currentGameInfo.bgTouch = gameInfo.bgTouch;
          self.currentGameInfo.gravity = gameInfo.gravity;
          self.currentGameInfo.itunesPath = gameInfo.itunesPath;
@@ -802,7 +793,6 @@
 //             [self pressGesBtnOn];
              [self performSelectorOnMainThread:@selector(pressGesBtnOn) withObject:nil waitUntilDone:YES];
              
-             NSLog(@"支持重力");
          }
          else
          {
@@ -867,7 +857,6 @@
          }
          else
          {
-             NSLog(@"error downloading zip file! ");
              dispatch_async(dispatch_get_main_queue(), ^{
 //                 [_activityView stopAnimating];
 //                 [_activityView removeFromSuperview];
@@ -1236,10 +1225,7 @@
                                     {
                                         width = [Singleton getSingle].current_sdkTvInfo.width*keyBean.tvX/1920;
                                         height = [Singleton getSingle].current_sdkTvInfo.height*keyBean.tvY/1080;
-                                        NSLog(@"sdk宽度: %d", keyBean.idd);
-                                        NSLog(@"sdk-keyBean.x == %d", keyBean.tvX);
-                                        NSLog(@"sdk--tv.x == %d", [Singleton getSingle].current_sdkTvInfo.width);
-                                        NSLog(@"sdk高度: %d", height);
+                                
                                     }
                                     else
                                     {
@@ -1273,7 +1259,6 @@
                                 
                                 NSTvuPoint* point = [[NSTvuPoint alloc] init];
                                 point.button = button;
-                                NSLog(@"发送%d",[_mutilPointArray count]);
                                 switch ([_mutilPointArray count])
                                 {
                                     case 0:
@@ -1307,10 +1292,7 @@
                                 }
                                 point.p_x = width;
                                 point.p_y = height;
-                                NSLog(@"id: %d", point.p_id);
-                                NSLog(@"xx: %f", point.p_x);
-                                NSLog(@"yy: %f", point.p_y);
-                                NSLog(@"action: %d", action);
+                            
                                 if([[event allTouches] count] == 1)
                                 {
                                     [_mutilPointArray removeAllObjects];
@@ -1324,7 +1306,6 @@
                             }
                         }
 
-                        NSLog(@"按下要发送的数组是：%@", _mutilPointArray);
                         if(self.single.tvType == 1)
                         {
                             sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
@@ -1408,7 +1389,6 @@
                         [point release];
                         
                         iv.center = [everyTouch locationInView:self.view];
-                        NSLog(@"摇杆按下了---- ");
                         if(self.single.tvType == 1)
                         {
                             sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvUdpPort, action, [_mutilPointArray count], _mutilPointArray);
@@ -1768,8 +1748,6 @@
                     [tvuPoint.button setImage:tvuPoint.button.imageUp forState:UIControlStateNormal];
                     if(self.single.tvType == 1)
                     {
-                        NSLog(@"发送keyTarget: %d", tvuPoint.keyBean.targetKey);
-                        NSLog(@"发送idd: %d", tvuPoint.keyBean.idd);
                         keyEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, 1, tvuPoint.keyBean.targetKey, 0);
                     }
                     else
@@ -1795,11 +1773,9 @@
                     if(point.button != nil)
                     {
                         [point.button setImage:point.button.imageUp forState:UIControlStateNormal];
-                        NSLog(@"普通按钮抬起");
                     }
                     else
                     {
-                        NSLog(@"摇杆的抬起事件");
                         if([_rockerImageArray count] != 0)
                         ((UIImageView*)[_rockerImageArray objectAtIndex:0]).center = _yaoganCenter;
                     }
@@ -1820,11 +1796,6 @@
                         action = 1;
                     }
                     
-                    NSLog(@"抬起,id %d", point.p_id);
-                    NSLog(@"抬起，xx %f", point.p_x);
-                    NSLog(@"抬起, yy %f", point.p_y);
-                    NSLog(@"抬起, action %d",action);
-                    NSLog(@"抬起要发送的数组是：%@", _mutilPointArray);
                     if(self.single.tvType == 1)
                     {
                         sendMutiEvent(self.single.current_tv.tvIp, self.single.current_tv.tvServerport, self.single.current_tv.tvServerport, action, [_mutilPointArray count], _mutilPointArray);
@@ -1934,7 +1905,6 @@
 - (void) leftBtnPressed
 {
     //获取超值手柄
-    NSLog(@"leftBtnPressed: %@", [[AllUrl getInstance] handshangkBuyUrl]);
     if([[[AllUrl getInstance] handshangkBuyUrl] isEqualToString:@""])
     {
         UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"暂无" message:nil delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
@@ -2332,9 +2302,6 @@
             tvuPoint.current_touch = touch;
             
             [_mutilPoint addObject:tvuPoint];
-            NSLog(@"手势按下: %@", _mutilPoint);
-            NSLog(@"px-- %f", tvuPoint.p_x);
-            NSLog(@"py-- %f", tvuPoint.p_y);
             
             [tvuPoint release];
             Singleton* single = [Singleton getSingle];

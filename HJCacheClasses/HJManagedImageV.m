@@ -44,7 +44,6 @@
 	self.callbackOnSetImage=nil;
 	self.loadingWheel=nil;
     [super dealloc];
-	//NSLog(@"ManagedImage dealloc");
 }
 
 
@@ -86,13 +85,11 @@
 }
 
 -(void) managedObjFailed {
-	NSLog(@"moHandlerFailed %@",moHandler);
 	[image release];
 	image = nil;
 }
 
 -(void) managedObjReady {
-	//NSLog(@"moHandlerReady %@",moHandler);
 	[self setImage:moHandler.managedObj];
 }
 

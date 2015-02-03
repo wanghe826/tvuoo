@@ -96,7 +96,6 @@
 #pragma callback 连接异常断开了
 - (void) disconnectedWithTv
 {
-    NSLog(@"Quick 的 回调");
     //    int iP = [ip intValue];
     //    const char* disConnIp = parseIp(iP);
     //    NSString* str = [NSString stringWithFormat:@"%s", disConnIp];

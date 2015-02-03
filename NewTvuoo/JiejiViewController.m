@@ -559,7 +559,6 @@
         {
             //发送事件
             _upFlag = YES;
-            NSLog(@"发送up事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 48);
@@ -576,7 +575,6 @@
         {
             //发送事件
             _upFlag = NO;
-            NSLog(@"发送up事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 48);
@@ -594,7 +592,6 @@
         {
             //发送事件
             _downFlag = YES;
-            NSLog(@"发送down事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 53);
@@ -611,7 +608,6 @@
         {
             //发送事件
             _downFlag = NO;
-            NSLog(@"发送down事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 53);
@@ -628,7 +624,6 @@
         if(_leftFlag != YES)
         {
             _leftFlag = YES;
-            NSLog(@"发送 left 事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 49);
@@ -644,7 +639,6 @@
         if(_leftFlag != NO)
         {
             _leftFlag = NO;
-            NSLog(@"发送 left 事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 49);
@@ -661,7 +655,6 @@
         {
             //发送事件
             _rightFlag = YES;
-            NSLog(@"发送up事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, 37);
@@ -678,7 +671,6 @@
         {
             //发送事件
             _rightFlag = NO;
-            NSLog(@"发送up事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, 37);
@@ -696,7 +688,6 @@
         if(_leftUpFlag != YES)
         {
             _leftUpFlag = YES;
-            NSLog(@"发送leftUp事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, -3);
@@ -712,7 +703,6 @@
         if(_leftUpFlag != NO)
         {
             _leftUpFlag = NO;
-            NSLog(@"发送leftUp事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, -3);
@@ -728,7 +718,6 @@
         if(_leftDownFlag != YES)
         {
             _leftDownFlag = YES;
-            NSLog(@"发送leftDown 事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, -5);
@@ -744,7 +733,6 @@
         if(_leftDownFlag != NO)
         {
             _leftDownFlag = NO;
-            NSLog(@"发送leftDown 事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, -5);
@@ -760,7 +748,6 @@
         if(_rightUpFlag != YES)
         {
             _rightUpFlag = YES;
-            NSLog(@"发送rightUp 事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, -9);
@@ -776,7 +763,6 @@
         if(_rightUpFlag != NO)
         {
             _rightUpFlag = NO;
-            NSLog(@"发送rightUp 事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, -9);
@@ -795,7 +781,6 @@
         if(_rightDownFlag != YES)
         {
             _rightDownFlag = YES;
-            NSLog(@"发送rightDown事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 0, -7);
@@ -812,7 +797,6 @@
         if(_rightDownFlag != NO)
         {
             _rightDownFlag = NO;
-            NSLog(@"发送rightDown事件");
             if(self.btnFlag == NO)
             {
                 sendSimulator(_single.current_tv.tvIp, _single.current_tv.tvServerport, 3, 1, -7);

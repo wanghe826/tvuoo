@@ -81,7 +81,6 @@ static SystemSoundID shake_sound_male_id = 0;
 }
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touchbbbbb");
     self.image = self.downImage;
     self.flag = YES;
     if([[Singleton getSingle].isVoiceOn intValue] == 1)
@@ -122,16 +121,13 @@ static SystemSoundID shake_sound_male_id = 0;
 }
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touchmmmmmmm");
     UITouch* touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self];
     if(CGRectContainsPoint(self.frame, currentPoint))
     {
-        NSLog(@"在uiimageView里面移动");
     }
     else
     {
-        NSLog(@"不在uiimageView里面移动");
     }
     if(self.flag == YES)
     {
@@ -175,7 +171,6 @@ static SystemSoundID shake_sound_male_id = 0;
                 sendSimulator([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, self.gameType, 1, self.keyCode);
                 break;
         }
-        NSLog(@"gameType : %d", self.gameType);
         self.flag = NO;
     }
 }
@@ -189,7 +184,6 @@ static SystemSoundID shake_sound_male_id = 0;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"btn" ofType:@"wav"];
     if (path) {
         //注册声音到系统
-        NSLog(@"注册声音到系统");
         AudioServicesCreateSystemSoundID((CFURLRef)[NSURL fileURLWithPath:path],&shake_sound_male_id);
         AudioServicesPlaySystemSound(shake_sound_male_id);//如果无法再下面播放，可以尝试在此播放
     }

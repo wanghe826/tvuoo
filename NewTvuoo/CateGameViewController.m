@@ -401,7 +401,6 @@
         [NSThread detachNewThreadSelector:@selector(fetchData) toTarget:self withObject:nil];
         
         // 调用上拉刷新方法
-        NSLog(@"上拉");
         
     }
     

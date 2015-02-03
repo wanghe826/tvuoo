@@ -205,7 +205,6 @@
 {
     if(self.activityIndicator.hidden == NO)
     {
-        NSLog(@"定时器!");
         if(self.flag == HOT)
         {
             if([self.hotGameArray count] == 0)
@@ -990,9 +989,7 @@
     else
     {
         NSUInteger row = [indexPath row];
-        NSLog(@"befor!---");
         GameInfo* gameInfo = [self.pspGameArray objectAtIndex:row];
-        NSLog(@"after!---");
         cell = [tableView dequeueReusableCellWithIdentifier:cellTableViewIdentifier];
         if(cell == nil)
         {
@@ -1166,76 +1163,6 @@
     
 }
 
-/*
-//当滑动结束时调用
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    float height = scrollView.contentSize.height > self.gameList.frame.size.height ? self.gameList.frame.size.height : scrollView.contentSize.height;
-    if ((height - scrollView.contentSize.height + scrollView.contentOffset.y) / height > 0.2)
-    {
-        // 调用上拉刷新方法
-        NSLog(@"上拉");
-        
-        if (self.flag == HOT)
-        {
-            if([self.hotGameArray count]%20 != 0)
-            {
-                return;
-            }
-            
-            self.hotPageNum = [self.hotGameArray count]/20 + 1;
-            footView.frame = CGRectMake(0,self.hotGameArray.count*80, 320,50);
-            
-            [self.gameList addSubview:footView];
-            //正在加载
-            [NSThread detachNewThreadSelector:@selector(initMyDataSource) toTarget:self withObject:nil];
-        }
-        else if(self.flag == NEW)
-        {
-            if([self.niceGameArray count]%20 != 0)
-            {
-                return;
-            }
-            
-            self.nicePageNum = [self.niceGameArray count]/20 + 1;
-            footView.frame = CGRectMake(0,self.niceGameArray.count*80, 320,50);
-            
-            [self.gameList addSubview:footView];
-            //正在加载
-            [NSThread detachNewThreadSelector:@selector(initMyDataSource) toTarget:self withObject:nil];
-        }
-        else if(self.flag == CATE)
-        {
-            if([self.cateGameArray count]%20 != 0)
-            {
-                return;
-            }
-            
-            self.catePageNum = [self.cateGameArray count]/20 + 1;
-            footView.frame = CGRectMake(0,self.cateGameArray.count*80, 320,50);
-            
-            [self.gameList addSubview:footView];
-            //正在加载
-            [NSThread detachNewThreadSelector:@selector(initMyDataSource) toTarget:self withObject:nil];
-            
-        }
-        else
-        {
-            if([self.pspGameArray count]%20 != 0)
-            {
-                return;
-            }
-            
-            self.pspPageNum = [self.pspGameArray count]/20 + 1;
-            footView.frame = CGRectMake(0,self.pspGameArray.count*80, 320,50);
-            
-            [self.gameList addSubview:footView];
-            //正在加载
-            [NSThread detachNewThreadSelector:@selector(initMyDataSource) toTarget:self withObject:nil];
-        }
-    }
-}
- */
 
 #pragma passGameInfoArray delegate
 - (void) passGameInfoArray:(NSMutableArray *)gameInfoArray

@@ -76,7 +76,6 @@
     
 //    [_avalibleTvTimer invalidate];
     [Singleton getSingle].myAddTvInfoOrSdk = nil;
-    NSLog(@"连接状态是%d", [Singleton getSingle].conn_statue);
 }
 
 #pragma callback 连接异常断开了
@@ -655,8 +654,6 @@
 //            [[[Singleton getSingle].sdkArray objectAtIndex:tag] setCell_btn_statue:NO];
             
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                NSLog(@"ip----%s", parseIp(ip));
-                NSLog(@"port----%d", port);
                 [Singleton getSingle].tvType = 3;
                 connectServer(ip, port);
             });
@@ -685,10 +682,7 @@
                 }
             }
             
-            NSLog(@"%d", port);
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                NSLog(@"ip----%s", parseIp(ip));
-                NSLog(@"port----%d", port);
                 [Singleton getSingle].tvType = 1;
                 connectServer(ip, port);
             });
@@ -709,10 +703,7 @@
                 }
             }
             
-            NSLog(@"%d", port);
             dispatch_async(dispatch_get_global_queue(0, 0), ^{
-                NSLog(@"ip----%s", parseIp(ip));
-                NSLog(@"port----%d", port);
                 [Singleton getSingle].tvType = 3;
                 connectServer(ip, port);
             });
@@ -727,7 +718,6 @@
 {
     static float radian =0;
     radian += 0.1f;
-    NSLog(@"定时器");
 //    [UIView animateWithDuration:0.1 animations:^{
 //        animaUv.transform = CGAffineTransformMakeRotation(radian);
 //    }];
@@ -736,7 +726,7 @@
 #pragma connect failed
 - (void) connFailed:(int)ip
 {
-    NSLog(@"普通电视连接失败的回调!");
+    NSLog(@"普通电视连接失败!");
 //    [self.activityIndicator stopAnimating];
 //    self.activityIndicator.hidden = YES;
 //    //        [self.activityIndicator removeFromSuperview];
@@ -806,7 +796,7 @@
 //如果连接成功， 会回调此方法
 - (void) connSuccess:(NSData*)data
 {
-    NSLog(@"普通电视连接成功的回调");
+    NSLog(@"普通电视连接成功");
     //在这里要更改按钮的状态
     int ip = 0;
     [data getBytes:&ip length:sizeof(ip)];
@@ -935,7 +925,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger at_row = [indexPath row];
-    NSLog(@"%ld", (long)at_row);
 }
 
 - (void) pressDevBtn
@@ -984,12 +973,10 @@
 //    if([self.sdkArray count] > 0)
     if([[Singleton getSingle].sdkArray count] > 0)
     {
-        NSLog(@"大于0");
         [self.avalibaleDev reloadData];
     }
     else
     {
-        NSLog(@"不大于0");
         [self addNoConnView];
     }
 }

@@ -317,7 +317,6 @@
             _lineIv.backgroundColor = greenColor;
             [self.view addSubview:_lineIv];
             
-            NSLog(@"显示2");
             _numberLabel.text = [NSString stringWithFormat:@"%d", memory];
             _numberLabel.textColor = greenColor;
             _numberLabel2.textColor = greenColor;

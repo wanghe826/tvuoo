@@ -421,9 +421,7 @@
     
     [self.view addSubview:_failedIv];
     //    [_failedIv release];
-    NSLog(@"_failedLabel");
     [self.view addSubview:_failedLabel];
-    NSLog(@"_leateter:");
     //    [_failedLabel release];
     [self.view addSubview:_listUv];
     [self.view addSubview:_reloadBtn];
@@ -944,7 +942,6 @@
         const char* c_jsonString = [jsonString UTF8String];
         
         string str = c_jsonString;
-        NSLog(@"推动到电视:%s", str.c_str());
         sendApp([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport,0, str);
         [jsonString release];
     }

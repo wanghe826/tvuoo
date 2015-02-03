@@ -83,13 +83,10 @@
     
     if(self.gameInfo.tvPkgName == nil)
     {
-        NSLog(@"tvPkgName is nil");
         isInstalled([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, self.gameInfo.game_id, self.gameInfo.appType, [@"" UTF8String]);
     }
     else
     {
-        NSLog(@"tvuPkgName : %@", self.gameInfo.tvPkgName);
-        NSLog(@"tvPkgName isn't nil");
         if([self.gameInfo.tvPkgName isEqualToString:@""])
         {
             isInstalled([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, self.gameInfo.game_id, self.gameInfo.appType, [@"pkg" UTF8String]);
@@ -487,7 +484,6 @@
         {
             HongbaijiViewController* hongbaiVc = [[HongbaijiViewController alloc] initWithNibName:@"HongbaijiViewController" bundle:nil];
             hongbaiVc.gameParam = self.gameInfo.gameParam;
-            NSLog(@"self.gameino.gralks: %d", self.gameInfo.gameParam);
             [self.navigationController presentViewController:hongbaiVc animated:NO completion:nil];
             [hongbaiVc release];
             break;
@@ -571,7 +567,6 @@
 //    if((self.gameInfo.game_id == gameId) && ([self.gameInfo.androidPkgName isEqualToString:pkgName]) && statue==1)
     if((self.gameInfo.game_id == gameId) && (statue == 1))
     {
-        NSLog(@"电视上已经安装了这个游戏");
         dispatch_sync(dispatch_get_main_queue(), ^{
             [_btn1 setTitle:@"启动游戏" forState:UIControlStateNormal];
         });
@@ -580,7 +575,6 @@
     else
     {
         _haveInstalled = NO;
-        NSLog(@"电视上没有安装这个游戏");
     }
 }
 

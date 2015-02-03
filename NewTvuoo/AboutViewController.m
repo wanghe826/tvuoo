@@ -257,13 +257,11 @@
 {
     if(buttonIndex == 0)
     {
-        NSLog(@"暂不升级");
         [alertView removeFromSuperview];
     }
     
     if(buttonIndex == 1)
     {
-        NSLog(@"现在升级");
         //跳转到app store中指定的应用
         NSString *str = [NSString stringWithFormat:
                          @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d",
@@ -583,13 +581,11 @@
 {
     if(buttonIndex == 0)
     {
-        NSLog(@"暂不升级");
         [alertView removeFromSuperview];
     }
     
     if(buttonIndex == 1)
     {
-        NSLog(@"现在升级");
         //跳转到app store中指定的应用
         NSString *str = [NSString stringWithFormat:
                          @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%d",

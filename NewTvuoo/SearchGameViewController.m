@@ -316,7 +316,6 @@
     NSData* data = [NSData dataWithContentsOfURL:url];
     if(data == nil)
     {
-        NSLog(@"没有解析， 返回NIL");
 //        NSLog(@"errorrrrr: %@", [error description]);
         [error release];
         return nil;

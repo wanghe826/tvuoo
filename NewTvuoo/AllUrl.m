@@ -107,13 +107,11 @@
     
     NSData* data = [NSData dataWithContentsOfURL:url];
     if (data == nil) {
-        NSLog(@"获取单个switcher失败");
         return ;
     }
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     if(dic == nil)
     {
-        NSLog(@"获取switcher的json 失败");
         return ;
     }
     self.tvu_ad_switch = [[dic objectForKey:@"tvu_ad_switch"] intValue];
@@ -371,13 +369,11 @@
     
     NSData* data = [NSData dataWithContentsOfURL:url];
     if (data == nil) {
-        NSLog(@"获取单个switcher失败");
         return nil;
     }
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     if(dic == nil)
     {
-        NSLog(@"获取switcher的json 失败");
         return nil;
     }
     Switcher* switcher = [[Switcher alloc] init];

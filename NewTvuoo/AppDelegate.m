@@ -57,8 +57,6 @@ static int myClock = 0;
     LordViewController* lordViewController = [[[LordViewController alloc] initWithNibName:@"LordViewController" bundle:nil] autorelease];
     ViewControllerOrientation* viewControllerOrientation = nil;
     
-    
-    NSLog(@"是否显示手机游戏%d",[[AllUrl getInstance] tvu_showgame_switch]);
     if([self topMessage] == 5)
     {
         viewControllerOrientation = [[ViewControllerOrientation alloc] initWithRootViewController:lordViewController];
@@ -128,7 +126,6 @@ static int myClock = 0;
         [updateUrl appendString:vcodeStr];
         [updateUrl appendString:@"&plat="];
         [updateUrl appendString:[NSString stringWithFormat:@"%d",4]];
-        NSLog(@"updateUrl-----:%@", updateUrl);
         [Singleton getSingle].updateInfo  = [ParseJson createUpdateInfoFromJson:updateUrl];
         if(single.viewController != nil)
         {
@@ -180,7 +177,6 @@ static int myClock = 0;
                 [self noWifi:str];
                 break;
         }
-        NSLog(@"%@", str);
     }
     
     _status = curStatus;
@@ -247,7 +243,6 @@ static int myClock = 0;
         [updateUrl appendString:vcodeStr];
         [updateUrl appendString:@"&plat="];
         [updateUrl appendString:[NSString stringWithFormat:@"%d",4]];
-        NSLog(@"updateUrl-----:%@", updateUrl);
         [Singleton getSingle].updateInfo  = [ParseJson createUpdateInfoFromJson:updateUrl];
         [updateUrl release];
     });
@@ -256,7 +251,6 @@ static int myClock = 0;
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    NSLog(@"appliactionWillResignActive");
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
@@ -265,7 +259,6 @@ static int myClock = 0;
 {
 //    [[Singleton getSingle] release];
 //    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    NSLog(@"applicationDidEnterBackground");
     UIApplication* app = [UIApplication sharedApplication];
     _bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
         // Clean up any unfinished task business by marking where you
@@ -278,10 +271,8 @@ static int myClock = 0;
 
 - (void)timerHandler
 {
-    NSLog(@"myclllll %d", myClock);
     if(myClock == 300)
     {
-        NSLog(@"退出程序");
         [[UIApplication sharedApplication] endBackgroundTask:_bgTask];
         _bgTask = UIBackgroundTaskInvalid;
         exit(0);
@@ -291,16 +282,13 @@ static int myClock = 0;
 
 - (void)applicationWillEnterForeground:(UIApplication*)application
 {
-    NSLog(@"applicationWillEnterForeground");
     myClock = 0;
     [_timer invalidate];
-    NSLog(@"取消定时器");
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    NSLog(@"applicationDidBecomeActive");
 //    _bgTask
 //    application beginBackgroundTaskWithExpirationHandler:<#^(void)handler#>
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
@@ -308,7 +296,7 @@ static int myClock = 0;
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    NSLog(@"applicationWillTerminate");
+
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
@@ -320,7 +308,6 @@ static int myClock = 0;
 
 - (BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    NSLog(@"应用间通信");
     return YES;
 }
 

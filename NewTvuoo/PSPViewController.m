@@ -240,7 +240,6 @@ static SystemSoundID shake_sound_male_id = 0;
     NSString* game = @"game";
     const char* param = [game UTF8String];
     //    string param = gam
-    NSLog(@"退出psp 游戏");
     sendExitGame([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 4, param);
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -348,7 +347,6 @@ static SystemSoundID shake_sound_male_id = 0;
     {
          if(_upFlag == NO)
          {
-             NSLog(@"发送上");
              self.yuanUp.image = [UIImage imageNamed:@"ty_anniu2.png"];
              self.yuanUp.centView.image = self.yuanUp.downImage;
              _upFlag = YES;
@@ -358,7 +356,6 @@ static SystemSoundID shake_sound_male_id = 0;
     {
         if(_leftFlag == NO)
         {
-            NSLog(@"发送左");
             self.yuanLeft.image = [UIImage imageNamed:@"ty_anniu2.png"];
             self.yuanLeft.centView.image = self.yuanLeft.downImage;
             _leftFlag = YES;
@@ -368,7 +365,6 @@ static SystemSoundID shake_sound_male_id = 0;
     {
         if(_rightFlag == NO)
         {
-            NSLog(@"发送右");
             self.yuanRight.image = [UIImage imageNamed:@"ty_anniu2.png"];
             self.yuanRight.centView.image = self.yuanRight.downImage;
             _rightFlag = YES;
@@ -378,7 +374,6 @@ static SystemSoundID shake_sound_male_id = 0;
     {
         if(_downFlag == NO)
         {
-            NSLog(@"发送下");
             self.chacha.image = [UIImage imageNamed:@"ty_anniu2.png"];
             self.chacha.centView.image = self.chacha.downImage;
             _downFlag = YES;
@@ -479,7 +474,6 @@ static SystemSoundID shake_sound_male_id = 0;
 }
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touch Began ----keyCode: %d", self.keyCode);
     self.image = [UIImage imageNamed:@"ty_anniu2.png"];
     
     self.flag = YES;
@@ -501,11 +495,9 @@ static SystemSoundID shake_sound_male_id = 0;
     CGPoint currentPoint = [touch locationInView:self];
     if(CGRectContainsPoint(self.frame, currentPoint))
     {
-        NSLog(@"在uiimageView里面移动");
     }
     else
     {
-        NSLog(@"不在uiimageView里面移动");
     }
     if(self.flag == YES)
     {
@@ -514,7 +506,6 @@ static SystemSoundID shake_sound_male_id = 0;
     else
     {
         self.image = self.downImage;
-        NSLog(@"touch Moved ----keyCode: %d", self.keyCode);
         sendSimulator([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 4, 0, self.keyCode);
         self.flag = YES;
     }
@@ -524,7 +515,6 @@ static SystemSoundID shake_sound_male_id = 0;
     
     if(self.flag == YES)
     {
-        NSLog(@"touch ended ----keyCode: %d", self.keyCode);
         self.image = [UIImage imageNamed:@"ty_anniu1.png"];
         self.centView.image = self.upImage;
         sendSimulator([Singleton getSingle].current_tv.tvIp, [Singleton getSingle].current_tv.tvServerport, 4, 1, self.keyCode);
@@ -534,7 +524,6 @@ static SystemSoundID shake_sound_male_id = 0;
 
 - (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"touch Cancelled");
 }
 
 -(void) playSound

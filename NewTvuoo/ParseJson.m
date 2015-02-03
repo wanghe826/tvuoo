@@ -26,7 +26,6 @@
     NSDictionary* jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     if(jsonDic == nil)
     {
-        NSLog(@"tvinfo json 解析失败");
         [tv release];
         return nil;
     }
@@ -48,6 +47,7 @@
     if(jsonDic == nil)
     {
         NSLog(@"tvinfoDetail json 解析失败:%@", tvString);
+        return nil;
     }
     tv.deviceId = [[jsonDic objectForKey:@"deviceid"] intValue];
     tv.name = [jsonDic objectForKey:@"name"];
@@ -76,8 +76,6 @@
   
         if(data == nil)
         {
-            NSLog(@"没有解析， 返回NIL");
-            NSLog(@"errorrrrr: %@", [error description]);
             return nil;
         }
         
@@ -97,6 +95,7 @@
     if(jsonArray == nil)
     {
         NSLog(@"GameInfo Json--------- 解析失败   %@", [error description]);
+        return nil;
     }
     NSArray* dataArray = [jsonArray objectForKey:@"data"];
 //    NSMutableArray* gameInfoArray = [NSMutableArray arrayWithCapacity:3];  要返回的指针， 不能使用便利初始化
@@ -273,6 +272,7 @@
     if(json == nil)
     {
         NSLog(@"GameInfo Json--------- 解析失败   %@", [error description]);
+        return nil;
     }
     
     NSArray* jsonArray = [json objectForKey:@"data"];
@@ -442,12 +442,10 @@
 + (UpdateInfo*) createUpdateInfoFromJson:(NSString*)json
 {
     NSError* error=nil;
-    NSLog(@"jsonis: %@", json);
     NSURL* url = [NSURL URLWithString:json];
     NSData* data = [NSData dataWithContentsOfURL:url options:kNilOptions error:&error];
     if(error != nil)
     {
-        NSLog(@"createUpdateInfo 失败, %@", error);
         return nil;
     }
     
@@ -461,7 +459,6 @@
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     if(error != nil)
     {
-        NSLog(@"解析updateInfo失败");
         return nil;
     }
     UpdateInfo* updateInfo = [[UpdateInfo alloc] init];
