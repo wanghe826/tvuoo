@@ -233,17 +233,26 @@ static int myClock = 0;
     AllUrl* allUrl = [AllUrl getInstance];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSMutableString* updateUrl = [[NSMutableString alloc] initWithString:[allUrl updatedUrl]];
+        
         [updateUrl appendString:@"?cid="];
         [updateUrl appendString:[NSString stringWithFormat:@"%d", 9527]];
+        
         [updateUrl appendString:@"&pkg="];
         NSString* bundleId = [[NSBundle mainBundle] bundleIdentifier];
         [updateUrl appendString:bundleId];
+        
         [updateUrl appendString:@"&vcode="];
-        NSString* vcodeStr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        NSString* vcodeStr = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]; //vcode build
         [updateUrl appendString:vcodeStr];
+        
+        [updateUrl appendString:@"&vname="];
+        NSString* vnameStr = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+        [updateUrl appendString:vnameStr];
+        
         [updateUrl appendString:@"&plat="];
         [updateUrl appendString:[NSString stringWithFormat:@"%d",4]];
         [Singleton getSingle].updateInfo  = [ParseJson createUpdateInfoFromJson:updateUrl];
+        NSLog(@"upddddd %@", updateUrl);
         [updateUrl release];
     });
 }
